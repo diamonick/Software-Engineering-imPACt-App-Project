@@ -16,10 +16,22 @@ namespace imPACt.Pages
         private Color EmptyColor = Color.FromHex("#B5E4FF");
         private Color InvalidColor = Color.FromHex("#FFB5B5");
         private Color ValidColor = Color.FromHex("#75FF89");
+        private const string HideIcon = "NotVisibleIcon.png";
+        private const string ShowIcon = "VisibleIcon.png";
 
         public ChooseSignInPage()
         {
             InitializeComponent();
+
+            ShowPasswordIcon.Source = "NotVisibleIcon.png";
+        }
+
+        void ValidateEntry(object sender, TextChangedEventArgs e)
+        {
+            var entry = (Entry)sender;
+
+            if (entry.Text.Length > 0) { entry.BackgroundColor = ValidColor; }
+            else { entry.BackgroundColor = EmptyColor; }
         }
 
         async void ValidatePasswordLength(object sender, TextChangedEventArgs e)
@@ -41,6 +53,14 @@ namespace imPACt.Pages
         void DisplayPassword(object sender, EventArgs args)
         {
             Password.IsPassword = !Password.IsPassword;
+
+            if (Password.IsPassword) { ShowPasswordIcon.Source = HideIcon; }
+            else { ShowPasswordIcon.Source = ShowIcon; }
+        }
+
+        void GoToSignInPage(object sender, EventArgs args)
+        {
+            
         }
     }
 }

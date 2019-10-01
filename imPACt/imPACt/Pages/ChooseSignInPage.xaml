@@ -40,8 +40,9 @@
                            TranslationX="-126"
                            AbsoluteLayout.LayoutBounds="0.5,0.45" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Label>
-                    <Entry TextColor="Black" BackgroundColor="#B5E4FF"
-                           WidthRequest="330"
+                    <Entry x:Name="FullName"
+                           TextColor="Black" BackgroundColor="#B5E4FF"
+                           WidthRequest="330" TextChanged="ValidateEntry"
                            HorizontalOptions="Fill"
                            Placeholder="e.g. Alan Turing" PlaceholderColor="#63ACD6"
                            AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
@@ -54,8 +55,9 @@
                            HorizontalOptions="Start"
                            AbsoluteLayout.LayoutBounds="0.5,0.575" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Label>
-                    <Entry TextColor="Black" BackgroundColor="#B5E4FF"
-                           WidthRequest="330"
+                    <Entry x:Name="Email"
+                           TextColor="Black" BackgroundColor="#B5E4FF"
+                           WidthRequest="330" TextChanged="ValidateEntry"
                            HorizontalOptions="Fill"
                            Placeholder="e.g. aturing@lsu.edu" PlaceholderColor="#63ACD6"
                            AbsoluteLayout.LayoutBounds="0.5,0.625" AbsoluteLayout.LayoutFlags="PositionProportional">
@@ -79,12 +81,29 @@
                            TranslationX="-48"
                            AbsoluteLayout.LayoutBounds="0.5,0.785" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Label>
-                    <ImageButton Source="FrontAppIcon_180x180.png"
+                    <ImageButton x:Name="ShowPasswordIcon"
                                  TranslationX="145" TranslationY="-25"
                                  Released="DisplayPassword"
                                  AbsoluteLayout.LayoutBounds="0.5,0.785,25,25" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </ImageButton>
-                    
+
+                    <StackLayout Orientation="Horizontal"
+                        AbsoluteLayout.LayoutBounds="0.5,0.9" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <!-- Already have an account? -->
+                    <Label Text="Already have an account?" VerticalTextAlignment="Center"
+                           TextColor="#00858F" FontSize="16" FontAttributes="Bold"
+                           TranslationX="0"
+                           AbsoluteLayout.LayoutBounds="0.5,0.85" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Label>
+                    <Button Text="Sign In"
+                            TextColor="White" FontSize="16" FontAttributes="Bold"
+                            BackgroundColor="#0088FF"
+                            WidthRequest="120"
+                            AbsoluteLayout.LayoutBounds="0.5,0.85" AbsoluteLayout.LayoutFlags="PositionProportional">
+
+                    </Button>
+                    </StackLayout>
+
                 </AbsoluteLayout>
             </AbsoluteLayout>
         </ScrollView>

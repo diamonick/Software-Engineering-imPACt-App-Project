@@ -24,12 +24,14 @@ namespace imPACt.Pages
             InitializeComponent();
         }
 
-        //Highlight the skip button to let the user know it's pressed
-        async void HighlightSkipButton(object sender, EventArgs args)
+        //Highlight the button to let the user know it's pressed
+        async void HighlightButton(object sender, EventArgs args)
         {
-            SkipButton.TextColor = Color.FromRgb(200, 200, 200);
-            SkipButton.BackgroundColor = Color.FromRgb(0, 85, 92);
-            await SkipButton.ScaleTo(PressedSize, 200, Easing.SinOut);
+            var button = (Button)sender;
+
+            button.TextColor = Color.FromRgb(200, 200, 200);
+            button.BackgroundColor = Color.FromRgb(0, 85, 92);
+            await button.ScaleTo(PressedSize, 200, Easing.SinOut);
         }
 
         //Skip the introduction and send user straight to the login page
@@ -39,14 +41,6 @@ namespace imPACt.Pages
             SkipButton.BackgroundColor = Color.FromHex("#00858F");
             await SkipButton.ScaleTo(1.0, 200, Easing.SinOut);
             await Navigation.PushAsync(new ChooseSignInPage());
-        }
-
-        //Highlight the next button to let the user know it's pressed
-        async void HighlightNextButton(object sender, EventArgs args)
-        {
-            NextButton.TextColor = Color.FromRgb(200, 200, 200);
-            NextButton.BackgroundColor = Color.FromRgb(0, 85, 92);
-            await NextButton.ScaleTo(PressedSize, 200, Easing.SinOut);
         }
 
         //Go to the next note of the introduction page

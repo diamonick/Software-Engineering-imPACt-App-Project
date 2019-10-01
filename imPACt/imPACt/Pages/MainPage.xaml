@@ -67,14 +67,14 @@
             
             
             <!-- Skip Button -->
-            <Button x:Name="SkipButton" Pressed="HighlightSkipButton" Released="SkipToLogin"
+            <Button x:Name="SkipButton" Pressed="HighlightButton" Released="SkipToLogin"
                     Text="Skip"
                     Style="{StaticResource ChoiceButton}"
                     >
             </Button>
             
             <!-- Next Button -->
-            <Button x:Name="NextButton" Pressed="HighlightNextButton" Released="NextNote"
+            <Button x:Name="NextButton" Pressed="HighlightButton" Released="NextNote"
                     Text="Next"
                     Style="{StaticResource ChoiceButton}">
             </Button>

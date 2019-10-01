@@ -137,12 +137,14 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\FrontAppIcon_180x180.png" />
-    <BundleResource Include="Resources\LaunchScreen.png" />
     <BundleResource Include="Resources\LS_PAC_MODELS_Icon1.png" />
     <BundleResource Include="Resources\LS_PAC_MODELS_Icon2.png" />
     <BundleResource Include="Resources\LS_PAC_MODELS_Icon3.png" />
+    <BundleResource Include="Resources\FrontAppIcon_180x180.png" />
     <BundleResource Include="Resources\imPACt_Title1.png" />
     <BundleResource Include="Resources\imPACt_Title2.png" />
+    <BundleResource Include="Resources\LaunchScreen.png" />
+    <BundleResource Include="Resources\NotVisibleIcon.png" />
+    <BundleResource Include="Resources\VisibleIcon.png" />
   </ItemGroup>
 </Project>
