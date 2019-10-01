@@ -4,47 +4,89 @@
              BackgroundColor="#00858F">
     <ContentPage.Content>
         <ScrollView>
-        <AbsoluteLayout>
-            <Image Source="imPACt_Title2.png"
-               WidthRequest="180"
-               AbsoluteLayout.LayoutBounds="0.5,0.05" AbsoluteLayout.LayoutFlags="PositionProportional">
-            </Image>
-            <Label Text="Connecting researchers across campuses"
-                   TextColor="White" FontSize="18"
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                   AbsoluteLayout.LayoutBounds="0.5,0.15" AbsoluteLayout.LayoutFlags="PositionProportional">
-            </Label>
-            <BoxView BackgroundColor="White"
-                 HorizontalOptions="Fill"
-                 HeightRequest="550"
-                 AbsoluteLayout.LayoutBounds="0.5,1,1,0.8" AbsoluteLayout.LayoutFlags="All"
-            />
-            <Label Text="Create an Account"
-                   TextColor="#00858F" FontSize="24" FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   AbsoluteLayout.LayoutBounds="0.5,0.27" AbsoluteLayout.LayoutFlags="PositionProportional">
-            </Label>
-            <Label Text="You must have a SEC institution affiliated email account. Select your school from the dropdown menu below."
-                   TextColor="#00858F" FontSize="16"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Start"
-                   AbsoluteLayout.LayoutBounds="0.5,0.35" AbsoluteLayout.LayoutFlags="PositionProportional">
-            </Label>
-            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                <Label Text="Full Name"
-                       TextColor="#00858F" FontSize="16" FontAttributes="Bold"
-                       HorizontalTextAlignment="Start"
-                       AbsoluteLayout.LayoutBounds="30,0.5" AbsoluteLayout.LayoutFlags="YProportional">
+            <AbsoluteLayout>
+                <!-- imPACt Title Logo -->
+                <Image Source="imPACt_Title2.png"
+                   WidthRequest="180"
+                   AbsoluteLayout.LayoutBounds="0.5,0.05" AbsoluteLayout.LayoutFlags="PositionProportional">
+                </Image>
+                <Label Text="Connecting researchers across campuses"
+                       TextColor="White" FontSize="18"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="0.5,0.15" AbsoluteLayout.LayoutFlags="PositionProportional">
                 </Label>
-                <Entry ReturnType="Done"
-                       TextColor="#00858F"
-                       WidthRequest="300"
-                       HorizontalOptions="Fill"
-                       Placeholder="Insert full name here"
-                       AbsoluteLayout.LayoutBounds="0.4,0.55" AbsoluteLayout.LayoutFlags="PositionProportional">
-                </Entry>
+                <BoxView BackgroundColor="White"
+                     HorizontalOptions="Fill"
+                     HeightRequest="550"
+                     AbsoluteLayout.LayoutBounds="0.5,1,1,0.8" AbsoluteLayout.LayoutFlags="All"
+                />
+                <!-- Account display text -->
+                <Label Text="Create an Account"
+                       TextColor="#00858F" FontSize="24" FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="0.5,0.27" AbsoluteLayout.LayoutFlags="PositionProportional">
+                </Label>
+                <Label Text="You must have a SEC institution affiliated email account. Select your school from the dropdown menu below."
+                       TextColor="#00858F" FontSize="16"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start"
+                       AbsoluteLayout.LayoutBounds="0.5,0.35" AbsoluteLayout.LayoutFlags="PositionProportional">
+                </Label>
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+
+                    <!-- Full Name Entry -->
+                    <Label Text="Full Name"
+                           TextColor="#00858F" FontSize="16" FontAttributes="Bold"
+                           TranslationX="-126"
+                           AbsoluteLayout.LayoutBounds="0.5,0.45" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Label>
+                    <Entry TextColor="Black" BackgroundColor="#B5E4FF"
+                           WidthRequest="330"
+                           HorizontalOptions="Fill"
+                           Placeholder="e.g. Alan Turing" PlaceholderColor="#63ACD6"
+                           AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Entry>
+
+                    <!-- Email Entry -->
+                    <Label Text="Email"
+                           TextColor="#00858F" FontSize="16" FontAttributes="Bold"
+                           TranslationX="-142"
+                           HorizontalOptions="Start"
+                           AbsoluteLayout.LayoutBounds="0.5,0.575" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Label>
+                    <Entry TextColor="Black" BackgroundColor="#B5E4FF"
+                           WidthRequest="330"
+                           HorizontalOptions="Fill"
+                           Placeholder="e.g. aturing@lsu.edu" PlaceholderColor="#63ACD6"
+                           AbsoluteLayout.LayoutBounds="0.5,0.625" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Entry>
+
+                    <!-- Password Entry -->
+                    <Label Text="Password"
+                           TextColor="#00858F" FontSize="16" FontAttributes="Bold"
+                           TranslationX="-126.5"
+                           AbsoluteLayout.LayoutBounds="0.5,0.7" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Label>
+                    <Entry x:Name="Password"
+                           TextColor="Black" BackgroundColor="#B5E4FF"
+                           WidthRequest="330" TextChanged="ValidatePasswordLength"
+                           HorizontalOptions="Fill" 
+                           Placeholder="Password" IsPassword="True" PlaceholderColor="#63ACD6" MaxLength="16"
+                           AbsoluteLayout.LayoutBounds="0.5,0.75" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Entry>
+                    <Label Text="Password must be 8 characters or more."
+                           TextColor="#00858F" FontSize="12"
+                           TranslationX="-48"
+                           AbsoluteLayout.LayoutBounds="0.5,0.785" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Label>
+                    <ImageButton Source="FrontAppIcon_180x180.png"
+                                 TranslationX="145" TranslationY="-25"
+                                 Released="DisplayPassword"
+                                 AbsoluteLayout.LayoutBounds="0.5,0.785,25,25" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </ImageButton>
+                    
+                </AbsoluteLayout>
             </AbsoluteLayout>
-        </AbsoluteLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
