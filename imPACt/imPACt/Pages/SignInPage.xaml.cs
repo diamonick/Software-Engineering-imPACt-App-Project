@@ -9,21 +9,42 @@ using Xamarin.Forms;
 
 namespace imPACt.Pages
 {
-    public partial class ChooseSignInPage : ContentPage
+    public partial class SignInPage : ContentPage
     {
         private string PWD = "";
         const uint MinPWDLength = 8;
+        private const double PressedSize = 1.1;                 //Size of button when pressed
         private Color EmptyColor = Color.FromHex("#B5E4FF");
         private Color InvalidColor = Color.FromHex("#FFB5B5");
         private Color ValidColor = Color.FromHex("#75FF89");
         private const string HideIcon = "NotVisibleIcon.png";
         private const string ShowIcon = "VisibleIcon.png";
 
-        public ChooseSignInPage()
+        public SignInPage()
         {
             InitializeComponent();
 
             ShowPasswordIcon.Source = "NotVisibleIcon.png";
+        }
+
+        //Highlight the button to let the user know it's pressed
+        async void HighlightButton(object sender, EventArgs args)
+        {
+            var button = (Button)sender;
+
+            button.TextColor = Color.FromRgb(200, 200, 200);
+            button.BackgroundColor = Color.FromRgb(0, 85, 92);
+            await button.ScaleTo(PressedSize, 200, Easing.SinOut);
+        }
+
+        async void SignUpLayout(object sender, EventArgs args)
+        {
+            await SignUp.ScaleTo(1.0, 200, Easing.SinOut);
+        }
+
+        async void LogInLayout(object sender, EventArgs args)
+        {
+            await LogIn.ScaleTo(1.0, 200, Easing.SinOut);
         }
 
         void ValidateEntry(object sender, TextChangedEventArgs e)
@@ -56,11 +77,6 @@ namespace imPACt.Pages
 
             if (Password.IsPassword) { ShowPasswordIcon.Source = HideIcon; }
             else { ShowPasswordIcon.Source = ShowIcon; }
-        }
-
-        void GoToSignInPage(object sender, EventArgs args)
-        {
-            
         }
     }
 }

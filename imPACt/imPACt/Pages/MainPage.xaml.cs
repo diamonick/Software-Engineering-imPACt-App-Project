@@ -40,7 +40,7 @@ namespace imPACt.Pages
             SkipButton.TextColor = Color.FromRgb(255, 255, 255);
             SkipButton.BackgroundColor = Color.FromHex("#00858F");
             await SkipButton.ScaleTo(1.0, 200, Easing.SinOut);
-            await Navigation.PushAsync(new ChooseSignInPage());
+            await Navigation.PushAsync(new SignInPage());
         }
 
         //Go to the next note of the introduction page
@@ -54,7 +54,7 @@ namespace imPACt.Pages
             //(ignores all code below this code block)
             if (CurrentNote == 3)
             {
-                await Navigation.PushAsync(new ChooseSignInPage());
+                await Navigation.PushAsync(new SignInPage());
                 return;
             }
 

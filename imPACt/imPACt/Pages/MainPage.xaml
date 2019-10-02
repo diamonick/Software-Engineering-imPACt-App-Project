@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
              x:Class="imPACt.Pages.MainPage"
              Padding="0,40"
-             BackgroundColor="#75FF89">
+             BackgroundColor="#00CFB3">
     <NavigationPage.TitleView>
         <AbsoluteLayout VerticalOptions="CenterAndExpand">
             <Button Text="Back" WidthRequest="120" HeightRequest="120"
