@@ -146,5 +146,7 @@
     <BundleResource Include="Resources\LaunchScreen.png" />
     <BundleResource Include="Resources\NotVisibleIcon.png" />
     <BundleResource Include="Resources\VisibleIcon.png" />
+    <BundleResource Include="Resources\xmark.png" />
+    <BundleResource Include="Resources\checkmark.png" />
   </ItemGroup>
 </Project>

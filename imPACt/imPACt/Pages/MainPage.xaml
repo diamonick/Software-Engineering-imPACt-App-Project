@@ -3,12 +3,6 @@
              x:Class="imPACt.Pages.MainPage"
              Padding="0,40"
              BackgroundColor="#00CFB3">
-    <NavigationPage.TitleView>
-        <AbsoluteLayout VerticalOptions="CenterAndExpand">
-            <Button Text="Back" WidthRequest="120" HeightRequest="120"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"></Button>
-        </AbsoluteLayout>
-    </NavigationPage.TitleView>
     <ContentPage.Content>
     <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
     <!-- Introduction to imPACt app with description of what is it -->
