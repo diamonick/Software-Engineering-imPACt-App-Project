@@ -34,6 +34,8 @@ namespace imPACt.Pages
         {
             InitializeComponent();
 
+            SU_FullName.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
+            SU_Email.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             SU_ShowPasswordIcon.Source = "NotVisibleIcon.png";
         }
 

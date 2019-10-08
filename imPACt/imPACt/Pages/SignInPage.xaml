@@ -235,6 +235,11 @@
                                      Released="DisplayPassword"
                                      AbsoluteLayout.LayoutBounds="0.5,0.625,25,25" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </ImageButton>
+                        <Button x:Name="ForgotPassword"
+                                Text="Forgot Password?"
+                                AbsoluteLayout.LayoutBounds="0.5,0.64" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Button>
+
                     </AbsoluteLayout>
 
                     <!-- Log in Confirmation button -->
