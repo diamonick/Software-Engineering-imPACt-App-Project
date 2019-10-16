@@ -6,12 +6,12 @@
    <ContentPage.Content>
        <!-- Scroll View (Able to scroll page) -->
         <ScrollView>
-            <AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <!-- Draw white background -->
                 <BoxView BackgroundColor="White"
-                     HorizontalOptions="Fill" VerticalOptions="Start"
+                     HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
                      HeightRequest="640"
-                     AbsoluteLayout.LayoutBounds="0,130,1,640" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                     AbsoluteLayout.LayoutBounds="0,130,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
 
                 <!-- imPACt Title Logo -->
                 <Image Source="imPACt_Title2.png"
@@ -37,7 +37,7 @@
                            HorizontalTextAlignment="Center"
                            AbsoluteLayout.LayoutBounds="0.5,0.28" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Label>
-                    <Label Text="You must have a SEC institution affiliated email account. Enter the school email address below."
+                    <Label Text="You must have a SEC institution&#10;affiliated email account. Enter the&#10;school email address below."
                            TextColor="#00858F" FontSize="16" Margin="50,0"
                            HorizontalTextAlignment="Center"
                            VerticalTextAlignment="Start"
@@ -162,6 +162,7 @@
                             TextColor="White" FontSize="24" FontAttributes="Bold"
                             BackgroundColor="#00CFB3"
                             WidthRequest="330" HeightRequest="50"
+                            IsEnabled="False" Opacity="0.5"
                             AbsoluteLayout.LayoutBounds="0.5,0.925" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Button>
                 </AbsoluteLayout>
@@ -178,7 +179,7 @@
                            HorizontalTextAlignment="Center"
                            AbsoluteLayout.LayoutBounds="0.5,0.28" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Label>
-                    <Label Text="You must have a SEC institution affiliated email account. Enter the school email address below."
+                    <Label Text="You must have a SEC institution affiliated&#10;email account. Enter the school email&#10;address below."
                            TextColor="#00858F" FontSize="16" Margin="50,0"
                            HorizontalTextAlignment="Center"
                            VerticalTextAlignment="Start"
@@ -247,6 +248,7 @@
                             TextColor="White" FontSize="24" FontAttributes="Bold"
                             BackgroundColor="#00CFB3"
                             WidthRequest="330" HeightRequest="50"
+                            IsEnabled="False" Opacity="0.5"
                             AbsoluteLayout.LayoutBounds="0.5,0.7" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Button>
                 </AbsoluteLayout>

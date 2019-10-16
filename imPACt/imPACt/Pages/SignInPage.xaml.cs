@@ -29,6 +29,10 @@ namespace imPACt.Pages
         private const string ShowIcon = "VisibleIcon.png";          //Eyeball icon (Show)
         private PageLayout PL = PageLayout.SignUpLayout;            //Page Layout
 
+        private bool FullName_Checked = false;
+        private bool Email_Checked = false;
+        private bool PWD_Checked = false;
+        private bool ConfirmPWD_Checked = false;
 
         public SignInPage()
         {
@@ -130,10 +134,10 @@ namespace imPACt.Pages
                 //Display check mark
                 if (PL == PageLayout.SignUpLayout)
                 {
-                    if (entry == SU_FullName) { SU_FullNameMark.Source = Checkmark; }
-                    else if (entry == SU_Email) { SU_EmailMark.Source = Checkmark; }
+                    if (entry == SU_FullName) { SU_FullNameMark.Source = Checkmark; FullName_Checked = true; }
+                    else if (entry == SU_Email) { SU_EmailMark.Source = Checkmark; Email_Checked = true; }
                 }
-                else { LI_EmailMark.Source = Checkmark; }
+                else { LI_EmailMark.Source = Checkmark; Email_Checked = false; }
             }
             //Entry is empty
             else
@@ -143,10 +147,10 @@ namespace imPACt.Pages
                 //Don't display anything
                 if (PL == PageLayout.SignUpLayout)
                 {
-                    if (entry == SU_FullName) { SU_FullNameMark.Source = EmptyString; }
-                    else if (entry == SU_Email) { SU_EmailMark.Source = EmptyString; }
+                    if (entry == SU_FullName) { SU_FullNameMark.Source = EmptyString; FullName_Checked = false; }
+                    else if (entry == SU_Email) { SU_EmailMark.Source = EmptyString; Email_Checked = false; }
                 }
-                else { LI_EmailMark.Source = EmptyString; }
+                else { LI_EmailMark.Source = EmptyString; Email_Checked = false; }
             }
         }
 
@@ -159,6 +163,7 @@ namespace imPACt.Pages
             //Display nothing if password entry is empty
             if (PWD.Length == 0)
             {
+                PWD_Checked = false;
                 entry.BackgroundColor = EmptyColor;
                 image.Source = EmptyString;
                 return;
@@ -171,12 +176,14 @@ namespace imPACt.Pages
             //Display nothing if password entry is empty
             if (PWD.Length == 0)
             {
+                PWD_Checked = false;
                 entry.BackgroundColor = EmptyColor;
                 image.Source = EmptyString;
             }
             //Password is valid if number of characters in password entry is at least 8 characters
             else if (PWD.Length >= MinPWDLength)
             {
+                PWD_Checked = true;
                 entry.BackgroundColor = ValidColor;
                 image.Source = Checkmark;
                 Field_ConfirmPassword.Opacity = 1.0;
@@ -184,6 +191,7 @@ namespace imPACt.Pages
             }
             else
             {
+                PWD_Checked = false;
                 entry.BackgroundColor = InvalidColor;
                 image.Source = Xmark;
                 SU_ConfirmPassword.Text = "";
@@ -238,6 +246,7 @@ namespace imPACt.Pages
             //Display no mark if entry is empty
             if (ConfirmPWD.Length == 0)
             {
+                ConfirmPWD_Checked = false;
                 entry.BackgroundColor = EmptyColor;
                 SU_ConfirmPasswordMark.Source = EmptyString;
                 return;
@@ -250,17 +259,20 @@ namespace imPACt.Pages
             //Display no mark if entry is empty
             if (ConfirmPWD.Length == 0)
             {
+                ConfirmPWD_Checked = false;
                 entry.BackgroundColor = EmptyColor;
                 SU_ConfirmPasswordMark.Source = EmptyString;
             }
             //If data from Confirm Password matches with Password, confirm password
             else if (ConfirmPWD == PWD)
             {
+                ConfirmPWD_Checked = true;
                 entry.BackgroundColor = ValidColor;
                 SU_ConfirmPasswordMark.Source = Checkmark;
             }
             else
             {
+                ConfirmPWD_Checked = false;
                 entry.BackgroundColor = InvalidColor;
                 SU_ConfirmPasswordMark.Source = Xmark;
             }

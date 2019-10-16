@@ -70,7 +70,7 @@ namespace imPACt.Pages
                 NoteIcon.FadeTo(0.0, 500, Easing.Linear);
                 await Introduction_Note.FadeTo(0.0, 500, Easing.Linear);
                 CurrentNote++;
-                Introduction_Note.Text = "Exchange information with researchers and mentors from your institute and others!";
+                Introduction_Note.Text = "Exchange information with\nresearchers and mentors from your\ninstitute and others!";
                 NoteIcon.Source = "LS_PAC_MODELS_Icon2.png";
                 NoteIcon.FadeTo(1.0, 500, Easing.Linear);
                 CheckNotes();
@@ -81,7 +81,7 @@ namespace imPACt.Pages
                 NoteIcon.FadeTo(0.0, 500, Easing.Linear);
                 await Introduction_Note.FadeTo(0.0, 500, Easing.Linear);
                 CurrentNote++;
-                Introduction_Note.Text = "Find collaborators for your current grant!";
+                Introduction_Note.Text = "Find collaborators for your current\ngrant!";
                 NoteIcon.Source = "LS_PAC_MODELS_Icon3.png";
                 NextButton.Text = "Get Started";
                 NoteIcon.FadeTo(1.0, 500, Easing.Linear);
