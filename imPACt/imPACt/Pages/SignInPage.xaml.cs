@@ -45,6 +45,12 @@ namespace imPACt.Pages
             SU_Email.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             LI_Email.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             SU_ShowPasswordIcon.Source = "NotVisibleIcon.png";
+
+            //Testing Purposes (will not appear in final product)
+            SU_FullName.Text = "Alan Turing";
+            SU_Email.Text = "aturing64@lsu.edu";
+            SU_Password.Text = "SeeSharp";
+            SU_ConfirmPassword.Text = "SeeSharp";
         }
 
         //Highlight the button to let the user know it's pressed

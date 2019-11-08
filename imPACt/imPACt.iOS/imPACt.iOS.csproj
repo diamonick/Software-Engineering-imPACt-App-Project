@@ -151,6 +151,7 @@
     <BundleResource Include="Resources\VisibleIcon.png" />
     <BundleResource Include="Resources\xmark.png" />
     <BundleResource Include="Resources\checkmark.png" />
+    <BundleResource Include="Resources\CheckTag-01.png" />
     <BundleResource Include="Resources\InterestsIcons-01.png" />
     <BundleResource Include="Resources\InterestsIcons-02.png" />
     <BundleResource Include="Resources\InterestsIcons-03.png" />
