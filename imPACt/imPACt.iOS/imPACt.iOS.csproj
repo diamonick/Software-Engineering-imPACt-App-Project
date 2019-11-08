@@ -151,5 +151,20 @@
     <BundleResource Include="Resources\VisibleIcon.png" />
     <BundleResource Include="Resources\xmark.png" />
     <BundleResource Include="Resources\checkmark.png" />
+    <BundleResource Include="Resources\InterestsIcons-01.png" />
+    <BundleResource Include="Resources\InterestsIcons-02.png" />
+    <BundleResource Include="Resources\InterestsIcons-03.png" />
+    <BundleResource Include="Resources\InterestsIcons-04.png" />
+    <BundleResource Include="Resources\InterestsIcons-05.png" />
+    <BundleResource Include="Resources\InterestsIcons-06.png" />
+    <BundleResource Include="Resources\InterestsIcons-07.png" />
+    <BundleResource Include="Resources\InterestsIcons-08.png" />
+    <BundleResource Include="Resources\InterestsIcons-09.png" />
+    <BundleResource Include="Resources\InterestsIcons-10.png" />
+    <BundleResource Include="Resources\InterestsIcons-11.png" />
+    <BundleResource Include="Resources\InterestsIcons-12.png" />
+    <BundleResource Include="Resources\InterestsIcons-13.png" />
+    <BundleResource Include="Resources\InterestsIcons-14.png" />
+    <BundleResource Include="Resources\InterestsIcons-15.png" />
   </ItemGroup>
 </Project>

@@ -25,7 +25,7 @@ namespace imPACt.Pages
 
         public UserClassificationPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }

@@ -5,12 +5,13 @@
              BackgroundColor="#00858F">
     <ContentPage.Content>
        <!-- Scroll View (Able to scroll page) -->
-        <ScrollView>
-            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+        <ScrollView HorizontalScrollBarVisibility="Always"
+            VerticalScrollBarVisibility="Always">
+            <AbsoluteLayout WidthRequest="900" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <!-- Draw white background -->
                 <BoxView BackgroundColor="White"
                      HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
-                     HeightRequest="640"
+                     HeightRequest="1400"
                      AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
                 <!-- Sub text -->
                 <Label Text="Customize Your Feed"
@@ -18,12 +19,173 @@
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                        AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional">
                 </Label>
-                <Label Text="Choose five or more categories that&#10;represent what you want to see"
+                <Label Text="Choose up to 5 interests that
+                             represent what you want to see.&#10;&#10;Note: You can change your interests&#10;in your feed."
                        TextColor="#00858F" FontSize="24"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Start"
-                       AbsoluteLayout.LayoutBounds="0.5,0.2" AbsoluteLayout.LayoutFlags="PositionProportional">
+                       AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                 </Label>
+                <BoxView
+                    WidthRequest="360" HeightRequest="50"
+                    CornerRadius="25"
+                    BackgroundColor="#00858F"
+                    AbsoluteLayout.LayoutBounds="0.5,0.2" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <Label Text="Number of interests:"
+                       TextColor="White" FontSize="24" FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start"
+                       AbsoluteLayout.LayoutBounds="0.5,0.205" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <Grid RowSpacing="96" ColumnSpacing="32" HorizontalOptions="FillAndExpand"
+                      AbsoluteLayout.LayoutBounds="0.5,0.65" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0">
+                        <ImageButton x:Name="MathematicsTab"
+                                     Source="InterestsIcons-01.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Mathematics" Margin="-20,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="1">
+                        <ImageButton Source="InterestsIcons-02.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Physics" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="2">
+                        <ImageButton Source="InterestsIcons-03.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Biology" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Row="1" Grid.Column="0">
+                        <ImageButton Source="InterestsIcons-04.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Mechanical&#10;Engineering" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="1">
+                        <ImageButton Source="InterestsIcons-05.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Science" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="2">
+                        <ImageButton Source="InterestsIcons-06.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Technology" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Row="2" Grid.Column="0">
+                        <ImageButton Source="InterestsIcons-07.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Chemistry" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="2" Grid.Column="1">
+                        <ImageButton Source="InterestsIcons-08.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Workshops" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="2" Grid.Column="2">
+                        <ImageButton Source="InterestsIcons-09.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Computer&#10;Science" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Row="3" Grid.Column="0">
+                        <ImageButton Source="InterestsIcons-10.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Electrical&#10;Engineering" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" Grid.Column="1">
+                        <ImageButton Source="InterestsIcons-11.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Civil&#10;Engineering" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" Grid.Column="2">
+                        <ImageButton Source="InterestsIcons-12.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Petroleum&#10;Engineering" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Row="4" Grid.Column="0">
+                        <ImageButton Source="InterestsIcons-13.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Medical Science" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="4" Grid.Column="1">
+                        <ImageButton Source="InterestsIcons-14.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Environment&#10;Science" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="4" Grid.Column="2">
+                        <ImageButton Source="InterestsIcons-15.png"
+                                     Pressed="HighlightButton" Released="SelectCategory"/>
+                        <Label Text="Statistics" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                    </StackLayout>
+                </Grid>
+                <!-- Next button -->
+                    <Button x:Name="NEXT" Text="Next"
+                            TextColor="White" FontSize="24" FontAttributes="Bold"
+                            BackgroundColor="#00CFB3"
+                            Pressed="HighlightButton" Released="SelectCategory"
+                            WidthRequest="330" HeightRequest="50"
+                            IsEnabled="True" Opacity="1"
+                            AbsoluteLayout.LayoutBounds="0.5,1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Button>
             </AbsoluteLayout>
         </ScrollView>
     </ContentPage.Content>
