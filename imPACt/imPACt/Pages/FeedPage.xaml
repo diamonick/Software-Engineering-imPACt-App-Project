@@ -5,12 +5,13 @@
              BackgroundColor="#00858F">
     <ContentPage.Content>
        <!-- Scroll View (Able to scroll page) -->
-        <ScrollView>
-            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+        <ScrollView HorizontalScrollBarVisibility="Always"
+            VerticalScrollBarVisibility="Always">
+            <AbsoluteLayout WidthRequest="900" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <!-- Draw white background -->
                 <BoxView BackgroundColor="White"
                      HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
-                     HeightRequest="640"
+                     HeightRequest="1400"
                      AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
                 <!-- Sub text -->
                 <Label Text="Customize Your Feed"
@@ -18,12 +19,246 @@
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                        AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional">
                 </Label>
-                <Label Text="Choose five or more categories that&#10;represent what you want to see"
+                <Label Text="Choose 5 or more interests that represent what you want to see.&#10;&#10;Note: You can change your interests&#10;in your feed."
                        TextColor="#00858F" FontSize="24"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Start"
-                       AbsoluteLayout.LayoutBounds="0.5,0.2" AbsoluteLayout.LayoutFlags="PositionProportional">
+                       AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                 </Label>
+                <BoxView
+                    WidthRequest="360" HeightRequest="50"
+                    CornerRadius="25"
+                    BackgroundColor="#00858F"
+                    AbsoluteLayout.LayoutBounds="0.5,0.2" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <Label x:Name="InterestCounter" Text="Number of interests:"
+                       TextColor="White" FontSize="24" FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start"
+                       AbsoluteLayout.LayoutBounds="0.5,0.205" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <Grid RowSpacing="96" ColumnSpacing="32" HorizontalOptions="FillAndExpand"
+                      AbsoluteLayout.LayoutBounds="0.5,0.65" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0">
+                        <ImageButton x:Name="MathematicsTab"
+                                     Source="InterestsIcons-01.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Mathematics" Margin="-20,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="MATH_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-150"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="1">
+                        <ImageButton x:Name="PhysicsTab"
+                                     Source="InterestsIcons-02.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Physics" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="PHYS_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-150"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="2">
+                        <ImageButton x:Name="BiologyTab"
+                                     Source="InterestsIcons-03.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Biology" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="BIOL_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-150"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Row="1" Grid.Column="0">
+                        <ImageButton x:Name="MechanicalEngineeringTab"
+                                     Source="InterestsIcons-04.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Mechanical&#10;Engineering" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="ME_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-175"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="1">
+                        <ImageButton x:Name="ScienceTab"
+                                     Source="InterestsIcons-05.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Science" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="SC_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-150"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="2">
+                        <ImageButton x:Name="TechnologyTab"
+                                     Source="InterestsIcons-06.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Technology" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="TECH_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-150"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Row="2" Grid.Column="0">
+                        <ImageButton x:Name="ChemistryTab"
+                                     Source="InterestsIcons-07.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Chemistry" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="CHEM_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-150"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="2" Grid.Column="1">
+                        <ImageButton x:Name="WorkshopsTab"
+                                     Source="InterestsIcons-08.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Workshops" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="WS_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-150"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="2" Grid.Column="2">
+                        <ImageButton x:Name="ComputerScienceTab"
+                                     Source="InterestsIcons-09.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Computer&#10;Science" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="CSC_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-175"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Row="3" Grid.Column="0">
+                        <ImageButton x:Name="ElectricalEngineeringTab"
+                                     Source="InterestsIcons-10.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Electrical&#10;Engineering" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="EE_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-175"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" Grid.Column="1">
+                        <ImageButton x:Name="CivilEngineeringTab"
+                                     Source="InterestsIcons-11.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Civil&#10;Engineering" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="CE_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-175"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" Grid.Column="2">
+                        <ImageButton x:Name="PetroleumEngineeringTab"
+                                     Source="InterestsIcons-12.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Petroleum&#10;Engineering" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="PE_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-175"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Row="4" Grid.Column="0">
+                        <ImageButton x:Name="MedicalScienceTab"
+                                     Source="InterestsIcons-13.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Medical Science" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="MSC_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-175"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="4" Grid.Column="1">
+                        <ImageButton x:Name="EnvironmentalScienceTab"
+                                     Source="InterestsIcons-14.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Environment&#10;Science" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="ESC_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-175"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="4" Grid.Column="2">
+                        <ImageButton x:Name="StatisticsTab"
+                                     Source="InterestsIcons-15.png"
+                                     Pressed="HighlightInterest" Released="SelectCategory"/>
+                        <Label Text="Statistics" Margin="-10,0"
+                               TextColor="#00858F" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"/>
+                        <Image x:Name="STATS_CheckTag" IsVisible="false"
+                               WidthRequest="50" HeightRequest="50"
+                               TranslationX="40" TranslationY="-150"
+                               Source="CheckTag-01.png"/>
+                    </StackLayout>
+                </Grid>
+                <!-- Next button -->
+                    <Button x:Name="NEXT" Text="Next"
+                            TextColor="White" FontSize="24" FontAttributes="Bold"
+                            BackgroundColor="#00CFB3"
+                            Pressed="HighlightButton" Released="GoToClassificationPage"
+                            WidthRequest="330" HeightRequest="50"
+                            IsEnabled="False" Opacity="0.5"
+                            AbsoluteLayout.LayoutBounds="0.5,1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Button>
             </AbsoluteLayout>
         </ScrollView>
     </ContentPage.Content>

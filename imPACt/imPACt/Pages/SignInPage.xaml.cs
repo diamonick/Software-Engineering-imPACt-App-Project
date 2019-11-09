@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using Xamarin.Forms;
 
 namespace imPACt.Pages
@@ -30,8 +31,10 @@ namespace imPACt.Pages
         private PageLayout PL = PageLayout.SignUpLayout;            //Page Layout
 
         private bool FullName_Checked = false;
-        private bool Email_Checked = false;
-        private bool PWD_Checked = false;
+        private bool SU_Email_Checked = false;
+        private bool LI_Email_Checked = false;
+        private bool SU_PWD_Checked = false;
+        private bool LI_PWD_Checked = false;
         private bool ConfirmPWD_Checked = false;
 
         public SignInPage()
@@ -40,7 +43,14 @@ namespace imPACt.Pages
 
             SU_FullName.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             SU_Email.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
+            LI_Email.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             SU_ShowPasswordIcon.Source = "NotVisibleIcon.png";
+
+            //Testing Purposes (will not appear in final product)
+            SU_FullName.Text = "Alan Turing";
+            SU_Email.Text = "aturing64@lsu.edu";
+            SU_Password.Text = "SeeSharp";
+            SU_ConfirmPassword.Text = "SeeSharp";
         }
 
         //Highlight the button to let the user know it's pressed
@@ -125,19 +135,49 @@ namespace imPACt.Pages
         void ValidateEntry(object sender, TextChangedEventArgs e)
         {
             var entry = (Entry)sender;
+            var emailSyntax = "^[a-zA-Z]{1,}[0-9]{1,}@lsu.edu$";
 
             //Confirm entry if there's at least one character
             if (entry.Text.Length > 0)
             {
-                entry.BackgroundColor = ValidColor;
-
                 //Display check mark
                 if (PL == PageLayout.SignUpLayout)
                 {
                     if (entry == SU_FullName) { SU_FullNameMark.Source = Checkmark; FullName_Checked = true; }
-                    else if (entry == SU_Email) { SU_EmailMark.Source = Checkmark; Email_Checked = true; }
+                    else if (entry == SU_Email)
+                    {
+                        if (Regex.IsMatch(entry.Text, emailSyntax))
+                        {
+                            SU_EmailMark.Source = Checkmark;
+                            SU_Email_Checked = true;
+                            entry.BackgroundColor = ValidColor;
+                        }
+                        else
+                        {
+                            SU_EmailMark.Source = Xmark;
+                            SU_Email_Checked = false;
+                            entry.BackgroundColor = InvalidColor;
+                        }
+                    }
                 }
-                else { LI_EmailMark.Source = Checkmark; Email_Checked = false; }
+                else
+                {
+                    if (entry == LI_Email)
+                    {
+                        if (Regex.IsMatch(entry.Text, emailSyntax))
+                        {
+                            LI_EmailMark.Source = Checkmark;
+                            LI_Email_Checked = true;
+                            entry.BackgroundColor = ValidColor;
+                        }
+                        else
+                        {
+                            LI_EmailMark.Source = Xmark;
+                            LI_Email_Checked = false;
+                            entry.BackgroundColor = InvalidColor;
+                        }
+                    }
+                }
             }
             //Entry is empty
             else
@@ -148,13 +188,16 @@ namespace imPACt.Pages
                 if (PL == PageLayout.SignUpLayout)
                 {
                     if (entry == SU_FullName) { SU_FullNameMark.Source = EmptyString; FullName_Checked = false; }
-                    else if (entry == SU_Email) { SU_EmailMark.Source = EmptyString; Email_Checked = false; }
+                    else if (entry == SU_Email) { SU_EmailMark.Source = EmptyString; SU_Email_Checked = false; }
                 }
-                else { LI_EmailMark.Source = EmptyString; Email_Checked = false; }
+                else { LI_EmailMark.Source = EmptyString; SU_Email_Checked = false; }
             }
+
+            if (PL == PageLayout.SignUpLayout) { CheckSignUp(); }
+            else { CheckLogin(); }
         }
 
-        async void ValidatePasswordLength(object sender, TextChangedEventArgs e)
+        void ValidatePasswordLength(object sender, TextChangedEventArgs e)
         {
             var entry = (Entry)sender;
             var image = (PL == PageLayout.SignUpLayout ? SU_PasswordMark : LI_PasswordMark);
@@ -163,27 +206,19 @@ namespace imPACt.Pages
             //Display nothing if password entry is empty
             if (PWD.Length == 0)
             {
-                PWD_Checked = false;
+                if (PL == PageLayout.SignUpLayout) { SU_PWD_Checked = false; }
+                else { LI_PWD_Checked = false; }
                 entry.BackgroundColor = EmptyColor;
                 image.Source = EmptyString;
-                return;
-            }
-            //Wait for 1 second (1000 milliseconds)
-            await Task.Delay(1000);
-
-            PWD = entry.Text;
-
-            //Display nothing if password entry is empty
-            if (PWD.Length == 0)
-            {
-                PWD_Checked = false;
-                entry.BackgroundColor = EmptyColor;
-                image.Source = EmptyString;
+                Field_ConfirmPassword.Opacity = 0.5;
+                Field_ConfirmPassword.IsEnabled = false;
+                SU_ConfirmPassword.Text = "";
             }
             //Password is valid if number of characters in password entry is at least 8 characters
             else if (PWD.Length >= MinPWDLength)
             {
-                PWD_Checked = true;
+                if (PL == PageLayout.SignUpLayout) { SU_PWD_Checked = true; }
+                else { LI_PWD_Checked = true; }
                 entry.BackgroundColor = ValidColor;
                 image.Source = Checkmark;
                 Field_ConfirmPassword.Opacity = 1.0;
@@ -191,13 +226,17 @@ namespace imPACt.Pages
             }
             else
             {
-                PWD_Checked = false;
+                if (PL == PageLayout.SignUpLayout) { SU_PWD_Checked = false; }
+                else { LI_PWD_Checked = false; }
                 entry.BackgroundColor = InvalidColor;
                 image.Source = Xmark;
                 SU_ConfirmPassword.Text = "";
                 Field_ConfirmPassword.Opacity = 0.5;
                 Field_ConfirmPassword.IsEnabled = false;
             }
+
+            if (PL == PageLayout.SignUpLayout) { CheckSignUp(); }
+            else { CheckLogin(); }
         }
 
         //Show/Hide password in Password entry
@@ -249,19 +288,6 @@ namespace imPACt.Pages
                 ConfirmPWD_Checked = false;
                 entry.BackgroundColor = EmptyColor;
                 SU_ConfirmPasswordMark.Source = EmptyString;
-                return;
-            }
-            //Wait for 1 second (1000 milliseconds)
-            await Task.Delay(1000);
-
-            ConfirmPWD = entry.Text;
-
-            //Display no mark if entry is empty
-            if (ConfirmPWD.Length == 0)
-            {
-                ConfirmPWD_Checked = false;
-                entry.BackgroundColor = EmptyColor;
-                SU_ConfirmPasswordMark.Source = EmptyString;
             }
             //If data from Confirm Password matches with Password, confirm password
             else if (ConfirmPWD == PWD)
@@ -276,6 +302,45 @@ namespace imPACt.Pages
                 entry.BackgroundColor = InvalidColor;
                 SU_ConfirmPasswordMark.Source = Xmark;
             }
+
+            if (PL == PageLayout.SignUpLayout) { CheckSignUp(); }
+            else { CheckLogin(); }
+        }
+
+        //Ensure user has filled all the entries in Sign Up. If true, allow user to sign up.
+        void CheckSignUp()
+        {
+            if (FullName_Checked && SU_Email_Checked && SU_PWD_Checked && ConfirmPWD_Checked)
+            {
+                SUBMIT.IsEnabled = true;
+                SUBMIT.Opacity = 1.0;
+            }
+            else
+            {
+                SUBMIT.IsEnabled = false;
+                SUBMIT.Opacity = 0.5;
+            }
+        }
+
+        //Ensure user has filled all the entries in Log In. If true, allow user to login.
+        void CheckLogin()
+        {
+            if (LI_Email_Checked && LI_PWD_Checked)
+            {
+                LOGIN.IsEnabled = true;
+                LOGIN.Opacity = 1.0;
+            }
+            else
+            {
+                LOGIN.IsEnabled = false;
+                LOGIN.Opacity = 0.5;
+            }
+        }
+
+        //Send user to Feed page
+        async void GoToFeedPage(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new FeedPage());
         }
     }
 }
