@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace imPACt.Pages
 {
-    public partial class ClassificationPage : ContentPage
+    public partial class HomePage : ContentPage
     {
-        public ClassificationPage()
+        public HomePage()
         {
             InitializeComponent();
         }

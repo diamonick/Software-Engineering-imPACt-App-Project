@@ -4,12 +4,41 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="imPACt.Pages.UserClassificationPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="imPACt.Pages.UserClassificationPage"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.BackButtonTitle="Classification"
+             BackgroundColor="#00858F">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="User Classification"
+                   FontSize="18" FontAttributes="Bold"
+                   TextColor="#00CFB3"/>
         </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+       <!-- Scroll View (Able to scroll page) -->
+        <ScrollView>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <!-- Draw white background -->
+                <BoxView BackgroundColor="White"
+                     HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                     HeightRequest="640"
+                     AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                <!-- Sub text -->
+                <Label Text="User Classification"
+                       TextColor="White" FontSize="36" FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional">
+                </Label>
+                <Label Text="Choose one of the roles below."
+                       TextColor="#00858F" FontSize="24"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start"
+                       AbsoluteLayout.LayoutBounds="0.5,0.2" AbsoluteLayout.LayoutFlags="PositionProportional">
+                </Label>
+            </AbsoluteLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

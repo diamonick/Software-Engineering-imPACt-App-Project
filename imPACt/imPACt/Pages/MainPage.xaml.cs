@@ -22,6 +22,7 @@ namespace imPACt.Pages
         public MainPage()
         {
             InitializeComponent();
+
         }
 
         //Highlight the button to let the user know it's pressed

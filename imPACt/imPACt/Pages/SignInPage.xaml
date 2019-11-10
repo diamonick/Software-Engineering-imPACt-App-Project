@@ -3,6 +3,15 @@
              x:Class="imPACt.Pages.SignInPage"
              NavigationPage.HasBackButton="False"
              BackgroundColor="#00858F">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="Sign Up / Login"
+                   FontSize="18" FontAttributes="Bold"
+                   TextColor="#00CFB3"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
    <ContentPage.Content>
        <!-- Scroll View (Able to scroll page) -->
         <ScrollView>

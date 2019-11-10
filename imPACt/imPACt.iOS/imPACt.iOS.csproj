@@ -167,5 +167,9 @@
     <BundleResource Include="Resources\InterestsIcons-13.png" />
     <BundleResource Include="Resources\InterestsIcons-14.png" />
     <BundleResource Include="Resources\InterestsIcons-15.png" />
+    <BundleResource Include="Resources\SettingsIcon.png" />
+    <BundleResource Include="Resources\UserDetailIcons-20.png" />
+    <BundleResource Include="Resources\HomeIcon.png" />
+    <BundleResource Include="Resources\HamburgerIcon.png" />
   </ItemGroup>
 </Project>

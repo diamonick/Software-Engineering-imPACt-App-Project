@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="imPACt.Pages.HomeFeedPage"
+                  MasterBehavior="Popover" IconImageSource="UserDetailIcons-18.png">
+    <MasterDetailPage.Master>
+        <ContentPage x:Name="MyFeed" Title="My Feed" IconImageSource="HamburgerIcon.png"
+                     BackgroundColor="#00D1A4">
+            <ContentPage.Content>
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <!-- Draw white background -->
+                        <BoxView BackgroundColor="#002D30"
+                             HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                             AbsoluteLayout.LayoutBounds="0,200,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                        <StackLayout Orientation="Vertical"
+                                     AbsoluteLayout.LayoutBounds="0.5,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                            <Image x:Name="UserProfile"
+                                   WidthRequest="80" HeightRequest="80" Margin="0,15,0,0"
+                                   Source="LS_PAC_MODELS_Icon3.png"
+                                   AbsoluteLayout.LayoutBounds="0.5,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                            <StackLayout Orientation="Vertical" Spacing="1">
+                                <Label x:Name="UsernameText"
+                                       Text="Diamonick Dunn" HorizontalOptions="Center"
+                                       TextColor="White" FontSize="32" FontAttributes="Bold"/>
+                                <Label x:Name="Role"
+                                       Text="Mentee" HorizontalOptions="Center"
+                                       TextColor="White" FontSize="24" FontAttributes="Bold"/>
+                                <Label x:Name="UniversityText"
+                                       Text="Louisiana State University" HorizontalOptions="Center"
+                                       TextColor="White" FontSize="18" FontAttributes="None"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Spacing="0"
+                                         AbsoluteLayout.LayoutBounds="0.5,0.29,1,1" AbsoluteLayout.LayoutFlags="All">
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.29" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                    <Button x:Name="HomeButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
+                                            CornerRadius="0"
+                                            AbsoluteLayout.LayoutBounds="0,0,1,42" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                                    <Image WidthRequest="32" HeightRequest="32"
+                                           TranslationY="4"
+                                           Source="HomeIcon.png"/>
+                                    <Label Text="Home" TextColor="White"
+                                           TranslationX="64" TranslationY="4"
+                                           FontSize="24" FontAttributes="None"/>
+                                </AbsoluteLayout>
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.29" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                    <Button x:Name="ContactsButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
+                                            CornerRadius="0"
+                                            AbsoluteLayout.LayoutBounds="0,0,1,42" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                                    <Image WidthRequest="32" HeightRequest="32"
+                                           TranslationY="4"
+                                           Source="SettingsIcon.png"/>
+                                    <Label Text="Contacts" TextColor="White"
+                                           TranslationX="64" TranslationY="4"
+                                           FontSize="24" FontAttributes="None"/>
+                                </AbsoluteLayout>
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.29" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                    <Button x:Name="SettingsButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
+                                            CornerRadius="0"
+                                            AbsoluteLayout.LayoutBounds="0,0,1,42" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                                    <Image WidthRequest="32" HeightRequest="32"
+                                           TranslationY="4" IsEnabled="False"
+                                           Source="SettingsIcon.png"/>
+                                    <Label Text="Settings" TextColor="White" IsEnabled="False"
+                                           TranslationX="64" TranslationY="4"
+                                           FontSize="24" FontAttributes="None"/>
+                                </AbsoluteLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </AbsoluteLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage BackgroundColor="#00858F" Title="Options">
+            <ContentPage.Content>
+               <!-- Scroll View (Able to scroll page) -->
+                <ScrollView>
+                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <!-- Draw white background -->
+                        <BoxView BackgroundColor="White"
+                             HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                             HeightRequest="640"
+                             AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                        <!-- Sub text -->
+                        <Label Text="Testing"
+                               TextColor="White" FontSize="36" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Label>
+                        <Label Text="This is just a test."
+                               TextColor="#00858F" FontSize="24"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Start"
+                               AbsoluteLayout.LayoutBounds="0.5,0.2" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Label>
+                        <BoxView x:Name="ForegroundLayer"
+                                 BackgroundColor="Black" Opacity="0.0"
+                                 AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    </AbsoluteLayout>
+                </ScrollView>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

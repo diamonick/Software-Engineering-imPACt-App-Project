@@ -179,7 +179,7 @@ namespace imPACt.Pages
         //Go to User Classification page
         async void GoToClassificationPage(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new UserClassificationPage());
+            await Navigation.PushAsync(new HomeFeedPage());
         }
     }
 }

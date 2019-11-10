@@ -3,11 +3,21 @@
              x:Class="imPACt.Pages.FeedPage"
              NavigationPage.HasBackButton="False"
              BackgroundColor="#00858F">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="Personal Feed"
+                   FontSize="18" FontAttributes="Bold"
+                   TextColor="#00CFB3"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
        <!-- Scroll View (Able to scroll page) -->
         <ScrollView HorizontalScrollBarVisibility="Always"
             VerticalScrollBarVisibility="Always">
-            <AbsoluteLayout WidthRequest="900" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <!-- Draw white background -->
                 <BoxView BackgroundColor="White"
                      HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
@@ -19,7 +29,7 @@
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                        AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional">
                 </Label>
-                <Label Text="Choose 5 or more interests that represent what you want to see.&#10;&#10;Note: You can change your interests&#10;in your feed."
+                <Label Text="Choose 5 or more interests that represent what you want to see.&#10;&#10;Note: You can change your interests in your feed."
                        TextColor="#00858F" FontSize="24"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Start"
