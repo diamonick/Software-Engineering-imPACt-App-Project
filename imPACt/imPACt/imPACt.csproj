@@ -10,7 +10,22 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="FirebaseDatabase.net" Version="4.0.3" />
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include="Pages\" />
+    <Compile Update="Pages\UserClassificationPage.xaml.cs">
+      <DependentUpon>UserClassificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\UserInterestsPage.xaml.cs">
+      <DependentUpon>UserInterestsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\UserClassificationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\UserInterestsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
