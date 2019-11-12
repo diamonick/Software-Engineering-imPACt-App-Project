@@ -13,6 +13,10 @@ namespace imPACt.Pages
         {
             InitializeComponent();
 
+            HomeNode.IsVisible = true;
+            ContactsNode.IsVisible = false;
+            SettingsNode.IsVisible = false;
+
             Detail = new NavigationPage(new HomePage());
             IsPresented = false;
             this.IsPresentedChanged += OnPresentedChanged;
@@ -47,14 +51,26 @@ namespace imPACt.Pages
 
             if (button == HomeButton)
             {
+                HomeNode.IsVisible = true;
+                ContactsNode.IsVisible = false;
+                SettingsNode.IsVisible = false;
+
                 Detail = new NavigationPage(new HomePage());
             }
             else if (button == ContactsButton)
             {
+                HomeNode.IsVisible = false;
+                ContactsNode.IsVisible = true;
+                SettingsNode.IsVisible = false;
+
                 Detail = new NavigationPage(new ContactsPage());
             }
             else if (button == SettingsButton)
             {
+                HomeNode.IsVisible = false;
+                ContactsNode.IsVisible = false;
+                SettingsNode.IsVisible = true;
+
                 Detail = new NavigationPage(new SettingsPage());
             }
 

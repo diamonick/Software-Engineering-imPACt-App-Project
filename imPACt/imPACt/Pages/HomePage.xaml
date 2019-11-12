@@ -3,5 +3,14 @@
              x:Class="imPACt.Pages.HomePage"
              Title="Home">
     <ContentPage.Content>
+        <AbsoluteLayout>
+            <SearchBar x:Name="Search" TextColor="White" BackgroundColor="#00D1A4"
+                       CancelButtonColor="#00858F" 
+                       Placeholder="Discover..." PlaceholderColor="White"/>
+             <BoxView x:Name="ForegroundLayer"
+                      BackgroundColor="Black" Opacity="0.0"
+                      AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"
+                      HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

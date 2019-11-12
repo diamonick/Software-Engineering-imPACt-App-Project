@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   x:Class="imPACt.Pages.HomeFeedPage"
-                  MasterBehavior="Popover" IconImageSource="UserDetailIcons-18.png">
+                  MasterBehavior="Popover">
     <MasterDetailPage.Master>
         <ContentPage x:Name="MyFeed" Title="My Feed" IconImageSource="HamburgerIcon.png"
                      BackgroundColor="#00D1A4">
@@ -15,7 +15,7 @@
                                      AbsoluteLayout.LayoutBounds="0.5,0,1,1" AbsoluteLayout.LayoutFlags="All">
                             <Image x:Name="UserProfile"
                                    WidthRequest="80" HeightRequest="80" Margin="0,15,0,0"
-                                   Source="LS_PAC_MODELS_Icon3.png"
+                                   Source="ProfilePicTemplate.png"
                                    AbsoluteLayout.LayoutBounds="0.5,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
                             <StackLayout Orientation="Vertical" Spacing="1">
                                 <Label x:Name="UsernameText"
@@ -30,29 +30,35 @@
                             </StackLayout>
                             <StackLayout Orientation="Vertical" Spacing="0"
                                          AbsoluteLayout.LayoutBounds="0.5,0.29,1,1" AbsoluteLayout.LayoutFlags="All">
-                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.29" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional">
                                     <Button x:Name="HomeButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
                                             CornerRadius="0"
                                             AbsoluteLayout.LayoutBounds="0,0,1,42" AbsoluteLayout.LayoutFlags="WidthProportional"/>
                                     <Image WidthRequest="32" HeightRequest="32"
-                                           TranslationY="4"
+                                           TranslationY="4" IsEnabled="False"
                                            Source="HomeIcon.png"/>
-                                    <Label Text="Home" TextColor="White"
+                                    <Label Text="Home" TextColor="White" IsEnabled="False"
                                            TranslationX="64" TranslationY="4"
                                            FontSize="24" FontAttributes="None"/>
+                                    <BoxView x:Name="HomeNode" BackgroundColor="#00d1a4"
+                                             CornerRadius="4"
+                                             AbsoluteLayout.LayoutBounds="0.8,0.455,8,8" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                                 </AbsoluteLayout>
-                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.29" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional">
                                     <Button x:Name="ContactsButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
                                             CornerRadius="0"
                                             AbsoluteLayout.LayoutBounds="0,0,1,42" AbsoluteLayout.LayoutFlags="WidthProportional"/>
                                     <Image WidthRequest="32" HeightRequest="32"
-                                           TranslationY="4"
-                                           Source="SettingsIcon.png"/>
-                                    <Label Text="Contacts" TextColor="White"
+                                           TranslationY="4" IsEnabled="False"
+                                           Source="ContactsIcon.png"/>
+                                    <Label Text="Contacts" TextColor="White" IsEnabled="False"
                                            TranslationX="64" TranslationY="4"
                                            FontSize="24" FontAttributes="None"/>
+                                    <BoxView x:Name="ContactsNode" BackgroundColor="#00d1a4"
+                                             CornerRadius="4"
+                                             AbsoluteLayout.LayoutBounds="0.8,0.455,8,8" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                                 </AbsoluteLayout>
-                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.29" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional">
                                     <Button x:Name="SettingsButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
                                             CornerRadius="0"
                                             AbsoluteLayout.LayoutBounds="0,0,1,42" AbsoluteLayout.LayoutFlags="WidthProportional"/>
@@ -62,6 +68,9 @@
                                     <Label Text="Settings" TextColor="White" IsEnabled="False"
                                            TranslationX="64" TranslationY="4"
                                            FontSize="24" FontAttributes="None"/>
+                                    <BoxView x:Name="SettingsNode" BackgroundColor="#00d1a4"
+                                             CornerRadius="4"
+                                             AbsoluteLayout.LayoutBounds="0.8,0.455,8,8" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                                 </AbsoluteLayout>
                             </StackLayout>
                         </StackLayout>

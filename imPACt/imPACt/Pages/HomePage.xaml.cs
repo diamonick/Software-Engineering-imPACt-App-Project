@@ -10,6 +10,8 @@ namespace imPACt.Pages
         public HomePage()
         {
             InitializeComponent();
+
+            
         }
     }
 }
