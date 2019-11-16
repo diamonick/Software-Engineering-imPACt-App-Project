@@ -180,5 +180,6 @@
     <BundleResource Include="Resources\HamburgerIcon.png" />
     <BundleResource Include="Resources\ContactsIcon.png" />
     <BundleResource Include="Resources\ProfilePicTemplate.png" />
+    <BundleResource Include="Resources\MatchIcon.png" />
   </ItemGroup>
 </Project>

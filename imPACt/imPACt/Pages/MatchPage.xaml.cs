@@ -5,17 +5,11 @@ using Xamarin.Forms;
 
 namespace imPACt.Pages
 {
-
-    public partial class HomePage : ContentPage
+    public partial class MatchPage : ContentPage
     {
-        List<string> Words = new List<string>
-        { "" };
-
-        public HomePage()
+        public MatchPage()
         {
             InitializeComponent();
-
-            
         }
     }
 }
