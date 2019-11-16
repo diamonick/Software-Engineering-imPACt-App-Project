@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>28644378744-cmf4ee1h728toc40s4fgl1511gt4o6k5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.28644378744-cmf4ee1h728toc40s4fgl1511gt4o6k5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCxmFtZZdbpj9vLAWCBTIDzsPbrfuXX-q8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>28644378744</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.LS-PAC-MODELS.imPACt</string>
+	<key>PROJECT_ID</key>
+	<string>impact-9f78a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>impact-9f78a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:28644378744:ios:b023372676d94777ea058d</string>
+	<key>DATABASE_URL</key>
+	<string>https://impact-9f78a.firebaseio.com</string>
+</dict>
+</plist>
