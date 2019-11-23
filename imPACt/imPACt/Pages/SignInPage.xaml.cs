@@ -348,7 +348,7 @@ namespace imPACt.Pages
         }
 
         //Add User to Local DB -> Navigate to Home Page?
-        async void AddUser(object sender, EventArgs e)
+        async void ClickSignUp(object sender, EventArgs e)
         {
 
             await App.Database.SaveUserAsync(new User
@@ -357,6 +357,8 @@ namespace imPACt.Pages
                 Email = SU_Email.Text,
                 Password = SU_Password.Text
             });
+            System.Diagnostics.Debug.WriteLine("User Added");
+            await Navigation.PushAsync(new FeedPage());
 
         }
     }

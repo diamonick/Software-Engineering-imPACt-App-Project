@@ -164,7 +164,7 @@
                             WidthRequest="330" HeightRequest="50"
                             IsEnabled="False" Opacity="0.5"
                             AbsoluteLayout.LayoutBounds="0.5,0.925" AbsoluteLayout.LayoutFlags="PositionProportional"
-                            Clicked="AddUser">
+                            Clicked="ClickSignUp">
                     </Button>
                 </AbsoluteLayout>
 <!--######################################################################################################################-->
@@ -263,8 +263,7 @@
                             BackgroundColor="#00CFB3"
                             Pressed="HighlightButton" Released="SignUpLayout"
                             WidthRequest="150" HeightRequest="50"
-                            AbsoluteLayout.LayoutBounds="0.5,0.20" AbsoluteLayout.LayoutFlags="PositionProportional"
-                            Clicked="AddUser">
+                            AbsoluteLayout.LayoutBounds="0.5,0.20" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Button>
                     <!-- Log In button -->
                     <Button x:Name="LogIn" Text="Log In"
