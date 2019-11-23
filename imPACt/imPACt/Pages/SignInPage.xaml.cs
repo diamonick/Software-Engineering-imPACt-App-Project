@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
 using imPACt.Models;
-using imPACt.Helper;
+using imPACt.Data;
 using SQLite;
 using System.IO;
 
@@ -347,30 +347,17 @@ namespace imPACt.Pages
             await Navigation.PushAsync(new FeedPage());
         }
 
-        public static void AddUser(object sender, EventArgs e)
+        //Add User to Local DB -> Navigate to Home Page?
+        async void AddUser(object sender, EventArgs e)
         {
-            Console.WriteLine("Creating database, if it doesn't already exist");
-            string dbPath = Path.Combine(
-                 Environment.GetFolderPath(Environment.SpecialFolder.Personal),
-                 "database.db3");
-            var db = new SQLiteConnection(dbPath);
-            db.CreateTable<User>();
-            var newUser = new User();
 
-            //newUser.Name = SU_FullName.Text;
-            //newUser.Email = SU_Email.Text;
-            //newUser.Password = SU_Password.Text;
+            await App.Database.SaveUserAsync(new User
+            {
+                Name = SU_FullName.Text,
+                Email = SU_Email.Text,
+                Password = SU_Password.Text
+            });
 
-            db.Insert(newUser);
         }
-
-        //FirebaseHelper firebaseHelper = new FirebaseHelper();
-        //private async void BtnAdd_Clicked(object sender, EventArgs e)
-        //{
-        //    await firebaseHelper.AddUser(txtName.Text);
-        //    txtId.Text = string.Empty;
-        //    txtName.Text = string.Empty;
-        //    await DisplayAlert("Success", "User Added Successfully", "OK");
-        //}
     }
 }

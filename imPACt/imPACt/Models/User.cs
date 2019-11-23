@@ -6,7 +6,7 @@ namespace imPACt.Models
     public class User
     {
         [PrimaryKey, AutoIncrement]
-        public int UserID { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }

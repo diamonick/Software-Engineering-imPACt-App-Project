@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Helper\FirebaseHelper.cs" />
+    <Compile Remove="Data\EmptyClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Pages\UserClassificationPage.xaml.cs">
       <DependentUpon>UserClassificationPage.xaml</DependentUpon>
     </Compile>
@@ -35,6 +39,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helper\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>
