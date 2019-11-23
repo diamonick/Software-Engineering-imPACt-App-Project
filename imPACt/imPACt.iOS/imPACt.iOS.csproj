@@ -111,7 +111,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\Icon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

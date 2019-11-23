@@ -154,6 +154,22 @@ namespace imPACt.Pages
                                         "Theatre",
                                         "Transportation Engineering"};
 
+        private string[] UniversityItems = {    "Auburn University",
+                                                "Louisiana State University",
+                                                "Mississippi State University",
+                                                "Texas A&M University",
+                                                "University of Alabama",
+                                                "University of Arkansas",
+                                                "University of Florida",
+                                                "University of Georgia",
+                                                "University of Kentucky",
+                                                "University of Mississippi",
+                                                "University of Missouri",
+                                                "University of South Carolina",
+                                                "University of Tennessee",
+                                                "Vanderbilt University"
+        };
+
         public UserProfilePage()
         {
             InitializeComponent();
@@ -170,6 +186,12 @@ namespace imPACt.Pages
             foreach (string i in MinorItems)
             {
                 MinorList.Items.Add(i);
+            }
+
+            //Add all items from UniversityItems to the University list
+            foreach (string i in UniversityItems)
+            {
+                UniversityList.Items.Add(i);
             }
         }
 

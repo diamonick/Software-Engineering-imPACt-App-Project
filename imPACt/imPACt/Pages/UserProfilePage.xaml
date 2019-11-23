@@ -116,7 +116,21 @@
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
-                    <AbsoluteLayout>
+                        <AbsoluteLayout>
+                            <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
+                                 WidthRequest="360" HeightRequest="42"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                            <Label Text="University: " TextColor="White"
+                               FontSize="18" FontAttributes="Bold" TranslationX="-120"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                            <Picker x:Name="UniversityList" Title="Select your University"
+                                BackgroundColor="White" WidthRequest="210" HeightRequest="28"
+                                HorizontalOptions="End"
+                                FontSize="18" FontAttributes="None" TranslationX="60"
+                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            </Picker>
+                        </AbsoluteLayout>
+                        <AbsoluteLayout>
                         <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
                                  WidthRequest="360" HeightRequest="180"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>

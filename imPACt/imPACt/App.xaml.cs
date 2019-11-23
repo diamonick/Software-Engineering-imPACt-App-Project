@@ -26,7 +26,7 @@ namespace imPACt
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Pages.SignInPage());
+            MainPage = new NavigationPage(new Pages.UserProfilePage());
             
         }
 

@@ -10,11 +10,15 @@ using Xamarin.Forms.Xaml;
 namespace imPACt.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UserInterests : ContentPage
+    public partial class UserInterestsPage : ContentPage
     {
-        public UserInterests()
+        
+
+        [Obsolete]
+        public UserInterestsPage()
         {
             InitializeComponent();
+
         }
     }
 }
