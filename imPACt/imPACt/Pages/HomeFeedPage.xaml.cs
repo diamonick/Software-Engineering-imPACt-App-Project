@@ -77,7 +77,7 @@ namespace imPACt.Pages
                 ContactsButton.BackgroundColor = InactiveColor;
                 SettingsButton.BackgroundColor = InactiveColor;
 
-                Detail = new NavigationPage(new MatchPage());
+                Detail = new NavigationPage(new UserInterestsPage());
             }
             else if (button == ContactsButton)
             {

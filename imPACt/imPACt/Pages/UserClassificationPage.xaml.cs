@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
 
 namespace imPACt.Pages
 {
@@ -87,16 +88,18 @@ namespace imPACt.Pages
                                             "Wyoming"
         };
 
-        //Pick from a string of degree levels
-        private string[] CompletedLevelItems = {    "N/A",
-                                                    "Associates",
-                                                    "Bachelors",
-                                                    "Masters",
-                                                    "Doctorate"
+        //Pick from a string of classifications
+        private string[] ClassificationItems = {    "Freshman",
+                                                    "Sophomore",
+                                                    "Junior",
+                                                    "Senior",
+                                                    "Graduate",
+                                                    "Professor",
+                                                    "Researcher"
         };
 
         //Pick from a string of degrees
-        private string[] CompletedDegreeItems = {   "N/A",
+        private string[] DegreeItems = {   "N/A",
                                                     "Animal Sciences",
                                                     "Astronomy",
                                                     "Biochemistry",
@@ -131,97 +134,6 @@ namespace imPACt.Pages
                                                     "Petroleum Engineering",
                                                     "Software Engineering"
         };
-
-        //Pick from a string of degree levels
-        private string[] CurrentLevelItems = {    "N/A",
-                                                    "Associates",
-                                                    "Bachelors",
-                                                    "Masters",
-                                                    "Doctorate"
-        };
-
-        //Pick from a string of degrees
-        private string[] CurrentDegreeItems = {   "N/A",
-                                                    "Animal Sciences",
-                                                    "Astronomy",
-                                                    "Biochemistry",
-                                                    "Biological Chemistry",
-                                                    "Biological Engineering",
-                                                    "Biological Sciences",
-                                                    "Biology",
-                                                    "Biomolecular Chemical Engineering",
-                                                    "Chemical Engineering",
-                                                    "Chemical Physics",
-                                                    "Chemistry",
-                                                    "Civil Engineering",
-                                                    "Cloud Computing and Networking",
-                                                    "Coastal Environmental Science",
-                                                    "Computational Mathematics",
-                                                    "Computer Engineering",
-                                                    "Computer Science",
-                                                    "Conservation Biology",
-                                                    "Construction Management",
-                                                    "Data Science and Analytics",
-                                                    "Digital Art",
-                                                    "Disaster Science and Management",
-                                                    "Electrical Engineering",
-                                                    "Environmental Engineering",
-                                                    "Food Science and Technology",
-                                                    "Horticulture",
-                                                    "Industrial Engineering",
-                                                    "Mathematical Statistics",
-                                                    "Mathematics",
-                                                    "Mechanical Engineering",
-                                                    "Microbiology",
-                                                    "Petroleum Engineering",
-                                                    "Software Engineering"
-        };
-
-        //Pick from a string of degree levels
-        private string[] ProspectiveLevelItems = {    "N/A",
-                                                    "Associates",
-                                                    "Bachelors",
-                                                    "Masters",
-                                                    "Doctorate"
-        };
-
-        //Pick from a string of degrees
-        private string[] ProspectiveDegreeItems = {   "N/A",
-                                                    "Animal Sciences",
-                                                    "Astronomy",
-                                                    "Biochemistry",
-                                                    "Biological Chemistry",
-                                                    "Biological Engineering",
-                                                    "Biological Sciences",
-                                                    "Biology",
-                                                    "Biomolecular Chemical Engineering",
-                                                    "Chemical Engineering",
-                                                    "Chemical Physics",
-                                                    "Chemistry",
-                                                    "Civil Engineering",
-                                                    "Cloud Computing and Networking",
-                                                    "Coastal Environmental Science",
-                                                    "Computational Mathematics",
-                                                    "Computer Engineering",
-                                                    "Computer Science",
-                                                    "Conservation Biology",
-                                                    "Construction Management",
-                                                    "Data Science and Analytics",
-                                                    "Digital Art",
-                                                    "Disaster Science and Management",
-                                                    "Electrical Engineering",
-                                                    "Environmental Engineering",
-                                                    "Food Science and Technology",
-                                                    "Horticulture",
-                                                    "Industrial Engineering",
-                                                    "Mathematical Statistics",
-                                                    "Mathematics",
-                                                    "Mechanical Engineering",
-                                                    "Microbiology",
-                                                    "Petroleum Engineering",
-                                                    "Software Engineering"
-        };
-
 
         //private string Institution = "";        //String from institution entry
         //private string Location = "";           //String from location entry
@@ -234,6 +146,7 @@ namespace imPACt.Pages
         //private bool Mentor = false;            //Boolean from Mentor selection
         //private bool Mentee = false;            //Boolean from Mentee selection
 
+            public int SelectedIndex { get; set; }
         public UserClassificationPage()
         {
             InitializeComponent();
@@ -256,43 +169,29 @@ namespace imPACt.Pages
                 LocationList.Items.Add(i);
             }
 
+            //Add all items from Classification items to the Classification list
+            foreach (string i in ClassificationItems)
+            {
+                ClassificationList.Items.Add(i);
+            }
+
             //Add all items from Completed Level Items to the Completed Level list
-            foreach (string i in CompletedLevelItems)
+            foreach (string i in DegreeItems)
             {
-                CompletedLevelList.Items.Add(i);
+                DegreeList.Items.Add(i);
             }
 
-            //Add all items from Completed Degree Items to the Completed Degree list
-            foreach (string i in CompletedDegreeItems)
-            {
-                CompletedDegreeList.Items.Add(i);
-            }
+            checkFields();
+        }
+        void checkFields()
+        {
+            SUBMIT.IsEnabled = true;
+            SUBMIT.Opacity = 1.0;
+        }
 
-            //Add all items from Current Level Items to the Current Level list
-            foreach (string i in CurrentLevelItems)
-            {
-                CurrentLevelList.Items.Add(i);
-            }
-
-            //Add all items from Current Degree Items to the Current Degree list
-            foreach (string i in CurrentDegreeItems)
-            {
-                CurrentDegreeList.Items.Add(i);
-            }
-
-            //Add all items from Prospective Level Items to the Prospective Level list
-            foreach (string i in ProspectiveLevelItems)
-            {
-                ProspectiveLevelList.Items.Add(i);
-            }
-
-            //Add all items from Prospective Degree Items to the Prospective Degree list
-            foreach (string i in ProspectiveDegreeItems)
-            {
-                ProspectiveDegreeList.Items.Add(i);
-            }
-
-
+        async void GoToHomeFeedPage(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new HomeFeedPage());
         }
     }
 }
