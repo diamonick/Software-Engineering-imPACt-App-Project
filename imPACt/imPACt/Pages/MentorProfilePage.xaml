@@ -1,5 +1,108 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="imPACt.Pages.MentorProfilePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="imPACt.Pages.MentorProfilePage"
+             Title="Profile">
     <ContentPage.Content>
+        <ScrollView>
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <AbsoluteLayout>
+                    <BoxView BackgroundColor="#00858F"
+                         AbsoluteLayout.LayoutBounds="0,0,1,170" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                    <Image
+                           WidthRequest="120" HeightRequest="120"
+                           Source="ProfilePicTemplate.png" Margin="0,25,0,0"
+                           AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Button x:Name="FollowButton" Text="Follow"
+                                TextColor="White" FontSize="24" FontAttributes="Bold"
+                                BackgroundColor="#00CFB3"
+                                WidthRequest="120" HeightRequest="50"
+                                AbsoluteLayout.LayoutBounds="0.93,205" AbsoluteLayout.LayoutFlags="XProportional">
+                        </Button>
+                    <StackLayout Orientation="Vertical" Spacing="1" Margin="16,24,0,0"
+                                 AbsoluteLayout.LayoutBounds="0.25,180" AbsoluteLayout.LayoutFlags="XProportional">
+                        <Label x:Name="UsernameText"
+                               Text="Dr. Xavier Forms"
+                               TextColor="#00858F" FontSize="24" FontAttributes="Bold"/>
+                        <Label x:Name="UniversityText"
+                               Text="Louisiana State University"
+                               TextColor="#00858F" FontSize="18" FontAttributes="Bold"/>
+                        <Label x:Name="Description" HorizontalOptions="Center" TranslationY="32"
+                               Text="Hi! My name is Dr. Forms, I'm a Xamarin Forms specialist at Louisiana State University. I develop apps 24 hours a day. Contact me at xforms@lsu.edu."
+                               TextColor="#00858F" FontSize="16" FontAttributes="None"/>
+                    </StackLayout>
+                    <BoxView BackgroundColor="#00D1A4"
+                         AbsoluteLayout.LayoutBounds="0,390,1,600" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                        <Label Text="Research Interests" Margin="16,0,0,0"
+                               TextColor="White" FontSize="24" FontAttributes="Bold"
+                               AbsoluteLayout.LayoutBounds="0,420" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Grid RowSpacing="16" ColumnSpacing="16" HorizontalOptions="FillAndExpand" Margin="0,16,0,0"
+                              AbsoluteLayout.LayoutBounds="0.5,450" AbsoluteLayout.LayoutFlags="XProportional">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="64"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="64"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image x:Name="Tab1"
+                                   Grid.Row="0" Grid.Column="0"
+                                   Source="InterestsIcons-01.png"/>
+                            <Image x:Name="Tab2"
+                                   Grid.Row="0" Grid.Column="1"
+                                   Source="InterestsIcons-02.png"/>
+                            <Image x:Name="Tab3"
+                                   Grid.Row="0" Grid.Column="2"
+                                   Source="InterestsIcons-03.png"/>
+                            <Image x:Name="Tab4"
+                                   Grid.Row="0" Grid.Column="3"
+                                   Source="InterestsIcons-04.png"/>
+                            <Image x:Name="Tab5"
+                                   Grid.Row="1" Grid.Column="0"
+                                   Source="InterestsIcons-05.png"/>
+                            <Image x:Name="Tab6"
+                                   Grid.Row="1" Grid.Column="1"
+                                   Source="InterestsIcons-06.png"/>
+                            <Image x:Name="Tab7"
+                                   Grid.Row="1" Grid.Column="2"
+                                   Source="InterestsIcons-07.png"/>
+                            <Image x:Name="Tab8"
+                                   Grid.Row="1" Grid.Column="3"
+                                   Source="InterestsIcons-08.png"/>
+                            <Image x:Name="Tab9"
+                                   Grid.Row="2" Grid.Column="0"
+                                   Source="InterestsIcons-09.png"/>
+                            <Image x:Name="Tab10"
+                                   Grid.Row="2" Grid.Column="1"
+                                   Source="InterestsIcons-10.png"/>
+                            <Image x:Name="Tab11"
+                                   Grid.Row="2" Grid.Column="2"
+                                   Source="InterestsIcons-11.png"/>
+                            <Image x:Name="Tab12"
+                                   Grid.Row="2" Grid.Column="3"
+                                   Source="InterestsIcons-12.png"/>
+                            <Image x:Name="Tab13"
+                                   Grid.Row="3" Grid.Column="0"
+                                   Source="InterestsIcons-13.png"/>
+                            <Image x:Name="Tab14"
+                                   Grid.Row="3" Grid.Column="1"
+                                   Source="InterestsIcons-14.png"/>
+                            <Image x:Name="Tab15"
+                                   Grid.Row="3" Grid.Column="2"
+                                   Source="InterestsIcons-15.png"/>
+                        </Grid>
+                        <Label Text="Educational Background" Margin="16,0,0,0"
+                               TextColor="White" FontSize="24" FontAttributes="Bold"
+                               AbsoluteLayout.LayoutBounds="0,800" AbsoluteLayout.LayoutFlags="XProportional"/>
+                </AbsoluteLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
