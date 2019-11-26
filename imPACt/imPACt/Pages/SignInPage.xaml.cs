@@ -357,9 +357,21 @@ namespace imPACt.Pages
                 Email = SU_Email.Text,
                 Password = SU_Password.Text
             });
-            System.Diagnostics.Debug.WriteLine("User Added");
+            Console.WriteLine("User Added");
             await Navigation.PushAsync(new FeedPage());
 
+        }
+
+        //Check User DB to see if user exists
+        async void ClickSignIn(object sender, EventArgs e)
+        {
+            var user = await App.Database.GetUserByEmail(LI_Email.Text);
+            if (user == null)
+                await DisplayAlert("User Not Found", "A user with that email does not exist!", "Back");
+            else if (user.Password == LI_Password.Text)
+                await Navigation.PushAsync(new HomeFeedPage());
+            else
+                await DisplayAlert("Invalid User", "Wrong Username or Password", "Back");
         }
     }
 }

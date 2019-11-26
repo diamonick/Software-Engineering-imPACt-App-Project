@@ -13,6 +13,7 @@ namespace imPACt.Models
         public string Classification { get; set; }
         public string Location { get; set; }
         public int Role { get; set; } //Role: 1 is Mentee, 2 is Mentor, 3 is Admin
+        public Boolean LoggedIn { get; set; }
         //Interests
     }
 }

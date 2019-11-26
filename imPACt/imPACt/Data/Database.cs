@@ -27,6 +27,20 @@ namespace imPACt.Data
                             .FirstOrDefaultAsync();
         }
 
+        public Task<User> GetUserByEmail(string email)
+        {
+            return _database.Table<User>()
+                            .Where(i => i.Email == email)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<User> GetCurrentUser()
+        {
+            return _database.Table<User>()
+                            .Where(i => i.LoggedIn == true)
+                            .FirstOrDefaultAsync();
+        }
+
         public Task<int> SaveUserAsync(User User)
         {
             if (User.ID != 0)
