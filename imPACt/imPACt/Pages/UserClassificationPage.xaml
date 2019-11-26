@@ -7,7 +7,7 @@
              x:Class="imPACt.Pages.UserClassificationPage"
              NavigationPage.HasBackButton="True"
              NavigationPage.BackButtonTitle="Classification"
-             BackgroundColor="White">
+             BackgroundColor="#00858F">
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
@@ -38,6 +38,7 @@
                                FontSize="10" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="RoleList" Title="Select your role"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="200" HeightRequest="28"
                                 HorizontalOptions="End"
                                 FontSize="14" FontAttributes="None" TranslationX="60"
@@ -52,6 +53,7 @@
                                FontSize="10" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="UniversityList" Title="Select a university"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="200" HeightRequest="28"
                                 HorizontalOptions="End"
                                 FontSize="14" FontAttributes="None" TranslationX="60"
@@ -66,6 +68,7 @@
                                FontSize="10" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="LocationList" Title="Select a location"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="200" HeightRequest="28"
                                 HorizontalOptions="End"
                                 FontSize="14" FontAttributes="None" TranslationX="60"
@@ -76,10 +79,11 @@
                         <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
                                  WidthRequest="375" HeightRequest="42"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
-                        <Label Text="Classification: " TextColor="White"
+                        <Label Text="Completed Degree Level: " TextColor="White"
                                FontSize="10" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Picker x:Name="ClassificationList" Title="Pick classification"
+                        <Picker x:Name="CompletedLevelList" Title="Pick degree level or N/A"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="200" HeightRequest="28"
                                 HorizontalOptions="End"
                                 FontSize="14" FontAttributes="None" TranslationX="60"
@@ -90,27 +94,88 @@
                         <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
                                  WidthRequest="375" HeightRequest="42"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
-                        <Label Text="Degree: " TextColor="White"
+                        <Label Text="Completed Degree: " TextColor="White"
                                FontSize="10" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Picker x:Name="DegreeList" Title="Pick degree/field of study"
+                        <Picker x:Name="CompletedDegreeList" Title="Pick degree or N/A"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="200" HeightRequest="28"
                                 HorizontalOptions="End"
                                 FontSize="14" FontAttributes="None" TranslationX="60"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
-
-                    <!-- Sign Up Confirmation button -->
-                    <Button x:Name="SUBMIT" Text="Complete"
+                    <AbsoluteLayout>
+                        <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
+                                 WidthRequest="375" HeightRequest="42"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Label Text="Current Degree Level: " TextColor="White"
+                               FontSize="10" FontAttributes="Bold" TranslationX="-120"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Picker x:Name="CurrentLevelList" Title="Pick degree level or N/A"
+                                SelectedIndexChanged="PickedItem"
+                                BackgroundColor="White" WidthRequest="200" HeightRequest="28"
+                                HorizontalOptions="End"
+                                FontSize="14" FontAttributes="None" TranslationX="60"
+                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Picker>
+                    </AbsoluteLayout>
+                    <AbsoluteLayout>
+                        <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
+                                 WidthRequest="375" HeightRequest="42"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Label Text="Current Degree: " TextColor="White"
+                               FontSize="10" FontAttributes="Bold" TranslationX="-120"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Picker x:Name="CurrentDegreeList" Title="Pick degree or N/A"
+                                SelectedIndexChanged="PickedItem"
+                                BackgroundColor="White" WidthRequest="200" HeightRequest="28"
+                                HorizontalOptions="End"
+                                FontSize="14" FontAttributes="None" TranslationX="60"
+                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Picker>
+                    </AbsoluteLayout>
+                    <AbsoluteLayout>
+                        <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
+                                 WidthRequest="375" HeightRequest="42"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Label Text="Prospective Degree Level: " TextColor="White"
+                               FontSize="10" FontAttributes="Bold" TranslationX="-120"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Picker x:Name="ProspectiveLevelList" Title="Pick degree level or N/A"
+                                SelectedIndexChanged="PickedItem"
+                                BackgroundColor="White" WidthRequest="200" HeightRequest="28"
+                                HorizontalOptions="End"
+                                FontSize="14" FontAttributes="None" TranslationX="60"
+                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Picker>
+                    </AbsoluteLayout>
+                    <AbsoluteLayout>
+                        <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
+                                 WidthRequest="375" HeightRequest="42"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Label Text="Prospective Degree: " TextColor="White"
+                               FontSize="10" FontAttributes="Bold" TranslationX="-120"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Picker x:Name="ProspectiveDegreeList" Title="Pick degree or N/A"
+                                SelectedIndexChanged="PickedItem"
+                                BackgroundColor="White" WidthRequest="200" HeightRequest="28"
+                                HorizontalOptions="End"
+                                FontSize="14" FontAttributes="None" TranslationX="60"
+                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Picker>
+                    </AbsoluteLayout>
+                </StackLayout>
+                
+                <!-- Next button -->
+                    <Button x:Name="COMPLETE" Text="Complete"
                             TextColor="White" FontSize="24" FontAttributes="Bold"
                             BackgroundColor="#00CFB3"
+                            Pressed="HighlightButton" Released="GoToHomeFeedPage"
                             WidthRequest="330" HeightRequest="50"
                             IsEnabled="False" Opacity="0.5"
-                            AbsoluteLayout.LayoutBounds="0.5,0.925" AbsoluteLayout.LayoutFlags="PositionProportional"
-                            Clicked="GoToHomeFeedPage">
+                            AbsoluteLayout.LayoutBounds="0.5,1" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Button>
-                </StackLayout>
             </AbsoluteLayout>
         </ScrollView>
     </ContentPage.Content>

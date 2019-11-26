@@ -146,7 +146,8 @@ namespace imPACt.Pages
         //private bool Mentor = false;            //Boolean from Mentor selection
         //private bool Mentee = false;            //Boolean from Mentee selection
 
-            public int SelectedIndex { get; set; }
+        private const double PressedSize = 1.1;                     //Size of button when pressed
+        public int SelectedIndex { get; set; }
         public UserClassificationPage()
         {
             InitializeComponent();
@@ -172,21 +173,56 @@ namespace imPACt.Pages
             //Add all items from Classification items to the Classification list
             foreach (string i in ClassificationItems)
             {
-                ClassificationList.Items.Add(i);
+                CompletedLevelList.Items.Add(i);
+                CurrentLevelList.Items.Add(i);
+                ProspectiveLevelList.Items.Add(i);
             }
 
             //Add all items from Completed Level Items to the Completed Level list
             foreach (string i in DegreeItems)
             {
-                DegreeList.Items.Add(i);
+                CompletedDegreeList.Items.Add(i);
+                CurrentDegreeList.Items.Add(i);
+                ProspectiveDegreeList.Items.Add(i);
             }
 
-            checkFields();
+            CheckFields();
         }
-        void checkFields()
+
+
+        void HighlightButton(object sender, EventArgs args)
         {
-            SUBMIT.IsEnabled = true;
-            SUBMIT.Opacity = 1.0;
+            var button = (Button)sender;
+            button.ScaleTo(PressedSize, 200, Easing.SinOut);
+        }
+
+        //Check if all the fields are filled. If true, allow user to press the Complete button
+        void CheckFields()
+        {
+            if (RoleList.SelectedIndex != -1
+                && UniversityList.SelectedIndex != -1
+                && LocationList.SelectedIndex != -1
+                && CompletedLevelList.SelectedIndex != -1
+                && CompletedDegreeList.SelectedIndex != -1
+                && CurrentLevelList.SelectedIndex != -1
+                && CurrentDegreeList.SelectedIndex != -1
+                && ProspectiveLevelList.SelectedIndex != -1
+                && ProspectiveDegreeList.SelectedIndex != -1)
+            {
+                COMPLETE.IsEnabled = true;
+                COMPLETE.Opacity = 1.0;
+            }
+            else
+            {
+                COMPLETE.IsEnabled = false;
+                COMPLETE.Opacity = 0.5;
+            }
+        }
+
+        //SelectedIndexChanged Event that runs when the user selects an item from a picker
+        void PickedItem(object sender, EventArgs args)
+        {
+            CheckFields();
         }
 
         async void GoToHomeFeedPage(object sender, EventArgs args)
