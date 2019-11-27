@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using SQLite;
 
 namespace imPACt.Models
 {
+    [Table("Users")]
     public class User
     {
         [PrimaryKey, AutoIncrement]
@@ -14,6 +16,10 @@ namespace imPACt.Models
         public string Location { get; set; }
         public int Role { get; set; } //Role: 1 is Mentee, 2 is Mentor, 3 is Admin
         public Boolean LoggedIn { get; set; }
-        //Interests
+
+        
+        public List<User> Mentors { get; set; }
+        public List<User> Mentees { get; set; }
+        public List<string> Interests { get; set; }
     }
 }

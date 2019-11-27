@@ -3,6 +3,7 @@ using SQLite;
 
 namespace imPACt.Models
 {
+    [Table("Events")]
     public class Event
     {
         [PrimaryKey, AutoIncrement]
