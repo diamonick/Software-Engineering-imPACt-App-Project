@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using SQLite;
 
 namespace imPACt.Models
@@ -18,8 +17,8 @@ namespace imPACt.Models
         public Boolean LoggedIn { get; set; }
 
         
-        public List<User> Mentors { get; set; }
-        public List<User> Mentees { get; set; }
-        public List<string> Interests { get; set; }
+        //public User[] Mentors { get; set; }
+        //public User[] Mentees { get; set; }
+        //public String[] Interests { get; set; }
     }
 }
