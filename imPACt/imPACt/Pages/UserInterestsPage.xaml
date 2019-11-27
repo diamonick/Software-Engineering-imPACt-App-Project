@@ -7,7 +7,7 @@
              x:Class="imPACt.Pages.UserInterestsPage"
              NavigationPage.HasBackButton="True"
              NavigationPage.BackButtonTitle="Interests"
-             BackgroundColor="White">
+             BackgroundColor="#00858F">
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
@@ -19,27 +19,31 @@
     <ContentPage.Content>
         <!-- Scroll View (Able to scroll page) -->
         <ScrollView>
-            <AbsoluteLayout>
-                <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                        <!-- Sub text -->
-                        <Label Text="Matching Interests"
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <!-- Draw white background -->
+                <BoxView BackgroundColor="White"
+                     HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                     AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                <!-- Sub text -->
+                <Label Text="Filters"
                        TextColor="White" FontSize="36" FontAttributes="Bold"
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                        AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional">
-                        </Label>
-                    </AbsoluteLayout>
+                </Label>
+                <StackLayout AbsoluteLayout.LayoutBounds="0,100,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
                     <AbsoluteLayout>
                         <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
                                  WidthRequest="375" HeightRequest="42"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
                         <Label Text="University: " TextColor="White"
-                               FontSize="14" FontAttributes="Bold" TranslationX="-120"
+                               FontSize="16" FontAttributes="Bold" TranslationX="-130"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="UniversityList" Title="Select a university you want a mentor through"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="240" HeightRequest="28"
                                 HorizontalOptions="End"
-                                FontSize="10" FontAttributes="None" TranslationX="60"
+                                FontSize="12" FontAttributes="None" TranslationX="60"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
@@ -48,12 +52,13 @@
                                  WidthRequest="375" HeightRequest="42"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
                         <Label Text="Location: " TextColor="White"
-                               FontSize="14" FontAttributes="Bold" TranslationX="-120"
+                               FontSize="16" FontAttributes="Bold" TranslationX="-132"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="LocationList" Title="Select a location you want a mentor from"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="240" HeightRequest="28"
                                 HorizontalOptions="End"
-                                FontSize="10" FontAttributes="None" TranslationX="60"
+                                FontSize="12" FontAttributes="None" TranslationX="60"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
@@ -61,13 +66,14 @@
                         <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
                                  WidthRequest="375" HeightRequest="42"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
-                        <Label Text="Interested Field: " TextColor="White"
-                               FontSize="14" FontAttributes="Bold" TranslationX="-120"
+                        <Label Text="Major: " TextColor="White"
+                               FontSize="16" FontAttributes="Bold" TranslationX="-144"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Picker x:Name="InterestedFieldList" Title="Pick an area you are looking for a mentor in"
+                        <Picker x:Name="MajorList" Title="Pick an area you are looking for a mentor in"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="240" HeightRequest="28"
                                 HorizontalOptions="End"
-                                FontSize="10" FontAttributes="None" TranslationX="60"
+                                FontSize="12" FontAttributes="None" TranslationX="60"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
@@ -76,26 +82,26 @@
                                  WidthRequest="375" HeightRequest="42"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
                         <Label Text="Classification: " TextColor="White"
-                               FontSize="14" FontAttributes="Bold" TranslationX="-120"
+                               FontSize="16" FontAttributes="Bold" TranslationX="-116"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="ClassifcationList" Title="Pick classification"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="240" HeightRequest="28"
                                 HorizontalOptions="End"
-                                FontSize="10" FontAttributes="None" TranslationX="60"
+                                FontSize="12" FontAttributes="None" TranslationX="60"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
-
-                    <!-- Sign Up Confirmation button -->
-                    <Button x:Name="SUBMIT" Text="Complete"
-                            TextColor="White" FontSize="24" FontAttributes="Bold"
-                            BackgroundColor="#00CFB3"
-                            WidthRequest="330" HeightRequest="50"
-                            IsEnabled="False" Opacity="0.5"
-                            AbsoluteLayout.LayoutBounds="0.5,0.925" AbsoluteLayout.LayoutFlags="PositionProportional"
-                            Clicked="GoToMatchPage">
-                    </Button>
                 </StackLayout>
+                <!-- Match button -->
+                <Button x:Name="MATCH" Text="Match"
+                        TextColor="White" FontSize="24" FontAttributes="Bold"
+                        BackgroundColor="#00CFB3"
+                        Pressed="HighlightButton" Released="GoToMatchPage"
+                        WidthRequest="330" HeightRequest="50"
+                        IsEnabled="False" Opacity="0.5"
+                        AbsoluteLayout.LayoutBounds="0.5,0.8" AbsoluteLayout.LayoutFlags="PositionProportional">
+                </Button>
             </AbsoluteLayout>
         </ScrollView>
     </ContentPage.Content>

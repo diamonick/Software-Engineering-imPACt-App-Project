@@ -80,7 +80,7 @@ namespace imPACt.Pages
                                             "Wyoming"
         };
 
-        private string[] InterestedFieldItems = {   "N/A",
+        private string[] MajorItems = {   "N/A",
                                                     "Animal Sciences",
                                                     "Astronomy",
                                                     "Biochemistry",
@@ -126,6 +126,8 @@ namespace imPACt.Pages
                                                     "Researcher"
         };
 
+        private const double PressedSize = 1.1;                     //Size of button when pressed
+        public int SelectedIndex { get; set; }
         public UserInterestsPage()
         {
             InitializeComponent();
@@ -142,9 +144,9 @@ namespace imPACt.Pages
                 LocationList.Items.Add(i);
             }
 
-            foreach (string i in InterestedFieldItems)
+            foreach (string i in MajorItems)
             {
-                InterestedFieldList.Items.Add(i);
+                MajorList.Items.Add(i);
             }
 
             //Add all items from Classification items to the Classification list
@@ -153,12 +155,36 @@ namespace imPACt.Pages
                 ClassifcationList.Items.Add(i);
             }
 
-            checkFields();
+            CheckFields();
         }
-        void checkFields()
+
+        void HighlightButton(object sender, EventArgs args)
         {
-            SUBMIT.IsEnabled = true;
-            SUBMIT.Opacity = 1.0;
+            var button = (Button)sender;
+            button.ScaleTo(PressedSize, 200, Easing.SinOut);
+        }
+
+        void CheckFields()
+        {
+            if (UniversityList.SelectedIndex != -1
+                && LocationList.SelectedIndex != -1
+                && MajorList.SelectedIndex != -1
+                && ClassifcationList.SelectedIndex != -1)
+            {
+                MATCH.IsEnabled = true;
+                MATCH.Opacity = 1.0;
+            }
+            else
+            {
+                MATCH.IsEnabled = false;
+                MATCH.Opacity = 0.5;
+            }
+        }
+
+        //SelectedIndexChanged Event that runs when the user selects an item from a picker
+        void PickedItem(object sender, EventArgs args)
+        {
+            CheckFields();
         }
 
         async void GoToMatchPage(object sender, EventArgs args)
