@@ -34,13 +34,6 @@ namespace imPACt.Data
                             .FirstOrDefaultAsync();
         }
 
-        public Task<User> GetCurrentUser()
-        {
-            return _database.Table<User>()
-                            .Where(i => i.LoggedIn == true)
-                            .FirstOrDefaultAsync();
-        }
-
         public Task<int> SaveUserAsync(User User)
         {
             if (User.ID != 0)

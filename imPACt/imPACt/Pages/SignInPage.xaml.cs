@@ -342,23 +342,23 @@ namespace imPACt.Pages
         }
 
         //Send user to Feed page
-        async void GoToFeedPage(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new FeedPage());
-        }
+        //async void GoToFeedPage(object sender, EventArgs args)
+        //{
+        //    await Navigation.PushAsync(new FeedPage());
+        //}
 
-        //Add User to Local DB -> Navigate to Home Page?
+        //Add User to Local DB
         async void ClickSignUp(object sender, EventArgs e)
         {
 
-            await App.Database.SaveUserAsync(new User
+            User newUser = new User
             {
                 Name = SU_FullName.Text,
                 Email = SU_Email.Text,
                 Password = SU_Password.Text
-            });
-            Console.WriteLine("User Added");
-            await Navigation.PushAsync(new FeedPage());
+            };
+            
+            await Navigation.PushAsync(new FeedPage(newUser));
 
         }
 
@@ -369,7 +369,10 @@ namespace imPACt.Pages
             if (user == null)
                 await DisplayAlert("User Not Found", "A user with that email does not exist!", "Back");
             else if (user.Password == LI_Password.Text)
+            {
+                App.currentUserID = user.ID;
                 await Navigation.PushAsync(new HomeFeedPage());
+            }
             else
                 await DisplayAlert("Invalid User", "Wrong Username or Password", "Back");
         }

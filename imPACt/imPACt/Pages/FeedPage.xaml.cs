@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using imPACt.Models;
 using Xamarin.Forms;
 
 namespace imPACt.Pages
@@ -12,10 +12,12 @@ namespace imPACt.Pages
         private int NumOfInterests = 0; 
         private const int RequiredNumOfInterests = 5;
         private bool[] InterestsSelected = new bool[15];
+        private User newUser;
 
-        public FeedPage()
+        public FeedPage(User u)
         {
             InitializeComponent();
+            this.newUser = u;
             InterestCounter.Text = "Number of Interest: " + NumOfInterests + "/5";
         }
 
@@ -179,7 +181,9 @@ namespace imPACt.Pages
         //Go to User Classification page
         async void GoToClassificationPage(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new UserClassificationPage());
+            //Set Interests for New User Here
+            //this.newUser = 
+            await Navigation.PushAsync(new UserClassificationPage(this.newUser));
         }
     }
 }
