@@ -2,6 +2,7 @@
 using System.IO;
 using Xamarin.Forms;
 using imPACt.Data;
+using imPACt.Models;
 using Xamarin.Forms.Xaml;
 
 namespace imPACt
@@ -9,6 +10,7 @@ namespace imPACt
     public partial class App : Application
     {
         static Database database;
+        public static int currentUserID { get; set; }
 
         public static Database Database
         {
@@ -25,7 +27,6 @@ namespace imPACt
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new Pages.MainPage());
             
         }

@@ -23,9 +23,6 @@
                                 <Label x:Name="UsernameText"
                                        Text="Diamonick Dunn" HorizontalOptions="Center"
                                        TextColor="White" FontSize="32" FontAttributes="Bold"/>
-                                <Label x:Name="Role"
-                                       Text="Mentee" HorizontalOptions="Center"
-                                       TextColor="White" FontSize="24" FontAttributes="Bold"/>
                                 <Label x:Name="UniversityText"
                                        Text="Louisiana State University" HorizontalOptions="Center"
                                        TextColor="White" FontSize="18" FontAttributes="None"/>

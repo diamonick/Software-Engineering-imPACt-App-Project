@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using imPACt.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SQLite;
@@ -13,6 +13,8 @@ namespace imPACt.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserClassificationPage : ContentPage
     {
+        User newUser;
+
         //Designate your role
         private string[] RoleItems = {  "Mentor",
                                         "Mentee"
@@ -37,7 +39,7 @@ namespace imPACt.Pages
 
         //Pick from a string of states
         private string[] LocationItems = {  "Alabama",
-                                            "Alazka",
+                                            "Alaska",
                                             "Arizona",
                                             "Arkansas",
                                             "California",
@@ -148,9 +150,10 @@ namespace imPACt.Pages
 
         private const double PressedSize = 1.1;                     //Size of button when pressed
         public int SelectedIndex { get; set; }
-        public UserClassificationPage()
+        public UserClassificationPage(User u)
         {
             InitializeComponent();
+            this.newUser = u;
 
             //Add all items from Role items to Role list
             foreach (string i in RoleItems)
@@ -233,6 +236,16 @@ namespace imPACt.Pages
             var button = (Button)sender;
 
             await button.ScaleTo(1.0, 200, Easing.SinOut);
+
+            //Add Data to New User
+            this.newUser.Role = (string)RoleList.SelectedItem;
+            this.newUser.University = (string)UniversityList.SelectedItem;
+            this.newUser.Location = (string)LocationList.SelectedItem;
+
+            //Save New User to Database
+            await App.Database.SaveUserAsync(this.newUser);
+            //Current User is now New User
+            App.currentUserID = this.newUser.ID;
             await Navigation.PushAsync(new HomeFeedPage());
         }
     }
