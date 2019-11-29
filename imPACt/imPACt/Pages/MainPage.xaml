@@ -15,7 +15,7 @@
     <ContentPage.Content>
     <ScrollView>
     <!-- Introduction to imPACt app with description of what is it -->
-        <AbsoluteLayout>  
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">  
         <BoxView BackgroundColor="White"
                  CornerRadius="10"
                  WidthRequest="360" HeightRequest="580"

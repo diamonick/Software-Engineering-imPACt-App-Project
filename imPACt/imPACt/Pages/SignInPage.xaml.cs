@@ -147,7 +147,12 @@ namespace imPACt.Pages
                 //Display check mark
                 if (PL == PageLayout.SignUpLayout)
                 {
-                    if (entry == SU_FullName) { SU_FullNameMark.Source = Checkmark; FullName_Checked = true; }
+                    if (entry == SU_FullName)
+                    {
+                        SU_FullNameMark.Source = Checkmark;
+                        FullName_Checked = true;
+                        entry.BackgroundColor = ValidColor;
+                    }
                     else if (entry == SU_Email)
                     {
                         if (Regex.IsMatch(entry.Text, emailSyntax))

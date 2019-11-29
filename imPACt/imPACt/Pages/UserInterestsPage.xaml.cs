@@ -161,6 +161,9 @@ namespace imPACt.Pages
         void HighlightButton(object sender, EventArgs args)
         {
             var button = (Button)sender;
+
+            button.TextColor = Color.FromRgb(200, 200, 200);
+            button.BackgroundColor = Color.FromRgb(0, 85, 92);
             button.ScaleTo(PressedSize, 200, Easing.SinOut);
         }
 
@@ -189,6 +192,9 @@ namespace imPACt.Pages
 
         async void GoToMatchPage(object sender, EventArgs args)
         {
+            var button = (Button)sender;
+
+            await button.ScaleTo(1.0, 200, Easing.SinOut);
             await Navigation.PushAsync(new MatchPage());
         }
     }
