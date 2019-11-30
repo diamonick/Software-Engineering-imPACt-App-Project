@@ -23,19 +23,6 @@ namespace imPACt.Pages
 
             Detail = new NavigationPage(new HomePage());
             IsPresented = false;
-            this.IsPresentedChanged += OnPresentedChanged;
-        }
-
-        async private void OnPresentedChanged(object sender, EventArgs args)
-        {
-            if (this.IsPresented)
-            {
-                await ForegroundLayer.FadeTo(0.5, 100, Easing.CubicOut);
-            }
-            else
-            {
-                await ForegroundLayer.FadeTo(0.0, 100, Easing.CubicOut);
-            }
         }
 
         //Highlight the button to let the user know it's pressed

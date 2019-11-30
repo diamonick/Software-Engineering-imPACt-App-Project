@@ -187,5 +187,8 @@
     <BundleResource Include="Resources\ContactsIcon.png" />
     <BundleResource Include="Resources\ProfilePicTemplate.png" />
     <BundleResource Include="Resources\MatchIcon.png" />
+    <BundleResource Include="Resources\FloraPortrait.png" />
+    <BundleResource Include="Resources\TimeIcon.png" />
+    <BundleResource Include="Resources\LocationIcon.png" />
   </ItemGroup>
 </Project>

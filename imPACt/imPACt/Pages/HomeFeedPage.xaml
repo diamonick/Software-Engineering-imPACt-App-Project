@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   x:Class="imPACt.Pages.HomeFeedPage"
-                  MasterBehavior="Popover"
-                  NavigationPage.HasBackButton="False">
+                  NavigationPage.HasBackButton="False"
+                  MasterBehavior="Popover">
     <MasterDetailPage.Master>
         <ContentPage x:Name="MyFeed" Title="My Feed" IconImageSource="HamburgerIcon.png"
                      BackgroundColor="#00D1A4">
@@ -11,7 +11,7 @@
                         <!-- Draw white background -->
                         <BoxView BackgroundColor="#002D30"
                              HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
-                             AbsoluteLayout.LayoutBounds="0,200,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                             AbsoluteLayout.LayoutBounds="0,168,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
                         <StackLayout Orientation="Vertical"
                                      AbsoluteLayout.LayoutBounds="0.5,0,1,1" AbsoluteLayout.LayoutFlags="All">
                             <ImageButton x:Name="UserProfile"
@@ -39,8 +39,8 @@
                                            TranslationY="4" IsEnabled="False"
                                            Source="HomeIcon.png"/>
                                     <Label Text="Home" TextColor="White" IsEnabled="False"
-                                           TranslationX="64" TranslationY="4"
-                                           FontSize="24" FontAttributes="None"/>
+                                           TranslationX="64" TranslationY="8"
+                                           FontSize="18" FontAttributes="None"/>
                                 </AbsoluteLayout>
                                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional">
                                     <Button x:Name="MatchButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
@@ -52,8 +52,8 @@
                                            TranslationY="4" IsEnabled="False"
                                            Source="MatchIcon.png"/>
                                     <Label Text="Mentor Match" TextColor="White" IsEnabled="False"
-                                           TranslationX="64" TranslationY="4"
-                                           FontSize="24" FontAttributes="None"/>
+                                           TranslationX="64" TranslationY="8"
+                                           FontSize="18" FontAttributes="None"/>
                                 </AbsoluteLayout>
                                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional">
                                     <Button x:Name="ContactsButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
@@ -65,8 +65,8 @@
                                            TranslationY="4" IsEnabled="False"
                                            Source="ContactsIcon.png"/>
                                     <Label Text="Contacts" TextColor="White" IsEnabled="False"
-                                           TranslationX="64" TranslationY="4"
-                                           FontSize="24" FontAttributes="None"/>
+                                           TranslationX="64" TranslationY="8"
+                                           FontSize="18" FontAttributes="None"/>
                                 </AbsoluteLayout>
                                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional">
                                     <Button x:Name="SettingsButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
@@ -78,8 +78,8 @@
                                            TranslationY="4" IsEnabled="False"
                                            Source="SettingsIcon.png"/>
                                     <Label Text="Settings" TextColor="White" IsEnabled="False"
-                                           TranslationX="64" TranslationY="4"
-                                           FontSize="24" FontAttributes="None"/>
+                                           TranslationX="64" TranslationY="8"
+                                           FontSize="18" FontAttributes="None"/>
                                 </AbsoluteLayout>
                             </StackLayout>
                         </StackLayout>
@@ -87,37 +87,4 @@
             </ContentPage.Content>
         </ContentPage>
     </MasterDetailPage.Master>
-
-    <MasterDetailPage.Detail>
-        <ContentPage BackgroundColor="#00858F" Title="Options">
-            <ContentPage.Content>
-               <!-- Scroll View (Able to scroll page) -->
-                <ScrollView>
-                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                        <!-- Draw white background -->
-                        <BoxView BackgroundColor="White"
-                             HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
-                             HeightRequest="640"
-                             AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
-                        <!-- Sub text -->
-                        <Label Text="Testing"
-                               TextColor="White" FontSize="36" FontAttributes="Bold"
-                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                               AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional">
-                        </Label>
-                        <Label Text="This is just a test."
-                               TextColor="#00858F" FontSize="24"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Start"
-                               AbsoluteLayout.LayoutBounds="0.5,0.2" AbsoluteLayout.LayoutFlags="PositionProportional">
-                        </Label>
-                        <BoxView x:Name="ForegroundLayer"
-                                 BackgroundColor="Black" Opacity="0.0"
-                                 AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"
-                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                    </AbsoluteLayout>
-                </ScrollView>
-            </ContentPage.Content>
-        </ContentPage>
-    </MasterDetailPage.Detail>
 </MasterDetailPage>
