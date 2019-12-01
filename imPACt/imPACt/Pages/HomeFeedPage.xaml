@@ -15,10 +15,10 @@
                         <StackLayout Orientation="Vertical"
                                      AbsoluteLayout.LayoutBounds="0.5,0,1,1" AbsoluteLayout.LayoutFlags="All">
                             <ImageButton x:Name="UserProfile"
-                                   WidthRequest="80" HeightRequest="80" Margin="0,15,0,0"
-                                   Source="ProfilePicTemplate.png"
-                                   Released="GoToProfilePage"
-                                   AbsoluteLayout.LayoutBounds="0.5,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                                         WidthRequest="80" HeightRequest="80" Margin="0,15,0,0"
+                                         Source="ProfilePicTemplate.png"
+                                         Released="GoToProfilePage"
+                                         AbsoluteLayout.LayoutBounds="0.5,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
                             <StackLayout Orientation="Vertical" Spacing="1">
                                 <Label x:Name="UsernameText"
                                        Text="Diamonick Dunn" HorizontalOptions="Center"

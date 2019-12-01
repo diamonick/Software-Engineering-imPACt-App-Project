@@ -40,7 +40,7 @@ namespace imPACt.Pages
 
             button.BackgroundColor = ActiveColor;
 
-            if (button == HomeButton)
+            if (button == HomeButton && !HomeNode.IsVisible)
             {
                 HomeNode.IsVisible = true;
                 MatchNode.IsVisible = false;
@@ -53,7 +53,7 @@ namespace imPACt.Pages
 
                 Detail = new NavigationPage(new HomePage());
             }
-            else if (button == MatchButton)
+            else if (button == MatchButton && !MatchNode.IsVisible)
             {
                 HomeNode.IsVisible = false;
                 MatchNode.IsVisible = true;
@@ -66,7 +66,7 @@ namespace imPACt.Pages
 
                 Detail = new NavigationPage(new UserInterestsPage());
             }
-            else if (button == ContactsButton)
+            else if (button == ContactsButton && !ContactsNode.IsVisible)
             {
                 HomeNode.IsVisible = false;
                 MatchNode.IsVisible = false;
@@ -79,7 +79,7 @@ namespace imPACt.Pages
 
                 Detail = new NavigationPage(new ContactsPage());
             }
-            else if (button == SettingsButton)
+            else if (button == SettingsButton && !SettingsNode.IsVisible)
             {
                 HomeNode.IsVisible = false;
                 MatchNode.IsVisible = false;
@@ -100,6 +100,16 @@ namespace imPACt.Pages
         void GoToProfilePage(object sender, EventArgs args)
         {
             var imageButton = (ImageButton)sender;
+
+            HomeNode.IsVisible = false;
+            MatchNode.IsVisible = false;
+            ContactsNode.IsVisible = false;
+            SettingsNode.IsVisible = false;
+
+            HomeButton.BackgroundColor = InactiveColor;
+            MatchButton.BackgroundColor = InactiveColor;
+            ContactsButton.BackgroundColor = InactiveColor;
+            SettingsButton.BackgroundColor = InactiveColor;
 
             Detail = new NavigationPage(new UserProfilePage());
             IsPresented = false;
