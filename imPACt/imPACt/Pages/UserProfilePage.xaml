@@ -15,7 +15,7 @@
                            AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     <StackLayout Orientation="Vertical" Spacing="1"
                                  AbsoluteLayout.LayoutBounds="0.5,170" AbsoluteLayout.LayoutFlags="XProportional">
-                        <Label x:Name="UsernameText"
+                        <Label x:Name="FullNameText"
                                Text="Diamonick Dunn" HorizontalOptions="Center"
                                TextColor="White" FontSize="32" FontAttributes="Bold"/>
                         <Label x:Name="Description" Padding="32,0"

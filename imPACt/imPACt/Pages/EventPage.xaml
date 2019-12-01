@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="imPACt.Pages.EventPage"
+             Title="Event"
+             NavigationPage.HasBackButton="True"
+             BackgroundColor="#00858F">
+    <ContentPage.Content>
+        <!-- Scroll View (Able to scroll page) -->
+        <ScrollView>
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <!-- Draw white background -->
+                <BoxView BackgroundColor="White"
+                     HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                     AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                <!-- imPACt Title Logo -->
+                <Image Source="imPACt_Title2.png"
+                       WidthRequest="180"
+                       AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <BoxView BackgroundColor="#00D1A4"
+                         HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutBounds="0,80,1,67" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                <Frame HasShadow="False" CornerRadius="30"
+                       WidthRequest="18" HeightRequest="18"
+                       IsClippedToBounds="True" TranslationX="8"
+                       HorizontalOptions="Center" VerticalOptions="Center"
+                       AbsoluteLayout.LayoutBounds="0,84" AbsoluteLayout.LayoutFlags="XProportional">
+                    <ImageButton Source="InterestsIcons-06.png"
+                                 Released="GoToMentorPage"
+                                 Aspect="AspectFill" Margin="-20"
+                                 WidthRequest="56" HeightRequest="56"/>
+                </Frame>
+                <StackLayout Orientation="Vertical" Spacing="0"
+                             AbsoluteLayout.LayoutBounds="75,92" AbsoluteLayout.LayoutFlags="None">
+                    <Label Text="Qubic Sharp" TextColor="White"
+                           FontSize="18" FontAttributes="Bold"/>
+                    <Label Margin="0,0,90,0"
+                           Text="Louisiana State University" TextColor="White" 
+                           FontSize="16" FontAttributes="None"/>
+                </StackLayout>
+                <!-- First Post (Sharpen Your C# Skills) -->
+                <AbsoluteLayout HorizontalOptions="Start" Margin="8,0"
+                                AbsoluteLayout.LayoutBounds="0,182" AbsoluteLayout.LayoutFlags="XProportional">
+                    <Label HorizontalTextAlignment="Start"
+                           Text="Qubic Sharp &#183; 4 days ago" TextColor="#575757"
+                           FontSize="16" FontAttributes="None"/>
+                    <Label HorizontalTextAlignment="Start" TranslationY="24"
+                           Text="Sharpen Your C# Skills" TextColor="Black"
+                           FontSize="24" FontAttributes="Bold"/>
+                </AbsoluteLayout>
+                <AbsoluteLayout Margin="8,0"
+                                AbsoluteLayout.LayoutBounds="1,182" AbsoluteLayout.LayoutFlags="XProportional">
+                            <BoxView BackgroundColor="#FFAF00" CornerRadius="10"
+                                     HorizontalOptions="Center"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label HorizontalTextAlignment="Center"
+                                   Text="Workshop" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                <Image Source="EventPoster1.png"
+                       HeightRequest="240" HorizontalOptions="FillAndExpand"
+                       AbsoluteLayout.LayoutBounds="0.5,260" AbsoluteLayout.LayoutFlags="XProportional"/>
+                <Label Margin="8,0"
+                       Text="Interested in sharpening your C# Skills? Stop by PFT and learn the hidden intricacies of C#. You don't need to have prior knowledge of C# to participate. As a bonus, there will be free drinks and pizza!" TextColor="Black"
+                       FontSize="16" FontAttributes="None"
+                       AbsoluteLayout.LayoutBounds="0,520" AbsoluteLayout.LayoutFlags="XProportional"/>
+                
+                 <!-- Time Information -->
+                 <StackLayout Orientation="Horizontal"
+                              AbsoluteLayout.LayoutBounds="0,640" AbsoluteLayout.LayoutFlags="XProportional">
+                    <ImageButton Source="TimeIcon.png"
+                                 WidthRequest="28" HeightRequest="28"/>
+                    <Label Text="Dec 12, 2020 at 5:00pm to 7:00pm" TextColor="#00858F"
+                           TranslationY="4"
+                           FontSize="16" FontAttributes="Bold"/>
+                 </StackLayout>
+                 <!-- Location Information -->
+                 <StackLayout Orientation="Horizontal"
+                              AbsoluteLayout.LayoutBounds="0,670" AbsoluteLayout.LayoutFlags="XProportional">
+                    <ImageButton Source="LocationIcon.png"
+                                 WidthRequest="28" HeightRequest="28"/>
+                    <Label Text="1263 Patrick Taylor Hall" TextColor="#00858F"
+                           TranslationY="4"
+                           FontSize="16" FontAttributes="Bold"/>
+                 </StackLayout>
+
+                 <!-- Interested Button -->
+                 <Button BackgroundColor="#00D1A4"
+                         Text="Interested?" TextColor="White"
+                         FontSize="18" FontAttributes="Bold"
+                         WidthRequest="330" HeightRequest="50" CornerRadius="10"
+                         AbsoluteLayout.LayoutBounds="0.5,750" AbsoluteLayout.LayoutFlags="XProportional"/>
+            </AbsoluteLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

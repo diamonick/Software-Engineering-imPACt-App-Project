@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using imPACt.Models;
+using imPACt.Data;
+using SQLite;
+using System.IO;
 
 namespace imPACt.Pages
 {
