@@ -3,5 +3,25 @@
              x:Class="imPACt.Pages.ContactsPage"
              Title="Contacts">
     <ContentPage.Content>
+        <ScrollView>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <!-- Draw white background -->
+                <BoxView BackgroundColor="White"
+                     HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                     HeightRequest="640"
+                     AbsoluteLayout.LayoutBounds="0,130,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+                <!-- Contacts Layout -->
+                <AbsoluteLayout x:Name="ContactsTemplate"
+                                IsVisible="True" IsEnabled="True"
+                                AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                    <!-- Contacts page display text -->
+                    <Label Text="Contacts"
+                           TextColor="#00858F" FontSize="24" FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           AbsoluteLayout.LayoutBounds="0.5,0.28" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Label>
+                </AbsoluteLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

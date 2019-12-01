@@ -4,9 +4,182 @@
              Title="Mentor Match">
     <ContentPage.Content>
         <AbsoluteLayout>
-            <SearchBar x:Name="MainSearchBar" TextColor="White" BackgroundColor="#00D1A4"
+
+
+            <StackLayout x:Name="MatchLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <SearchBar x:Name="MainSearchBar" TextColor="White" BackgroundColor="#00D1A4"
                        CancelButtonColor="#00858F" 
                        Placeholder="Discover..." PlaceholderColor="White"/>
+
+                <Button x:Name="Match1"
+                    Text="Match 1" TextColor="White"
+                    BackgroundColor="#00D1A4"
+                    ImageSource=""
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"
+                    />
+
+                <Button x:Name="Match2"
+                    Text="Match 2" TextColor="White"
+                    BackgroundColor="#00D1A4"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"/>
+
+                <Button x:Name="Match3"
+                    Text="Match 3" TextColor="White"
+                    BackgroundColor="#00D1A4"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"/>
+
+                <Button x:Name="Match4"
+                    Text="Match 4" TextColor="White"
+                    BackgroundColor="#00D1A4"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"/>
+
+                <Button x:Name="Match5"
+                    Text="Match 5" TextColor="White"
+                    BackgroundColor="#00D1A4"
+                    VerticalOptions="End"
+                    HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
+</ContentPage>
+
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FlexLayoutDemos"
+             x:Class="imPACt.Pages.MatchPage""
+             Title="Mentor Match">
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="#00D1A4" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CornerRadius" Value="15" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="0, 4" />
+        </Style>
+
+        <Style x:Key="headerLabel" TargetType="Label">
+            <Setter Property="Margin" Value="0, 8" />
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="white" />
+        </Style>
+
+        <Style TargetType="Image">
+            <Setter Property="FlexLayout.Order" Value="-1" />
+            <Setter Property="FlexLayout.AlignSelf" Value="Center" />
+            <Setter Property="FlexLayout.CornerRadius" Value="15" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Text" Value="MATCH" />
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="#88bbf2" />
+            <Setter Property="BorderRadius" Value="20" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView Orientation="Both">
+        <FlexLayout>
+            <Frame WidthRequest="300"
+                   HeightRequest="480">
+
+                <FlexLayout Direction="Row">
+                    <Label Text="Match 1 (name)"
+                           Style="{StaticResource headerLabel}" />
+                    <Label Text="Field:" />
+                    <Label Text="Degree:" />
+                    <Label Text="Institution:" />
+                    <Label Text="Interests:" />
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.SeatedMonkey.jpg}"
+                           WidthRequest="180"
+                           HeightRequest="180" />
+                    <Label FlexLayout.Grow="1" />
+                    <Button />
+                </FlexLayout>
+            </Frame>
+
+            <Frame WidthRequest="300"
+                   HeightRequest="480">
+
+                <FlexLayout Direction="Row">
+                    <Label Text="Match 2 (name)"
+                           Style="{StaticResource headerLabel}" />
+                    <Label Text="Field:" />
+                    <Label Text="Degree:" />
+                    <Label Text="Institution:" />
+                    <Label Text="Interests:" />
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.Banana.jpg}"
+                           WidthRequest="240"
+                           HeightRequest="180" />
+                    <Label FlexLayout.Grow="1" />
+                    <Button />
+                </FlexLayout>
+            </Frame>
+
+            <Frame WidthRequest="300"
+                   HeightRequest="480">
+
+                <FlexLayout Direction="Row">
+                    <Label Text="Match 3 (name)"
+                           Style="{StaticResource headerLabel}" />
+                    <Label Text="Field:" />
+                    <Label Text="Degree:" />
+                    <Label Text="Institution:" />
+                    <Label Text="Interests:" />
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.FacePalm.jpg}"
+                           WidthRequest="180"
+                           HeightRequest="180" />
+                    <Label FlexLayout.Grow="1" />
+                    <Button />
+                </FlexLayout>
+            </Frame>
+
+            <Frame WidthRequest="300"
+                   HeightRequest="480">
+
+                <FlexLayout Direction="Row">
+                    <Label Text="Match 4 (name)"
+                           Style="{StaticResource headerLabel}" />
+                    <Label Text="Field:" />
+                    <Label Text="Degree:" />
+                    <Label Text="Institution:" />
+                    <Label Text="Interests:" />
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.FacePalm.jpg}"
+                           WidthRequest="180"
+                           HeightRequest="180" />
+                    <Label FlexLayout.Grow="1" />
+                    <Button />
+                </FlexLayout>
+            </Frame>
+
+            <Frame WidthRequest="300"
+                   HeightRequest="480">
+
+                <FlexLayout Direction="Row">
+                    <Label Text="Match 5 (name)"
+                           Style="{StaticResource headerLabel}" />
+                    <Label Text="Field:" />
+                    <Label Text="Degree:" />
+                    <Label Text="Institution:" />
+                    <Label Text="Interests:" />
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.FacePalm.jpg}"
+                           WidthRequest="180"
+                           HeightRequest="180" />
+                    <Label FlexLayout.Grow="1" />
+                    <Button />
+                </FlexLayout>
+            </Frame>
+            
+            
+        </FlexLayout>
+    </ScrollView>
 </ContentPage>
