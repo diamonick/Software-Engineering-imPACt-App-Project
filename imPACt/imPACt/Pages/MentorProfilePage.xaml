@@ -9,19 +9,24 @@
                 <AbsoluteLayout>
                     <BoxView BackgroundColor="#00858F"
                          AbsoluteLayout.LayoutBounds="0,0,1,170" AbsoluteLayout.LayoutFlags="WidthProportional"/>
-                    <Image
-                           WidthRequest="120" HeightRequest="120"
-                           Source="ProfilePicTemplate.png" Margin="0,25,0,0"
-                           AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    <Frame HasShadow="False" CornerRadius="52"
+                           WidthRequest="64" HeightRequest="64"
+                           IsClippedToBounds="True" TranslationY="32"
+                           HorizontalOptions="Center" VerticalOptions="Center"
+                           AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                           <Image x:Name="ProfilePic" Source="InterestsIcons-06.png"
+                                        Aspect="AspectFill" Margin="-20"
+                                        WidthRequest="56" HeightRequest="56"/>
+                    </Frame>
                         <Button x:Name="FollowButton" Text="Follow"
                                 TextColor="White" FontSize="24" FontAttributes="Bold"
                                 BackgroundColor="#00CFB3"
                                 WidthRequest="120" HeightRequest="50"
                                 AbsoluteLayout.LayoutBounds="0.93,205" AbsoluteLayout.LayoutFlags="XProportional">
                         </Button>
-                    <StackLayout Orientation="Vertical" Spacing="1" Margin="16,24,0,0"
+                    <StackLayout Orientation="Vertical" Spacing="1" Margin="16,24,16,0"
                                  AbsoluteLayout.LayoutBounds="0.25,180" AbsoluteLayout.LayoutFlags="XProportional">
-                        <Label x:Name="UsernameText"
+                        <Label x:Name="FullNameText"
                                Text="Dr. Xavier Forms"
                                TextColor="#00858F" FontSize="24" FontAttributes="Bold"/>
                         <Label x:Name="UniversityText"

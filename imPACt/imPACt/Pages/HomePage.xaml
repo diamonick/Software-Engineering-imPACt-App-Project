@@ -31,7 +31,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="FirstPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -45,7 +45,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="InterestsIcons-06.png"
+                            <ImageButton x:Name="MentorProfile1" Source="InterestsIcons-06.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>
@@ -76,7 +76,7 @@
                                      AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Image Source="TimeIcon.png"
                                          WidthRequest="28" HeightRequest="28"/>
-                            <Label Text="Dec 12, 2020 at 5:00pm to 7:00pm" TextColor="#00858F"
+                            <Label Text="Dec 12, 2019 at 5:00pm to 7:00pm" TextColor="#00858F"
                                    TranslationY="7"
                                    FontSize="12" FontAttributes="Bold"/>
                         </StackLayout>
@@ -99,7 +99,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="SecondPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -113,7 +113,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="InterestsIcons-01.png"
+                            <ImageButton x:Name="MentorProfile2" Source="InterestsIcons-01.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>
@@ -167,7 +167,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="ThirdPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -181,7 +181,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="FloraPortrait.png"
+                            <ImageButton x:Name="MentorProfile3" Source="FloraPortrait.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-30"
                                          WidthRequest="56" HeightRequest="56"/>
@@ -236,7 +236,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="FourthPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -250,7 +250,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="InterestsIcons-09.png"
+                            <ImageButton x:Name="MentorProfile4" Source="InterestsIcons-09.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>
@@ -305,7 +305,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="FifthPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -319,7 +319,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="InterestsIcons-09.png"
+                            <ImageButton x:Name="MentorProfile5" Source="InterestsIcons-09.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>

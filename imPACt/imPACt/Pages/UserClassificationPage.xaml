@@ -5,37 +5,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="imPACt.Pages.UserClassificationPage"
+             Title="User Classification"
              NavigationPage.HasBackButton="True"
              NavigationPage.BackButtonTitle="Classification"
              BackgroundColor="#00858F">
 
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Text="User Classification"
-                   FontSize="18" FontAttributes="Bold"
-                   TextColor="#00CFB3"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
-
     <ContentPage.Content>
        <!-- Scroll View (Able to scroll page) -->
         <ScrollView>
-            <AbsoluteLayout>
-                <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                        <!-- Sub text -->
-                        <Label Text="User Classification"
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <!-- Draw white background -->
+                <BoxView BackgroundColor="White"
+                        HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                        AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                <!-- Sub text -->
+                <Label Text="User Classification"
                        TextColor="White" FontSize="36" FontAttributes="Bold"
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                        AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional">
-                        </Label>
-                    </AbsoluteLayout>
+                </Label>
+                <StackLayout AbsoluteLayout.LayoutBounds="0.5,100" AbsoluteLayout.LayoutFlags="XProportional">
                     <AbsoluteLayout>
                         <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
                                  WidthRequest="375" HeightRequest="42"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
                         <Label Text="Role: " TextColor="White"
-                               FontSize="10" FontAttributes="Bold" TranslationX="-120"
+                               FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="RoleList" Title="Select your role"
                                 SelectedIndexChanged="PickedItem"
@@ -50,7 +46,7 @@
                                  WidthRequest="375" HeightRequest="42"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
                         <Label Text="University: " TextColor="White"
-                               FontSize="10" FontAttributes="Bold" TranslationX="-120"
+                               FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="UniversityList" Title="Select a university"
                                 SelectedIndexChanged="PickedItem"
@@ -65,7 +61,7 @@
                                  WidthRequest="375" HeightRequest="42"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
                         <Label Text="Location: " TextColor="White"
-                               FontSize="10" FontAttributes="Bold" TranslationX="-120"
+                               FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="LocationList" Title="Select a location"
                                 SelectedIndexChanged="PickedItem"
@@ -75,6 +71,7 @@
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
+                    <!--
                     <AbsoluteLayout>
                         <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
                                  WidthRequest="375" HeightRequest="42"
@@ -164,9 +161,9 @@
                                 FontSize="14" FontAttributes="None" TranslationX="60"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
-                    </AbsoluteLayout>
-                </StackLayout>
+                    </AbsoluteLayout> -->
                 
+                </StackLayout>
                 <!-- Next button -->
                     <Button x:Name="COMPLETE" Text="Complete"
                             TextColor="White" FontSize="24" FontAttributes="Bold"
@@ -174,7 +171,7 @@
                             Pressed="HighlightButton" Released="GoToHomeFeedPage"
                             WidthRequest="330" HeightRequest="50"
                             IsEnabled="False" Opacity="0.5"
-                            AbsoluteLayout.LayoutBounds="0.5,1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            AbsoluteLayout.LayoutBounds="0.5,0.8" AbsoluteLayout.LayoutFlags="PositionProportional">
                     </Button>
             </AbsoluteLayout>
         </ScrollView>

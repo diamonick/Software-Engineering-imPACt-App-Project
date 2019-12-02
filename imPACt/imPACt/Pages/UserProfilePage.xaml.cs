@@ -12,7 +12,7 @@ namespace imPACt.Pages
     public partial class UserProfilePage : ContentPage
     {
         private int DescCount = 0;
-        private const int MaxDescLimit = 120;
+        private const int MaxDescLimit = 210;
         private string[] Roles = { "Mentor", "Mentee"};
         private string[] MajorItems = { "Animal Sciences",
                                         "Astronomy",
