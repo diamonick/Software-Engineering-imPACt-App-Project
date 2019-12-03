@@ -197,4 +197,19 @@
     <BundleResource Include="Resources\QubicSharp_ProfilePhoto.png" />
     <BundleResource Include="Resources\SpencerRift_ProfilePhoto.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\0617_NeilDegrasseTyson_Gluekit_oneuseonly.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\elon-musk-twitter-account.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\golden2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\nash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\swh-1-web.jpg" />
+  </ItemGroup>
 </Project>
