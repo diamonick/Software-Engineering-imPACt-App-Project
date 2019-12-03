@@ -191,6 +191,9 @@
     <BundleResource Include="Resources\TimeIcon.png" />
     <BundleResource Include="Resources\LocationIcon.png" />
     <BundleResource Include="Resources\EventPoster1.png" />
+    <BundleResource Include="Resources\EventPoster2.png" />
+    <BundleResource Include="Resources\EventPoster3.png" />
+    <BundleResource Include="Resources\EventPoster4.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\0617_NeilDegrasseTyson_Gluekit_oneuseonly.jpg" />

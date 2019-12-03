@@ -14,6 +14,10 @@ namespace imPACt.Models
         public string University { get; set; }
         public string Classification { get; set; }
         public string Location { get; set; }
+        public string Description { get; set; }
+        public string Major { get; set; }
+        public string Minor { get; set; }
+        public string ProfilePhoto { get; set; }
         public string Role { get; set; } //"Mentee" or "Mentor"
         //public String[] Interests { get; set; }
     }

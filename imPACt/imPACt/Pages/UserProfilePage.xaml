@@ -18,7 +18,7 @@
                         <Label x:Name="FullNameText"
                                Text="Diamonick Dunn" HorizontalOptions="Center"
                                TextColor="White" FontSize="32" FontAttributes="Bold"/>
-                        <Label x:Name="Description" Padding="32,0"
+                        <Label x:Name="Description" Margin="16,0"
                                Text="" HorizontalOptions="Center"
                                TextColor="White" FontSize="16" FontAttributes="None"/>
                     </StackLayout>
@@ -42,9 +42,9 @@
                         <Label Text="Full Name: " TextColor="White" HorizontalTextAlignment="Start"
                                FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Entry BackgroundColor="White" WidthRequest="210" HeightRequest="28"
-                               Text="Alan Turing" TextColor="Black" HorizontalTextAlignment="Start" HorizontalOptions="End"
-                               FontSize="18" FontAttributes="None" TranslationX="60"
+                        <Entry x:Name="PersonalName" BackgroundColor="White" WidthRequest="210" HeightRequest="28"
+                               Text="" TextColor="Black" HorizontalTextAlignment="Start" HorizontalOptions="End"
+                               FontSize="18" FontAttributes="None" TranslationX="60" IsReadOnly="True"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     </AbsoluteLayout>
                     <AbsoluteLayout>
@@ -54,9 +54,9 @@
                         <Label Text="Email: " TextColor="White"
                                FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Entry BackgroundColor="White" WidthRequest="210" HeightRequest="28"
-                               Text="aturing64@lsu.edu" TextColor="Black" HorizontalTextAlignment="Start" HorizontalOptions="End"
-                               FontSize="18" FontAttributes="None" TranslationX="60"
+                        <Entry x:Name="PersonalEmail" BackgroundColor="White" WidthRequest="210" HeightRequest="28"
+                               Text="" TextColor="Black" HorizontalTextAlignment="Start" HorizontalOptions="End"
+                               FontSize="18" FontAttributes="None" TranslationX="60" IsReadOnly="True"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     </AbsoluteLayout>
                     <AbsoluteLayout>
@@ -66,9 +66,9 @@
                         <Label Text="Password: " TextColor="White"
                                FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Entry BackgroundColor="White" WidthRequest="210" HeightRequest="28"
-                               Text="SeeSharp" TextColor="Black" HorizontalTextAlignment="Start" HorizontalOptions="End"
-                               FontSize="18" FontAttributes="None" TranslationX="60" IsPassword="True"
+                        <Entry x:Name="PersonalPassword" BackgroundColor="White" WidthRequest="210" HeightRequest="28"
+                               Text="" TextColor="Black" HorizontalTextAlignment="Start" HorizontalOptions="End"
+                               FontSize="18" FontAttributes="None" TranslationX="60" IsPassword="True" IsReadOnly="True"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     </AbsoluteLayout>
                     <Label Margin="0,25,0,0"
@@ -83,8 +83,8 @@
                         <Label Text="Role: " TextColor="White"
                                FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Entry BackgroundColor="White" WidthRequest="210" HeightRequest="28"
-                               Text="Mentee" TextColor="Black" HorizontalTextAlignment="Start" HorizontalOptions="End"
+                        <Entry x:Name="PersonalRole" BackgroundColor="White" WidthRequest="210" HeightRequest="28"
+                               Text="" TextColor="Black" HorizontalTextAlignment="Start" HorizontalOptions="End"
                                FontSize="18" FontAttributes="None" TranslationX="60" IsReadOnly="True"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     </AbsoluteLayout>
@@ -96,6 +96,7 @@
                                FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="MajorList" Title="Select a major"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="210" HeightRequest="28"
                                 HorizontalOptions="End"
                                 FontSize="18" FontAttributes="None" TranslationX="60"
@@ -110,6 +111,7 @@
                                FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="MinorList" Title="Select a minor"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="210" HeightRequest="28"
                                 HorizontalOptions="End"
                                 FontSize="18" FontAttributes="None" TranslationX="60"
@@ -124,6 +126,7 @@
                                FontSize="18" FontAttributes="Bold" TranslationX="-120"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                             <Picker x:Name="UniversityList" Title="Select your University"
+                                SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="210" HeightRequest="28"
                                 HorizontalOptions="End"
                                 FontSize="18" FontAttributes="None" TranslationX="60"
@@ -132,16 +135,16 @@
                         </AbsoluteLayout>
                         <AbsoluteLayout>
                         <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
-                                 WidthRequest="360" HeightRequest="180"
+                                 WidthRequest="360" HeightRequest="224"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
-                        <Editor x:Name="DescriptionEntry" BackgroundColor="White" WidthRequest="336" HeightRequest="120"
+                        <Editor x:Name="DescriptionEntry" BackgroundColor="White" WidthRequest="336" HeightRequest="160"
                                 Text=""
                                 TextColor="Black" HorizontalOptions="End"
-                                FontSize="16" FontAttributes="None" MaxLength="120"
+                                FontSize="16" FontAttributes="None" MaxLength="210"
                                 TextChanged="UpdateUserDescription"
-                                AbsoluteLayout.LayoutBounds="0.5,0.7" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                                AbsoluteLayout.LayoutBounds="0.5,0.64" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Label x:Name="DescriptionLimit" TextColor="#00D1A4" HorizontalTextAlignment="Start"
-                               FontSize="18" FontAttributes="None" TranslationX="-132" TranslationY="56"
+                               FontSize="18" FontAttributes="None" TranslationX="-132" TranslationY="75"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Label Text="Description: " TextColor="White"
                                FontSize="18" FontAttributes="Bold" TranslationX="-114" TranslationY="16"

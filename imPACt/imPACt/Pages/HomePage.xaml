@@ -31,7 +31,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="FirstPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -45,7 +45,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="InterestsIcons-06.png"
+                            <ImageButton x:Name="MentorProfile1" Source="InterestsIcons-06.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>
@@ -54,7 +54,7 @@
                                      HorizontalOptions="Start" TranslationX="-5"
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
-                                   Text="Qubic Sharp &#183; 4 days ago" TextColor="#575757"
+                                   Text="Qubic Sharp" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
                                    Text="Sharpen Your C# Skills" TextColor="Black"
@@ -76,7 +76,7 @@
                                      AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Image Source="TimeIcon.png"
                                          WidthRequest="28" HeightRequest="28"/>
-                            <Label Text="Dec 12, 2020 at 5:00pm to 7:00pm" TextColor="#00858F"
+                            <Label Text="Dec 12, 2019 at 5:00pm to 7:00pm" TextColor="#00858F"
                                    TranslationY="7"
                                    FontSize="12" FontAttributes="Bold"/>
                         </StackLayout>
@@ -99,7 +99,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="SecondPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -113,7 +113,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="InterestsIcons-01.png"
+                            <ImageButton x:Name="MentorProfile2" Source="InterestsIcons-01.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>
@@ -122,7 +122,7 @@
                                      HorizontalOptions="Start" TranslationX="27"
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
-                                   Text="Spencer Rift &#183; 4 days ago" TextColor="#575757"
+                                   Text="Spencer Rift" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
                                    Text="The Potential of Virtual Reality" TextColor="Black"
@@ -144,7 +144,7 @@
                                      AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Image Source="TimeIcon.png"
                                          WidthRequest="28" HeightRequest="28"/>
-                            <Label Text="Dec 19, 2020 at 5:00pm to 6:20pm" TextColor="#00858F"
+                            <Label Text="Dec 19, 2019 at 5:00pm to 6:20pm" TextColor="#00858F"
                                    TranslationY="7"
                                    FontSize="12" FontAttributes="Bold"/>
                         </StackLayout>
@@ -167,7 +167,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="ThirdPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -181,7 +181,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="FloraPortrait.png"
+                            <ImageButton x:Name="MentorProfile3" Source="FloraPortrait.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-30"
                                          WidthRequest="56" HeightRequest="56"/>
@@ -191,7 +191,7 @@
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
                                    HorizontalOptions="Start"
-                                   Text="Flora O'Connor &#183; 1 month ago" TextColor="#575757"
+                                   Text="Flora O'Connor" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
                                    Text="LSU Global Game Jam 2020" TextColor="Black"
@@ -236,7 +236,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="FourthPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -250,20 +250,20 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="InterestsIcons-09.png"
+                            <ImageButton x:Name="MentorProfile4" Source="InterestsIcons-09.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>
                         </Frame>
                         <StackLayout Orientation="Vertical"
-                                     HorizontalOptions="Start" TranslationX="36"
+                                     HorizontalOptions="Start" TranslationX="18"
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
                                    HorizontalOptions="Start"
-                                   Text="Dr. Earl Logg &#183; 1 week ago" TextColor="#575757"
+                                   Text="Dr. Earl Logg" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
-                                   Text="Importance of Software Testing" TextColor="Black"
+                                   Text="The Importance of Software&#10;Testing" TextColor="Black"
                                    FontSize="18" FontAttributes="Bold"/>
                         </StackLayout>
                         <AbsoluteLayout TranslationX="124"
@@ -305,7 +305,7 @@
                                  WidthRequest="380" HeightRequest="144"
                                  TranslationX="3" TranslationY="3"
                                  AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Button Pressed="PressedEvent" Released="GoToEventPage"
+                        <Button x:Name="FifthPostButton" Pressed="PressedEvent" Released="GoToEventPage"
                                 BackgroundColor="White"
                                 HorizontalOptions="Center" CornerRadius="16"
                                 WidthRequest="380" HeightRequest="144"
@@ -319,7 +319,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton Source="InterestsIcons-09.png"
+                            <ImageButton x:Name="MentorProfile5" Source="InterestsIcons-09.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>
@@ -329,7 +329,7 @@
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
                                    HorizontalOptions="Start"
-                                   Text="Dr. Earl Logg &#183; 2 weeks ago" TextColor="#575757"
+                                   Text="Dr. Earl Logg" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
                                    Text="Git Gud at GitHub" TextColor="Black"

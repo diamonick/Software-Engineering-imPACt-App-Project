@@ -13,6 +13,7 @@ namespace imPACt.Data
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<User>().Wait();
+            _database.CreateTableAsync<Event>().Wait();
         }
 
         public Task<List<User>> GetUsersAsync()
@@ -49,6 +50,30 @@ namespace imPACt.Data
         public Task<int> DeleteUserAsync(User User)
         {
             return _database.DeleteAsync(User);
+        }
+
+        public Task<int> SaveEventAsync(Event Event)
+        {
+            if (Event.ID != 0)
+            {
+                return _database.UpdateAsync(Event);
+            }
+            else
+            {
+                return _database.InsertAsync(Event);
+            }
+        }
+
+        public Task<Event> GetEventByKeyword(string keyword)
+        {
+            return _database.Table<Event>()
+                            .Where(i => i.Keyword == keyword)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<int> DeleteEventAsync(Event Event)
+        {
+            return _database.DeleteAsync(Event);
         }
     }
 }

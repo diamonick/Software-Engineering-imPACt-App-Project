@@ -47,7 +47,10 @@ namespace imPACt.Pages
 
             SU_FullName.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             SU_Email.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
+            SU_Password.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
+            SU_ConfirmPassword.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             LI_Email.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
+            LI_Password.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             SU_ShowPasswordIcon.Source = "NotVisibleIcon.png";
 
             //Testing Purposes (will not appear in final product)
@@ -360,7 +363,7 @@ namespace imPACt.Pages
             {
                 Name = SU_FullName.Text,
                 Email = SU_Email.Text,
-                Password = SU_Password.Text
+                Password = SU_Password.Text,
             };
             
             await Navigation.PushAsync(new FeedPage(newUser));
@@ -370,13 +373,13 @@ namespace imPACt.Pages
         //Check User DB to see if user exists
         async void ClickSignIn(object sender, EventArgs e)
         {
-            var user = await App.Database.GetUserByEmail(LI_Email.Text);
+            User user = await App.Database.GetUserByEmail(LI_Email.Text);
             if (user == null)
                 await DisplayAlert("User Not Found", "A user with that email does not exist!", "Back");
             else if (user.Password == LI_Password.Text)
             {
                 App.currentUserID = user.ID;
-                await Navigation.PushAsync(new HomeFeedPage());
+                await Navigation.PushAsync(new HomeFeedPage(user));
             }
             else
                 await DisplayAlert("Invalid User", "Wrong Username or Password", "Back");

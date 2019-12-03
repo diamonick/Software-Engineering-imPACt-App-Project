@@ -5,17 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="imPACt.Pages.UserInterestsPage"
+             Title="Matching Interests"
              NavigationPage.HasBackButton="True"
              NavigationPage.BackButtonTitle="Interests"
              BackgroundColor="#00858F">
 
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Text="Matching Interests"
-                   FontSize="18" FontAttributes="Bold"
-                   TextColor="#00CFB3"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
     <ContentPage.Content>
         <!-- Scroll View (Able to scroll page) -->
         <ScrollView>
