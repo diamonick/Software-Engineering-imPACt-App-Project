@@ -100,8 +100,8 @@ namespace imPACt.Pages
                                                     "Researcher"
         };
 
-        //Pick from a string of degrees
-        private string[] DegreeItems = {   "N/A",
+        //Pick from a string of Majors
+        private string[] MajorItems = {             "Undecided",
                                                     "Animal Sciences",
                                                     "Astronomy",
                                                     "Biochemistry",
@@ -136,6 +136,118 @@ namespace imPACt.Pages
                                                     "Petroleum Engineering",
                                                     "Software Engineering"
         };
+
+        //Pick from a string of Minors
+        private string[] MinorItems = { "N/A",
+                                        "Aerospace Engineering",
+                                        "Aerospace Studies",
+                                        "African & African American Studies",
+                                        "Agricultural Business",
+                                        "Agricultural Communication",
+                                        "Agricultural Pest Management",
+                                        "Agriculture",
+                                        "Agronomy",
+                                        "Animal, Dairy & Poultry Sciences",
+                                        "Anthropology",
+                                        "Applied Statistics",
+                                        "Aquaculture",
+                                        "Arabic Studies",
+                                        "Architectural History",
+                                        "Art History",
+                                        "Arts Administration",
+                                        "Asian Studies",
+                                        "Biological Engineering",
+                                        "Biological Sciences",
+                                        "Business Administration",
+                                        "Ceramics",
+                                        "Chemistry",
+                                        "Chinese",
+                                        "Classical Civilization",
+                                        "Coach Education",
+                                        "Communication Sciences and Disorders",
+                                        "Communication Studies",
+                                        "Community Design",
+                                        "Computer Science",
+                                        "Construction Management",
+                                        "Dance",
+                                        "Digital Media AVATAR Arts",
+                                        "Digital Media Arts & Engineering-Technology",
+                                        "Disaster Science & Management",
+                                        "E-Commerce Engineering",
+                                        "Economics",
+                                        "Electrical & Computer Engineering",
+                                        "Energy",
+                                        "English",
+                                        "Entomology",
+                                        "Entrepreneurship",
+                                        "Environmental Engineering",
+                                        "Environmental Management Systems",
+                                        "Environmental Sciences",
+                                        "Environmental Toxicology",
+                                        "Extension Education",
+                                        "Fine Art",
+                                        "Fisheries",
+                                        "Forestry",
+                                        "French",
+                                        "Geographic Information Systems (GIS)",
+                                        "Geography",
+                                        "Geology",
+                                        "German",
+                                        "Greek",
+                                        "Health Science - Kinesiology",
+                                        "Health Science - School Health",
+                                        "Heritage Conservation",
+                                        "History",
+                                        "Horticulture",
+                                        "Human Nutrition",
+                                        "Information Technology Management",
+                                        "Internal Auditing",
+                                        "International Automotive Engineering",
+                                        "International Studies",
+                                        "Italian",
+                                        "Jewish Studies",
+                                        "LGBTQ Studies",
+                                        "Latin",
+                                        "Leadership Development",
+                                        "Library Science",
+                                        "Linguistics",
+                                        "Mass Communication",
+                                        "Materials Science & Engineering",
+                                        "Mathematics",
+                                        "Mechanical Engineering",
+                                        "Music",
+                                        "Nuclear Power Engineering",
+                                        "Nuclear Science",
+                                        "Oceanography & Coastal Sciences",
+                                        "Painting & Drawing",
+                                        "Personal Investing",
+                                        "Philosophy",
+                                        "Photography",
+                                        "Physical Activity and Health",
+                                        "Physical Theatre",
+                                        "Physics",
+                                        "Plant Biotechnology and Crop Development",
+                                        "Political Communication",
+                                        "Political Science",
+                                        "Printmaking",
+                                        "Professional Leadership",
+                                        "Psychology",
+                                        "Religious Studies",
+                                        "Robotics Engineering",
+                                        "Screen Arts",
+                                        "Sculpture",
+                                        "Social Work",
+                                        "Sociology",
+                                        "Spanish",
+                                        "Special Education",
+                                        "Sport Studies",
+                                        "Structural Engineering",
+                                        "Sugar Engineering",
+                                        "Surveying",
+                                        "Technical Sales",
+                                        "Textiles, Apparel & Merchandising",
+                                        "Theatre",
+                                        "Transportation Engineering"};
 
         //private string Institution = "";        //String from institution entry
         //private string Location = "";           //String from location entry
@@ -173,6 +285,18 @@ namespace imPACt.Pages
                 LocationList.Items.Add(i);
             }
 
+            //Add all items from Major items to the Major list
+            foreach (string i in MajorItems)
+            {
+                MajorList.Items.Add(i);
+            }
+
+            //Add all items from Minor items to the Minor list
+            foreach (string i in MinorItems)
+            {
+                MinorList.Items.Add(i);
+            }
+
             //Add all items from Classification items to the Classification list
             //foreach (string i in ClassificationItems)
             //{
@@ -189,6 +313,7 @@ namespace imPACt.Pages
             //    ProspectiveDegreeList.Items.Add(i);
             //}
 
+            MinorList.SelectedIndex = 0;
             CheckFields();
         }
 
@@ -207,7 +332,8 @@ namespace imPACt.Pages
         {
             if (RoleList.SelectedIndex != -1
                 && UniversityList.SelectedIndex != -1
-                && LocationList.SelectedIndex != -1)
+                && LocationList.SelectedIndex != -1
+                && MajorList.SelectedIndex != -1)
             {
                 COMPLETE.IsEnabled = true;
                 COMPLETE.Opacity = 1.0;
@@ -242,6 +368,8 @@ namespace imPACt.Pages
             this.newUser.Role = (string)RoleList.SelectedItem;
             this.newUser.University = (string)UniversityList.SelectedItem;
             this.newUser.Location = (string)LocationList.SelectedItem;
+            this.newUser.Major = (string)MajorList.SelectedItem;
+            this.newUser.Minor = (string)MinorList.SelectedItem;
 
             //Add preset mentors to database
             User mentor1 = new User
@@ -312,20 +440,45 @@ namespace imPACt.Pages
                 Location = "Royal Cotillion Ballroom",
                 NumAttendees = 77
             };
+            Event event3 = new Event
+            {
+                Keyword = "GGJ",
+                Title = "LSU Global Game Jam 2020",
+                Type = "Event",
+                Photo = "EventPoster3.png",
+                Summary = "LSU is hosting its 6th Global Game Jam in January. We pick a theme, you design a game based " +
+                          "on said theme, and have a playable demo ready in 48 hours. It costs 30$ per person so register ASAP. " +
+                          "I highly recommend anyone interested in game development to participate! It's a great learning experience! :D",
+                EventDateTime = "Jan 31 to Feb 2, 2020",
+                Location = "LSU Digital Media Center",
+                NumAttendees = 36
+            };
+            Event event4 = new Event
+            {
+                Keyword = "Testing",
+                Title = "The Importance of Software Testing",
+                Type = "Seminar",
+                Photo = "EventPoster4.png",
+                Summary = "Software bugs may look harmless at first, but bugs are dangerous and expensive. Small bugs in code could " +
+                          "potentially cause companies to lose money, customer satisfaction, and more. I'll be lecturing about why we " +
+                          "need software testing and the numerous types of testing.",
+                EventDateTime = "Mar 27, 2020 at 3:00pm to 4:20pm",
+                Location = "1263 Patrick Taylor Hall",
+                NumAttendees = 60
+            };
 
-
-            await App.Database.DeleteEventAsync(Event1);
-            await App.Database.DeleteEventAsync(Event2);
 
             //Save Event to Database
             await App.Database.SaveEventAsync(event1);
             await App.Database.SaveEventAsync(event2);
+            await App.Database.SaveEventAsync(event3);
+            await App.Database.SaveEventAsync(event4);
 
             //Save New User to Database
             await App.Database.SaveUserAsync(this.newUser);
             //Current User is now New User
             App.currentUserID = this.newUser.ID;
-            await Navigation.PushAsync(new HomeFeedPage());
+            await Navigation.PushAsync(new HomeFeedPage(this.newUser));
         }
     }
 }

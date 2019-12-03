@@ -20,12 +20,16 @@ namespace imPACt.Pages
         User Mentor4;
         Event Event1;
         Event Event2;
+        Event Event3;
+        Event Event4;
         private const string MentorEmail1 = "qsharp55@lsu.edu";
         private const string MentorEmail2 = "srift16@lsu.edu";
         private const string MentorEmail3 = "foconnor24@lsu.edu";
         private const string MentorEmail4 = "elogg22@lsu.edu";
         private const string EventKeyword1 = "C#";
         private const string EventKeyword2 = "VirtualReality";
+        private const string EventKeyword3 = "GGJ";
+        private const string EventKeyword4 = "Testing";
 
         List<string> Words = new List<string>
         { "" };
@@ -52,6 +56,8 @@ namespace imPACt.Pages
         {
             Event1 = await App.Database.GetEventByKeyword(EventKeyword1);
             Event2 = await App.Database.GetEventByKeyword(EventKeyword2);
+            Event3 = await App.Database.GetEventByKeyword(EventKeyword3);
+            Event4 = await App.Database.GetEventByKeyword(EventKeyword4);
         }
 
         async void PressedEvent(object sender, EventArgs args)
@@ -82,12 +88,12 @@ namespace imPACt.Pages
             else if (button == ThirdPostButton)
             {
                 await ThirdPost.ScaleTo(1.0, 200, Easing.SinOut);
-                await Navigation.PushAsync(new EventPage(Mentor3, Event1));
+                await Navigation.PushAsync(new EventPage(Mentor3, Event3));
             }
             else if (button == FourthPostButton)
             {
                 await FourthPost.ScaleTo(1.0, 200, Easing.SinOut);
-                await Navigation.PushAsync(new EventPage(Mentor4, Event1));
+                await Navigation.PushAsync(new EventPage(Mentor4, Event4));
             }
             else if (button == FifthPostButton)
             {

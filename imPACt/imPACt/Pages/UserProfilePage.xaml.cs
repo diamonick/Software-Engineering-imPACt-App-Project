@@ -11,10 +11,12 @@ namespace imPACt.Pages
 {
     public partial class UserProfilePage : ContentPage
     {
+        User newUser;
         private int DescCount = 0;
         private const int MaxDescLimit = 210;
         private string[] Roles = { "Mentor", "Mentee"};
-        private string[] MajorItems = { "Animal Sciences",
+        private string[] MajorItems = { "Undecided",
+                                        "Animal Sciences",
                                         "Astronomy",
                                         "Biochemistry",
                                         "Biological Chemistry",
@@ -48,7 +50,8 @@ namespace imPACt.Pages
                                         "Petroleum Engineering",
                                         "Software Engineering"};
 
-        private string[] MinorItems = { "Aerospace Engineering",
+        private string[] MinorItems = { "N/A",
+                                        "Aerospace Engineering",
                                         "Aerospace Studies",
                                         "African & African American Studies",
                                         "Agricultural Business",
@@ -174,9 +177,10 @@ namespace imPACt.Pages
                                                 "Vanderbilt University"
         };
 
-        public UserProfilePage()
+        public UserProfilePage(User u)
         {
             InitializeComponent();
+            this.newUser = u;
 
             DescriptionLimit.Text = DescCount + "/" + MaxDescLimit;
 
@@ -197,13 +201,51 @@ namespace imPACt.Pages
             {
                 UniversityList.Items.Add(i);
             }
+
+            LoadUser();
         }
 
-        void UpdateUserDescription (object sender, EventArgs args)
+        void LoadUser()
+        {
+            int MajorIndex = -1;
+            int MinorIndex = -1;
+            int UniversityIndex = -1;
+
+            FullNameText.Text = newUser.Name;
+            PersonalName.Text = newUser.Name;
+            PersonalEmail.Text = newUser.Email;
+            PersonalPassword.Text = newUser.Password;
+            if (newUser.Description == null) { DescriptionEntry.Text = ""; }
+            else { DescriptionEntry.Text = newUser.Description; }
+            PersonalRole.Text = newUser.Role;
+            MajorIndex = MajorList.Items.IndexOf(newUser.Major);
+            MinorIndex = MinorList.Items.IndexOf(newUser.Minor);
+            UniversityIndex = UniversityList.Items.IndexOf(newUser.University);
+
+            MajorList.SelectedIndex = MajorIndex;
+            MinorList.SelectedIndex = MinorIndex;
+            UniversityList.SelectedIndex = UniversityIndex;
+        }
+
+        async void PickedItem(object sender, EventArgs args)
+        {
+            var picker = (Picker)sender;
+
+            if (picker == MajorList) { newUser.Major = (string)MajorList.SelectedItem; }
+            else if (picker == MinorList) { newUser.Minor = (string)MinorList.SelectedItem; }
+            else if (picker == UniversityList) { newUser.University = (string)UniversityList.SelectedItem; }
+
+            await App.Database.SaveUserAsync(newUser);
+        }
+
+        async void UpdateUserDescription (object sender, EventArgs args)
         {
             Description.Text = DescriptionEntry.Text;
+            newUser.Description = DescriptionEntry.Text;
             DescCount = DescriptionEntry.Text.Length;
             DescriptionLimit.Text = DescCount + "/" + MaxDescLimit;
+
+            await App.Database.SaveUserAsync(newUser);
         }
 
     }

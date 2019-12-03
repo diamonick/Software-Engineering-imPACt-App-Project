@@ -71,6 +71,36 @@
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
+                    <AbsoluteLayout>
+                        <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
+                                 WidthRequest="375" HeightRequest="42"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Label Text="Major: " TextColor="White"
+                               FontSize="18" FontAttributes="Bold" TranslationX="-120"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Picker x:Name="MajorList" Title="Select a major"
+                                SelectedIndexChanged="PickedItem"
+                                BackgroundColor="White" WidthRequest="200" HeightRequest="28"
+                                HorizontalOptions="End"
+                                FontSize="14" FontAttributes="None" TranslationX="60"
+                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Picker>
+                    </AbsoluteLayout>
+                    <AbsoluteLayout>
+                        <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"
+                                 WidthRequest="375" HeightRequest="42"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Label Text="Minor: " TextColor="White"
+                               FontSize="18" FontAttributes="Bold" TranslationX="-120"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Picker x:Name="MinorList" Title="Select a minor (optional)"
+                                SelectedIndexChanged="PickedItem"
+                                BackgroundColor="White" WidthRequest="200" HeightRequest="28"
+                                HorizontalOptions="End"
+                                FontSize="14" FontAttributes="None" TranslationX="60"
+                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Picker>
+                    </AbsoluteLayout>
                     <!--
                     <AbsoluteLayout>
                         <BoxView BackgroundColor="#00D1A4" CornerRadius="21" HorizontalOptions="Center"

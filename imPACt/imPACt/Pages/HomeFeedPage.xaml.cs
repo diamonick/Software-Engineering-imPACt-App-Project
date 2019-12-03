@@ -1,25 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using imPACt.Models;
 using Xamarin.Forms;
-using Xamarin.Essentials;
+using Xamarin.Forms.Xaml;
+using SQLite;
 
 namespace imPACt.Pages
 {
     public partial class HomeFeedPage : MasterDetailPage
     {
+        User newUser;
         private const double PressedSize = 1.1;                     //Size of button when pressed
         private Color ActiveColor = Color.FromRgb(0, 179, 176);
         private Color InactiveColor = Color.FromRgb(0, 45, 48);
 
-        public HomeFeedPage()
+        public HomeFeedPage(User u)
         {
             InitializeComponent();
+            this.newUser = u;
 
             HomeNode.IsVisible = false;
             MatchNode.IsVisible = false;
             ContactsNode.IsVisible = false;
             SettingsNode.IsVisible = false;
+
+            FullNameText.Text = newUser.Name;
 
             Detail = new NavigationPage(new HomePage());
             IsPresented = false;
@@ -111,7 +119,7 @@ namespace imPACt.Pages
             ContactsButton.BackgroundColor = InactiveColor;
             SettingsButton.BackgroundColor = InactiveColor;
 
-            Detail = new NavigationPage(new UserProfilePage());
+            Detail = new NavigationPage(new UserProfilePage(this.newUser));
             IsPresented = false;
         }
     }

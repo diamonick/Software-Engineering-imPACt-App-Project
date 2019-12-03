@@ -54,7 +54,7 @@
                                      HorizontalOptions="Start" TranslationX="-5"
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
-                                   Text="Qubic Sharp &#183; 4 days ago" TextColor="#575757"
+                                   Text="Qubic Sharp" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
                                    Text="Sharpen Your C# Skills" TextColor="Black"
@@ -122,7 +122,7 @@
                                      HorizontalOptions="Start" TranslationX="27"
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
-                                   Text="Spencer Rift &#183; 4 days ago" TextColor="#575757"
+                                   Text="Spencer Rift" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
                                    Text="The Potential of Virtual Reality" TextColor="Black"
@@ -144,7 +144,7 @@
                                      AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Image Source="TimeIcon.png"
                                          WidthRequest="28" HeightRequest="28"/>
-                            <Label Text="Dec 19, 2020 at 5:00pm to 6:20pm" TextColor="#00858F"
+                            <Label Text="Dec 19, 2019 at 5:00pm to 6:20pm" TextColor="#00858F"
                                    TranslationY="7"
                                    FontSize="12" FontAttributes="Bold"/>
                         </StackLayout>
@@ -191,7 +191,7 @@
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
                                    HorizontalOptions="Start"
-                                   Text="Flora O'Connor &#183; 1 month ago" TextColor="#575757"
+                                   Text="Flora O'Connor" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
                                    Text="LSU Global Game Jam 2020" TextColor="Black"
@@ -256,14 +256,14 @@
                                          WidthRequest="56" HeightRequest="56"/>
                         </Frame>
                         <StackLayout Orientation="Vertical"
-                                     HorizontalOptions="Start" TranslationX="36"
+                                     HorizontalOptions="Start" TranslationX="18"
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
                                    HorizontalOptions="Start"
-                                   Text="Dr. Earl Logg &#183; 1 week ago" TextColor="#575757"
+                                   Text="Dr. Earl Logg" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
-                                   Text="Importance of Software Testing" TextColor="Black"
+                                   Text="The Importance of Software&#10;Testing" TextColor="Black"
                                    FontSize="18" FontAttributes="Bold"/>
                         </StackLayout>
                         <AbsoluteLayout TranslationX="124"
@@ -329,7 +329,7 @@
                                      AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Label HorizontalTextAlignment="Start"
                                    HorizontalOptions="Start"
-                                   Text="Dr. Earl Logg &#183; 2 weeks ago" TextColor="#575757"
+                                   Text="Dr. Earl Logg" TextColor="#575757"
                                    FontSize="12" FontAttributes="None"/>
                             <Label HorizontalTextAlignment="Start"
                                    Text="Git Gud at GitHub" TextColor="Black"
