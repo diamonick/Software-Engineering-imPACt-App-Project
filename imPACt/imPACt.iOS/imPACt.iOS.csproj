@@ -207,9 +207,6 @@
     <BundleResource Include="Resources\golden2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\nash.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\swh-1-web.jpg" />
   </ItemGroup>
 </Project>

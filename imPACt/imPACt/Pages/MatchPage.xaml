@@ -2,7 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FlexLayoutDemos"
              x:Class="imPACt.Pages.MatchPage"
-             Title = "Mentor Match">
+             Title="Mentor Match">
+    <!--
     <ContentPage.Resources>
         <Style TargetType="Frame">
             <Setter Property="BackgroundColor" Value="#00D1A4" />
@@ -23,6 +24,7 @@
         <Style TargetType="Image">
             <Setter Property="FlexLayout.Order" Value="-1" />
             <Setter Property="FlexLayout.AlignSelf" Value="Center" />
+            <Setter Property="FlexLayout.CornerRadius" Value="15" />
         </Style>
 
         <Style TargetType="Button">
@@ -36,11 +38,6 @@
 
     <ScrollView Orientation="Both">
         <FlexLayout>
-
-            <SearchBar x:Name="MainSearchBar" TextColor="White" BackgroundColor="#00D1A4"
-                       CancelButtonColor="#00858F" 
-                       Placeholder="Discover..." PlaceholderColor="White"/>
-
             <Frame WidthRequest="300"
                    HeightRequest="480">
 
@@ -51,7 +48,7 @@
                     <Label Text="Degree:" />
                     <Label Text="Institution:" />
                     <Label Text="Interests:" />
-                    <Image Source="swh-1-web.jpg"
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.SeatedMonkey.jpg}"
                            WidthRequest="180"
                            HeightRequest="180" />
                     <Label FlexLayout.Grow="1" />
@@ -69,7 +66,7 @@
                     <Label Text="Degree:" />
                     <Label Text="Institution:" />
                     <Label Text="Interests:" />
-                    <Image Source="0617_NeilDegrasseTyson_Gluekit_oneuseonly.jpg"
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.Banana.jpg}"
                            WidthRequest="240"
                            HeightRequest="180" />
                     <Label FlexLayout.Grow="1" />
@@ -87,7 +84,7 @@
                     <Label Text="Degree:" />
                     <Label Text="Institution:" />
                     <Label Text="Interests:" />
-                    <Image Source="nash.png"
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.FacePalm.jpg}"
                            WidthRequest="180"
                            HeightRequest="180" />
                     <Label FlexLayout.Grow="1" />
@@ -105,7 +102,7 @@
                     <Label Text="Degree:" />
                     <Label Text="Institution:" />
                     <Label Text="Interests:" />
-                    <Image Source="golden2.jpg"
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.FacePalm.jpg}"
                            WidthRequest="180"
                            HeightRequest="180" />
                     <Label FlexLayout.Grow="1" />
@@ -123,15 +120,15 @@
                     <Label Text="Degree:" />
                     <Label Text="Institution:" />
                     <Label Text="Interests:" />
-                    <Image Source="elon-musk-twitter-account.jpg"
+                    <Image Source="{local:ImageResource FlexLayoutDemos.Images.FacePalm.jpg}"
                            WidthRequest="180"
                            HeightRequest="180" />
                     <Label FlexLayout.Grow="1" />
                     <Button />
                 </FlexLayout>
             </Frame>
-
-
+            
+            
         </FlexLayout>
-    </ScrollView>
+    </ScrollView> -->
 </ContentPage>
