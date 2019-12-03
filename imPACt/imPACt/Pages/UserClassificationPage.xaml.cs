@@ -375,22 +375,22 @@ namespace imPACt.Pages
             User mentor1 = new User
             {
                 Name = "Qubic Sharp",
-                Email = "qsharp55@lsu.edu",
+                Email = "qsharp56@lsu.edu",
                 Password = "SeeSharp",
                 Classification = "Professor",
                 Description = "My name is Qubic C. Sharp. I'm a LSU professor who specializes in C# programming " +
                               "and mobile app development. Feel free to stop by my office when you get the chance.",
-                ProfilePhoto = "InterestsIcons-06.png"
+                ProfilePhoto = "QubicSharp_ProfilePhoto.png"
             };
             User mentor2 = new User
             {
                 Name = "Spencer Rift",
-                Email = "srift16@lsu.edu",
+                Email = "srift17@lsu.edu",
                 Password = "ILoveVR500",
                 Classification = "Graduate",
                 Description = "Howdy howdy! I'm Specner Rift! I'm an avid fan of virtual reality (VR) and " +
                               "augmented reality (AR).",
-                ProfilePhoto = "InterestsIcons-01.png"
+                ProfilePhoto = "SpencerRift_ProfilePhoto.png"
             };
             User mentor3 = new User
             {
@@ -466,7 +466,6 @@ namespace imPACt.Pages
                 Location = "1263 Patrick Taylor Hall",
                 NumAttendees = 60
             };
-
 
             //Save Event to Database
             await App.Database.SaveEventAsync(event1);

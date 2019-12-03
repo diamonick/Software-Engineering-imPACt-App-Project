@@ -194,5 +194,7 @@
     <BundleResource Include="Resources\EventPoster2.png" />
     <BundleResource Include="Resources\EventPoster3.png" />
     <BundleResource Include="Resources\EventPoster4.png" />
+    <BundleResource Include="Resources\QubicSharp_ProfilePhoto.png" />
+    <BundleResource Include="Resources\SpencerRift_ProfilePhoto.png" />
   </ItemGroup>
 </Project>

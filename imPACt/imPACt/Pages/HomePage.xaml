@@ -45,7 +45,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton x:Name="MentorProfile1" Source="InterestsIcons-06.png"
+                            <ImageButton x:Name="MentorProfile1" Source="QubicSharp_ProfilePhoto.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>
@@ -113,7 +113,7 @@
                                IsClippedToBounds="True" TranslationX="-154"
                                HorizontalOptions="Center" VerticalOptions="Center"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <ImageButton x:Name="MentorProfile2" Source="InterestsIcons-01.png"
+                            <ImageButton x:Name="MentorProfile2" Source="SpencerRift_ProfilePhoto.png"
                                          Released="GoToMentorPage"
                                          Aspect="AspectFill" Margin="-20"
                                          WidthRequest="56" HeightRequest="56"/>
