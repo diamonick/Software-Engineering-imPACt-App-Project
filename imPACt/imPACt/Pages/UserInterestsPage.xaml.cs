@@ -12,7 +12,8 @@ namespace imPACt.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserInterestsPage : ContentPage
     {
-        private string[] UniversityItems = {    "Auburn University",
+        private string[] UniversityItems = {    "Any",
+                                                "Auburn University",
                                                 "Louisiana State University",
                                                 "Mississippi State University",
                                                 "Texas A&M University",
@@ -28,7 +29,8 @@ namespace imPACt.Pages
                                                 "Vanderbilt University"
         };
 
-        private string[] LocationItems = {  "Alabama",
+        private string[] LocationItems = {  "Any",
+                                            "Alabama",
                                             "Alazka",
                                             "Arizona",
                                             "Arkansas",
@@ -80,7 +82,7 @@ namespace imPACt.Pages
                                             "Wyoming"
         };
 
-        private string[] InterestedFieldItems = {   "N/A",
+        private string[] InterestedFieldItems = {   "Any",
                                                     "Animal Sciences",
                                                     "Astronomy",
                                                     "Biochemistry",
@@ -117,7 +119,8 @@ namespace imPACt.Pages
         };
 
         //Pick from a string of classifications
-        private string[] ClassificationItems = {    "Freshman",
+        private string[] ClassificationItems = {    "Any",
+                                                    "Freshman",
                                                     "Sophomore",
                                                     "Junior",
                                                     "Senior",

@@ -175,7 +175,7 @@ namespace imPACt.Pages
                 ClassificationList.Items.Add(i);
             }
 
-            //Add all items from Completed Level Items to the Completed Level list
+            //Add all items from Degree Items to the Degree list
             foreach (string i in DegreeItems)
             {
                 DegreeList.Items.Add(i);
