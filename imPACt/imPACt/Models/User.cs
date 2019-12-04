@@ -26,6 +26,7 @@ namespace imPACt.Models
         public string Minor { get; set; }
         public string ProfilePhoto { get; set; }
         public List<string> Interests = new List<string>();
+        public bool[] InterestedInEvents = new bool[4];
         public string Role { get; set; } //"Mentee" or "Mentor"
         //public String[] Interests { get; set; }
     }

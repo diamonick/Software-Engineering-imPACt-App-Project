@@ -14,6 +14,7 @@ namespace imPACt.Pages
     public partial class HomePage : ContentPage
     {
         private const double PressedSize = 1.1;                     //Size of button when pressed
+        User newUser;
         User Mentor1;
         User Mentor2;
         User Mentor3;
@@ -34,10 +35,11 @@ namespace imPACt.Pages
         List<string> Words = new List<string>
         { "" };
 
-        public HomePage()
+        public HomePage(User u)
         {
             InitializeComponent();
 
+            this.newUser = u;
             LoadMentors();
             LoadEvents();
         }
@@ -78,27 +80,27 @@ namespace imPACt.Pages
             if (button == FirstPostButton)
             {
                 await FirstPost.ScaleTo(1.0, 200, Easing.SinOut);
-                await Navigation.PushAsync(new EventPage(Mentor1, Event1));
+                await Navigation.PushAsync(new EventPage(newUser, Mentor1, Event1));
             }
             else if (button == SecondPostButton)
             {
                 await SecondPost.ScaleTo(1.0, 200, Easing.SinOut);
-                await Navigation.PushAsync(new EventPage(Mentor2, Event2));
+                await Navigation.PushAsync(new EventPage(newUser, Mentor2, Event2));
             }
             else if (button == ThirdPostButton)
             {
                 await ThirdPost.ScaleTo(1.0, 200, Easing.SinOut);
-                await Navigation.PushAsync(new EventPage(Mentor3, Event3));
+                await Navigation.PushAsync(new EventPage(newUser, Mentor3, Event3));
             }
             else if (button == FourthPostButton)
             {
                 await FourthPost.ScaleTo(1.0, 200, Easing.SinOut);
-                await Navigation.PushAsync(new EventPage(Mentor4, Event4));
+                await Navigation.PushAsync(new EventPage(newUser, Mentor4, Event4));
             }
             else if (button == FifthPostButton)
             {
                 await FifthPost.ScaleTo(1.0, 200, Easing.SinOut);
-                await Navigation.PushAsync(new EventPage(Mentor4, Event1));
+                await Navigation.PushAsync(new EventPage(newUser, Mentor4, Event1));
             }
         }
 

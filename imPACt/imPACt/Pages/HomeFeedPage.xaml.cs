@@ -29,7 +29,7 @@ namespace imPACt.Pages
 
             FullNameText.Text = newUser.Name;
 
-            Detail = new NavigationPage(new HomePage());
+            Detail = new NavigationPage(new HomePage(this.newUser));
             IsPresented = false;
         }
 
@@ -59,7 +59,7 @@ namespace imPACt.Pages
                 ContactsButton.BackgroundColor = InactiveColor;
                 SettingsButton.BackgroundColor = InactiveColor;
 
-                Detail = new NavigationPage(new HomePage());
+                Detail = new NavigationPage(new HomePage(this.newUser));
             }
             else if (button == MatchButton && !MatchNode.IsVisible)
             {

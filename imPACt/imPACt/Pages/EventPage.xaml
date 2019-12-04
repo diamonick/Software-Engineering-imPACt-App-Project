@@ -86,8 +86,9 @@
                  </StackLayout>
 
                  <!-- Interested Button -->
-                 <Button x:Name="InterestedButton" BackgroundColor="#00D1A4"
+                 <Button x:Name="InterestedButton" BackgroundColor="#303030"
                          Text="Interested?" TextColor="White"
+                         Pressed="HighlightButton" Released="InterestedClicked"
                          FontSize="18" FontAttributes="Bold"
                          WidthRequest="330" HeightRequest="50" CornerRadius="10"
                          AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
