@@ -30,9 +30,9 @@ namespace imPACt.Pages
         {
             var Button = (Button)sender;
 
-            if (Button == FirstMatchButton) { (FirstMatchButton.BackgroundColor = Color.FromHex("#B9E9F0"); }
-            else if (Button == SecondMatchButton) { (SecondMatchButton.BackgroundColor = Color.FromHex("#B9E9F0"); }
-            else if (Button == ThirdMatchButton) { (ThirdMatchButton.BackgroundColor = Color.FromHex("#B9E9F0"); }
+            if (Button == FirstMatchButton) { FirstMatchButton.BackgroundColor = Color.FromHex("#B9E9F0"); }
+            else if (Button == SecondMatchButton) { SecondMatchButton.BackgroundColor = Color.FromHex("#B9E9F0"); }
+            else if (Button == ThirdMatchButton) { ThirdMatchButton.BackgroundColor = Color.FromHex("#B9E9F0"); }
             else if (Button == FourthMatchButton) { FourthMatchButton.BackgroundColor = Color.FromHex("#B9E9F0"); }
             else if (Button == FifthMatchButton) { FifthMatchButton.BackgroundColor = Color.FromHex("#B9E9F0"); }
         }
