@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using imPACt.Models;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using SQLite;
 
 namespace imPACt.Models
@@ -18,6 +25,7 @@ namespace imPACt.Models
         public string Major { get; set; }
         public string Minor { get; set; }
         public string ProfilePhoto { get; set; }
+        public List<string> Interests = new List<string>();
         public string Role { get; set; } //"Mentee" or "Mentor"
         //public String[] Interests { get; set; }
     }

@@ -2,16 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
              x:Class="imPACt.Pages.MainPage"
              NavigationPage.HasBackButton="False"
+             Title="Introduction"
              BackgroundColor="#00CFB3">
-
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Text="Introduction"
-                   FontSize="18" FontAttributes="Bold"
-                   TextColor="#00CFB3"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
-
     <ContentPage.Content>
     <ScrollView>
     <!-- Introduction to imPACt app with description of what is it -->

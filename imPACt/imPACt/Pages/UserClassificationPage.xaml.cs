@@ -362,6 +362,8 @@ namespace imPACt.Pages
             Event Event1 = await App.Database.GetEventByKeyword("C#");
             Event Event2 = await App.Database.GetEventByKeyword("VR");
 
+            button.TextColor = Color.White;
+            button.BackgroundColor = Color.FromHex("#00CFB3");
             await button.ScaleTo(1.0, 200, Easing.SinOut);
 
             //Add Data to New User
@@ -406,12 +408,12 @@ namespace imPACt.Pages
             User mentor4 = new User
             {
                 Name = "Dr. Earl Logg",
-                Email = "elogg22@lsu.edu",
+                Email = "elogg23@lsu.edu",
                 Password = "loggerror314",
                 Classification = "Professor",
                 Description = "My name is Dr. Earl Logg. My research mostly pertains to cloud computing, data storage, " +
                               "and version control. I also host events that prepare CSC undergraduates for the workplace.",
-                ProfilePhoto = "InterestsIcons-09.png"
+                ProfilePhoto = "EarlLogg_ProfilePhoto.png"
             };
 
             Event event1 = new Event
@@ -466,6 +468,11 @@ namespace imPACt.Pages
                 Location = "1263 Patrick Taylor Hall",
                 NumAttendees = 60
             };
+
+            await App.Database.SaveUserAsync(mentor1);
+            await App.Database.SaveUserAsync(mentor2);
+            await App.Database.SaveUserAsync(mentor3);
+            await App.Database.SaveUserAsync(mentor4);
 
             //Save Event to Database
             await App.Database.SaveEventAsync(event1);

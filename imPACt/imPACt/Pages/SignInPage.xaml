@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="imPACt.Pages.SignInPage"
+             Title="Sign Up / Log In"
              NavigationPage.HasBackButton="False"
              BackgroundColor="#00858F">
    <ContentPage.Content>
@@ -164,7 +165,7 @@
                             WidthRequest="330" HeightRequest="50"
                             IsEnabled="False" Opacity="0.5"
                             AbsoluteLayout.LayoutBounds="0.5,0.925" AbsoluteLayout.LayoutFlags="PositionProportional"
-                            Clicked="ClickSignUp">
+                            Pressed="HighlightConfirm" Released="ClickSignUp">
                     </Button>
                 </AbsoluteLayout>
 <!--######################################################################################################################-->
@@ -251,7 +252,7 @@
                             WidthRequest="330" HeightRequest="50"
                             IsEnabled="False" Opacity="0.5"
                             AbsoluteLayout.LayoutBounds="0.5,0.7" AbsoluteLayout.LayoutFlags="PositionProportional"
-                            Clicked="ClickSignIn">
+                            Pressed="HighlightConfirm" Released="ClickSignIn">
                     </Button>
                 </AbsoluteLayout>
 <!--######################################################################################################################-->

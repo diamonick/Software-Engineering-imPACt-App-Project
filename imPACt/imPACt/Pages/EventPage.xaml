@@ -86,7 +86,7 @@
                  </StackLayout>
 
                  <!-- Interested Button -->
-                 <Button BackgroundColor="#00D1A4"
+                 <Button x:Name="InterestedButton" BackgroundColor="#00D1A4"
                          Text="Interested?" TextColor="White"
                          FontSize="18" FontAttributes="Bold"
                          WidthRequest="330" HeightRequest="50" CornerRadius="10"
