@@ -210,4 +210,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\swh-1-web.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MatchIconGreen.png" />
+  </ItemGroup>
 </Project>

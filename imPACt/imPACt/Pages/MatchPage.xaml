@@ -73,7 +73,7 @@
                         <StackLayout Orientation="Horizontal"
                                      TranslationX="16" TranslationY="80"
                                      AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <Image Source="MatchIcon.png"
+                            <Image Source="MatchIconGreen.png"
                                          WidthRequest="28" HeightRequest="28"/>
                             <Label Text="Bio:" TextColor="#00858F"
                                    TranslationY="7"
@@ -89,17 +89,24 @@
                                    TranslationY="7"
                                    FontSize="12" FontAttributes="Bold"/>
                         </StackLayout>
-                        <!--Match Button-->
-                        <StackLayout>
-                            <Button x:Name ="FirstMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+
+                    </AbsoluteLayout>
+
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Button x:Name ="FirstMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
                                 BackgroundColor="#08B3C9"
                                 Text="MATCH" TextColor="White"
                                 FontSize="18" FontAttributes="Bold"
-                                WidthRequest="330" HeightRequest="50" CornerRadius="10"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
                                 AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
-                        </StackLayout>
-                        
-                    </AbsoluteLayout>
+                    <Button x:Name ="FirstDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+
 
                     <!-- Second Post -->
                     <AbsoluteLayout x:Name="SecondMatch">
@@ -149,7 +156,7 @@
                         <StackLayout Orientation="Horizontal"
                                      TranslationX="16" TranslationY="80"
                                      AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <Image Source="MatchIcon.png"
+                            <Image Source="MatchIconGreen.png"
                                          WidthRequest="28" HeightRequest="28"/>
                             <Label Text="Bio:" TextColor="#00858F"
                                    TranslationY="7"
@@ -166,17 +173,23 @@
                                    FontSize="12" FontAttributes="Bold"/>
                         </StackLayout>
 
-                        <!--Match Button-->
-                        <StackLayout>
-                            <Button x:Name ="SecondMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+                    </AbsoluteLayout>
+
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10" >
+                        <Button x:Name ="SecondMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
                                 BackgroundColor="#08B3C9"
                                 Text="MATCH" TextColor="White"
                                 FontSize="18" FontAttributes="Bold"
-                                WidthRequest="330" HeightRequest="50" CornerRadius="10"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
                                 AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
-                        </StackLayout>
-
-                    </AbsoluteLayout>
+                        <Button x:Name ="SecondDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    </StackLayout>
 
                     <!-- Third Post  -->
                     <AbsoluteLayout x:Name="ThirdMatch">
@@ -226,7 +239,7 @@
                         <StackLayout Orientation="Horizontal"
                                      TranslationX="16" TranslationY="80"
                                      AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <Image Source="MatchIcon.png"
+                            <Image Source="MatchIconGreen.png"
                                          WidthRequest="28" HeightRequest="28"/>
                             <Label Text="Bio:" TextColor="#00858F"
                                    TranslationY="7"
@@ -243,17 +256,23 @@
                                    FontSize="12" FontAttributes="Bold"/>
                         </StackLayout>
 
-                        <!--Match Button-->
-                        <StackLayout>
-                            <Button x:Name ="ThirdMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+                    </AbsoluteLayout>
+
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Button x:Name ="ThirdMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
                                 BackgroundColor="#08B3C9"
                                 Text="MATCH" TextColor="White"
                                 FontSize="18" FontAttributes="Bold"
-                                WidthRequest="330" HeightRequest="50" CornerRadius="10"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
                                 AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
-                        </StackLayout>
-
-                    </AbsoluteLayout>
+                        <Button x:Name ="ThirdDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    </StackLayout>
 
                     <!-- Fourth Post  -->
                     <AbsoluteLayout x:Name="FourthMatch">
@@ -303,7 +322,7 @@
                         <StackLayout Orientation="Horizontal"
                                      TranslationX="16" TranslationY="80"
                                      AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <Image Source="MatchIcon.png"
+                            <Image Source="MatchIconGreen.png"
                                          WidthRequest="28" HeightRequest="28"/>
                             <Label Text="Bio:" TextColor="#00858F"
                                    TranslationY="7"
@@ -320,19 +339,25 @@
                                    FontSize="12" FontAttributes="Bold"/>
                         </StackLayout>
 
-                        <!--Match Button-->
-                        <StackLayout>
-                            <Button x:Name ="FourthMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+                    </AbsoluteLayout>
+                    
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Button x:Name ="FourthMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
                                 BackgroundColor="#08B3C9"
                                 Text="MATCH" TextColor="White"
                                 FontSize="18" FontAttributes="Bold"
-                                WidthRequest="330" HeightRequest="50" CornerRadius="10"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
                                 AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
-                        </StackLayout>
+                        <Button x:Name ="FourthDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    </StackLayout>
 
-                    </AbsoluteLayout>
-
-                    <!-- Fifth Post (Git Gud at GitHub) -->
+                    <!-- Fifth Post -->
                     <AbsoluteLayout x:Name="FifthMatch">
                         <BoxView BackgroundColor="#00858f"
                                  HorizontalOptions="Center" CornerRadius="16"
@@ -380,7 +405,7 @@
                         <StackLayout Orientation="Horizontal"
                                      TranslationX="16" TranslationY="80"
                                      AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <Image Source="MatchIcon.png"
+                            <Image Source="MatchIconGreen.png"
                                          WidthRequest="28" HeightRequest="28"/>
                             <Label Text="Bio:" TextColor="#00858F"
                                    TranslationY="7"
@@ -397,18 +422,25 @@
                                    FontSize="12" FontAttributes="Bold"/>
                         </StackLayout>
 
-                        <!--Match Button-->
-                        <StackLayout>
-                            <Button x:Name ="FifthMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+                    </AbsoluteLayout>
+                    
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Button x:Name ="FifthMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
                                 BackgroundColor="#08B3C9"
                                 Text="MATCH" TextColor="White"
                                 FontSize="18" FontAttributes="Bold"
-                                WidthRequest="330" HeightRequest="50" CornerRadius="10"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
                                 AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
-                        </StackLayout>
-                        
-                    </AbsoluteLayout>
-                    
+                        <Button x:Name ="FifthDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    </StackLayout>
+
+                </StackLayout>
                 </StackLayout>
             </AbsoluteLayout>
         </ScrollView>
