@@ -25,7 +25,7 @@ namespace imPACt.Pages
         private const string MentorEmail1 = "qsharp56@lsu.edu";
         private const string MentorEmail2 = "srift17@lsu.edu";
         private const string MentorEmail3 = "foconnor24@lsu.edu";
-        private const string MentorEmail4 = "elogg22@lsu.edu";
+        private const string MentorEmail4 = "elogg23@lsu.edu";
         private const string EventKeyword1 = "C#";
         private const string EventKeyword2 = "VirtualReality";
         private const string EventKeyword3 = "GGJ";

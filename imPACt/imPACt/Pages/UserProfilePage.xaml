@@ -157,6 +157,68 @@
                              HeightRequest="4" HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
             </StackLayout>
+            
+                <Grid RowSpacing="16" ColumnSpacing="16" HorizontalOptions="FillAndExpand" Margin="0,16,0,0"
+                              AbsoluteLayout.LayoutBounds="0.5,1200" AbsoluteLayout.LayoutFlags="XProportional">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="64"/>
+                                <RowDefinition Height="64"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="64"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image x:Name="Tab1"
+                                   Grid.Row="0" Grid.Column="0"
+                                   Source=""/>
+                            <Image x:Name="Tab2"
+                                   Grid.Row="0" Grid.Column="1"
+                                   Source=""/>
+                            <Image x:Name="Tab3"
+                                   Grid.Row="0" Grid.Column="2"
+                                   Source=""/>
+                            <Image x:Name="Tab4"
+                                   Grid.Row="0" Grid.Column="3"
+                                   Source=""/>
+                            <Image x:Name="Tab5"
+                                   Grid.Row="1" Grid.Column="0"
+                                   Source=""/>
+                            <Image x:Name="Tab6"
+                                   Grid.Row="1" Grid.Column="1"
+                                   Source=""/>
+                            <Image x:Name="Tab7"
+                                   Grid.Row="1" Grid.Column="2"
+                                   Source=""/>
+                            <Image x:Name="Tab8"
+                                   Grid.Row="1" Grid.Column="3"
+                                   Source=""/>
+                            <Image x:Name="Tab9"
+                                   Grid.Row="2" Grid.Column="0"
+                                   Source=""/>
+                            <Image x:Name="Tab10"
+                                   Grid.Row="2" Grid.Column="1"
+                                   Source=""/>
+                            <Image x:Name="Tab11"
+                                   Grid.Row="2" Grid.Column="2"
+                                   Source=""/>
+                            <Image x:Name="Tab12"
+                                   Grid.Row="2" Grid.Column="3"
+                                   Source=""/>
+                            <Image x:Name="Tab13"
+                                   Grid.Row="3" Grid.Column="0"
+                                   Source=""/>
+                            <Image x:Name="Tab14"
+                                   Grid.Row="3" Grid.Column="1"
+                                   Source=""/>
+                            <Image x:Name="Tab15"
+                                   Grid.Row="3" Grid.Column="2"
+                                   Source=""/>
+                        </Grid>
         </AbsoluteLayout>
         </ScrollView>
     </ContentPage.Content>

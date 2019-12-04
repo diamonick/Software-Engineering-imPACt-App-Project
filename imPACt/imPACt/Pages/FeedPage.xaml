@@ -2,15 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="imPACt.Pages.FeedPage"
              NavigationPage.HasBackButton="False"
+             Title="Interest Picker"
              BackgroundColor="#00858F">
-
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Text="Personal Feed"
-                   FontSize="18" FontAttributes="Bold"
-                   TextColor="#00CFB3"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
 
     <ContentPage.Content>
        <!-- Scroll View (Able to scroll page) -->

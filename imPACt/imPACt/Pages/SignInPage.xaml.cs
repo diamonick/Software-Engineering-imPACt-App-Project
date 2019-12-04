@@ -80,6 +80,16 @@ namespace imPACt.Pages
             await button.ScaleTo(PressedSize, 200, Easing.SinOut);
         }
 
+        //Highlight the Sign In or Login button to let the user know it's pressed
+        void HighlightConfirm(object sender, EventArgs args)
+        {
+            var button = (Button)sender;
+
+            button.TextColor = Color.FromRgb(200, 200, 200);
+            button.BackgroundColor = Color.FromRgb(0, 85, 92);
+            button.ScaleTo(PressedSize, 200, Easing.SinOut);
+        }
+
         //Switch to Sign Up layout
         async void SignUpLayout(object sender, EventArgs args)
         {
@@ -358,6 +368,11 @@ namespace imPACt.Pages
         //Add User to Local DB
         async void ClickSignUp(object sender, EventArgs e)
         {
+            var button = (Button)sender;
+
+            button.TextColor = Color.White;
+            button.BackgroundColor = Color.FromHex("#00CFB3");
+            await button.ScaleTo(1.0, 200, Easing.SinOut);
 
             User newUser = new User
             {
@@ -373,6 +388,12 @@ namespace imPACt.Pages
         //Check User DB to see if user exists
         async void ClickSignIn(object sender, EventArgs e)
         {
+            var button = (Button)sender;
+
+            button.TextColor = Color.White;
+            button.BackgroundColor = Color.FromHex("#00CFB3");
+            await button.ScaleTo(1.0, 200, Easing.SinOut);
+
             User user = await App.Database.GetUserByEmail(LI_Email.Text);
             if (user == null)
                 await DisplayAlert("User Not Found", "A user with that email does not exist!", "Back");
