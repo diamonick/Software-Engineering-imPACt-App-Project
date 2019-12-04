@@ -1,12 +1,448 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="imPACt.Pages.MatchPage"
-             Title="Mentor Match">
+             Title="Match"
+             NavigationPage.HasBackButton="True"
+             BackgroundColor="#00858F">
     <ContentPage.Content>
-        <AbsoluteLayout>
-            <SearchBar x:Name="MainSearchBar" TextColor="White" BackgroundColor="#00D1A4"
-                       CancelButtonColor="#00858F" 
-                       Placeholder="Discover..." PlaceholderColor="White"/>
-        </AbsoluteLayout>
+        <!-- Scroll View (Able to scroll page) -->
+        <ScrollView>
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <!-- Draw white background -->
+                <BoxView BackgroundColor="#DEFFCF"
+                     HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                     AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                <!-- imPACt Title Logo -->
+                <Image Source="imPACt_Title2.png"
+                       WidthRequest="180"
+                       AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                <StackLayout x:Name="Matches" Orientation="Vertical" Spacing="24" Padding="5,0"
+                             AbsoluteLayout.LayoutBounds="0,100,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
+                    <Label Text="Match with a Mentor" TextColor="#00858F"
+                           FontSize="32" FontAttributes="Bold"/>
+                    <BoxView BackgroundColor="#00858F" CornerRadius="2" TranslationY="-12"
+                             HeightRequest="4" HorizontalOptions="FillAndExpand"/>
+                    
+                    <!-- First Match () -->
+                    <AbsoluteLayout x:Name="FirstMatch">
+                        <BoxView BackgroundColor="#00858f"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile1" Source="QubicSharp_ProfilePhoto.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical"
+                                     HorizontalOptions="Start" TranslationX="-5"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start"
+                                   Text="Qubic Sharp" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView x:Name="firstMatchTagBackground" 
+                                     BackgroundColor="#0084FF" CornerRadius="10" IsVisible="False"
+                                     HorizontalOptions="Center"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label x:Name="firstMatchTagLabel"
+                                   HorizontalTextAlignment="Center" IsVisible="False"
+                                   Text="Matched" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Bio information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="16" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="MatchIconGreen.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Bio:" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="-18" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Louisiana State University" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                    </AbsoluteLayout>
+
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Button x:Name ="FirstMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+                                BackgroundColor="#08B3C9"
+                                Text="MATCH" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    <Button x:Name ="FirstDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    </StackLayout>
+
+                    <!-- Second Post -->
+                    <AbsoluteLayout x:Name="SecondMatch">
+                        <BoxView BackgroundColor="#00858f"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile2" Source="SpencerRift_ProfilePhoto.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical"
+                                     HorizontalOptions="Start" TranslationX="-5"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start"
+                                   Text="Spencer Rift" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView x:Name="secondMatchTagBackground" 
+                                     BackgroundColor="#0084FF" CornerRadius="10" IsVisible="False"
+                                     HorizontalOptions="Center"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label x:Name="secondMatchTagLabel"
+                                   HorizontalTextAlignment="Center" IsVisible="False"
+                                   Text="Matched" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Bio information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="16" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="MatchIconGreen.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Bio:" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="-18" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Louisiana State University" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                    </AbsoluteLayout>
+
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10" >
+                        <Button x:Name ="SecondMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+                                BackgroundColor="#08B3C9"
+                                Text="MATCH" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Button x:Name ="SecondDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    </StackLayout>
+
+                    <!-- Third Post  -->
+                    <AbsoluteLayout x:Name="ThirdMatch">
+                        <BoxView BackgroundColor="#00858f"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile3" Source="FloraPortrait.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical"
+                                     HorizontalOptions="Start" TranslationX="-5"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start"
+                                   Text="Flora" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView x:Name="thirdMatchTagBackground" 
+                                     BackgroundColor="#0084FF" CornerRadius="10" IsVisible="False"
+                                     HorizontalOptions="Center"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label x:Name="thirdMatchTagLabel"
+                                   HorizontalTextAlignment="Center" IsVisible="False"
+                                   Text="Matched" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Bio information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="16" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="MatchIconGreen.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Bio:" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="-18" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Louisiana State University" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                    </AbsoluteLayout>
+
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Button x:Name ="ThirdMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+                                BackgroundColor="#08B3C9"
+                                Text="MATCH" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Button x:Name ="ThirdDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    </StackLayout>
+
+                    <!-- Fourth Post  -->
+                    <AbsoluteLayout x:Name="FourthMatch">
+                        <BoxView BackgroundColor="#00858f"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile4" Source="InterestsIcons-09.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical"
+                                     HorizontalOptions="Start" TranslationX="-5"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start"
+                                   Text="(place holder)" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView x:Name="fourthMatchTagBackground" 
+                                     BackgroundColor="#0084FF" CornerRadius="10" IsVisible="False"
+                                     HorizontalOptions="Center"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label x:Name="fourthMatchTagLabel"
+                                   HorizontalTextAlignment="Center" IsVisible="False"
+                                   Text="Matched" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Bio information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="16" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="MatchIconGreen.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Bio:" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="-18" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Louisiana State University" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                    </AbsoluteLayout>
+                    
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Button x:Name ="FourthMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+                                BackgroundColor="#08B3C9"
+                                Text="MATCH" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Button x:Name ="FourthDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    </StackLayout>
+
+                    <!-- Fifth Post -->
+                    <AbsoluteLayout x:Name="FifthMatch">
+                        <BoxView BackgroundColor="#00858f"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile5" Source="InterestsIcons-09.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical"
+                                     HorizontalOptions="Start" TranslationX="-5"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start"
+                                   Text="(place holder)" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView x:Name="fifthMatchTagBackground" 
+                                     BackgroundColor="#0084FF" CornerRadius="10" IsVisible="False"
+                                     HorizontalOptions="Center"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label x:Name="fifthMatchTagLabel"
+                                   HorizontalTextAlignment="Center" IsVisible="False"
+                                   Text="Matched" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Bio information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="16" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="MatchIconGreen.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Bio:" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal"
+                                     TranslationX="-18" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Louisiana State University" TextColor="#00858F"
+                                   TranslationY="7"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                    </AbsoluteLayout>
+                    
+                    <!--Match/Decline Button-->
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Button x:Name ="FifthMatchButton" Pressed="HighlightButton" Released="EnableMatchedTag"
+                                BackgroundColor="#08B3C9"
+                                Text="MATCH" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Button x:Name ="FifthDeclineButton" Pressed="HighlightButton" Released="DisableMatchedTag" IsVisible="True" IsEnabled="False"
+                                BackgroundColor="#ffc2cd"
+                                Text="DECLINE" TextColor="White"
+                                FontSize="18" FontAttributes="Bold"
+                                WidthRequest="165" HeightRequest="50" CornerRadius="10"
+                                AbsoluteLayout.LayoutBounds="0.5,742" AbsoluteLayout.LayoutFlags="XProportional"/>
+                    </StackLayout>
+
+                
+                </StackLayout>
+            </AbsoluteLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

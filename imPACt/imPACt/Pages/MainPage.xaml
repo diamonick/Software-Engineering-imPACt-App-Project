@@ -2,22 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
              x:Class="imPACt.Pages.MainPage"
              NavigationPage.HasBackButton="False"
+             Title="Introduction"
              BackgroundColor="#00CFB3">
-
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Text="Introduction"
-                   FontSize="18" FontAttributes="Bold"
-                   TextColor="#00CFB3"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
-
     <ContentPage.Content>
     <ScrollView>
     <!-- Introduction to imPACt app with description of what is it -->
-        <AbsoluteLayout>  
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">  
         <BoxView BackgroundColor="White"
-                 CornerRadius="10"
+                 CornerRadius="10" TranslationY="16"
                  WidthRequest="360" HeightRequest="580"
                  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
                  AbsoluteLayout.LayoutBounds="0.5,1,1,0.75" AbsoluteLayout.LayoutFlags="SizeProportional"

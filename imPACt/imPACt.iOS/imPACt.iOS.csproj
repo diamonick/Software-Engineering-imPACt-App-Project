@@ -187,5 +187,30 @@
     <BundleResource Include="Resources\ContactsIcon.png" />
     <BundleResource Include="Resources\ProfilePicTemplate.png" />
     <BundleResource Include="Resources\MatchIcon.png" />
+    <BundleResource Include="Resources\FloraPortrait.png" />
+    <BundleResource Include="Resources\TimeIcon.png" />
+    <BundleResource Include="Resources\LocationIcon.png" />
+    <BundleResource Include="Resources\EventPoster1.png" />
+    <BundleResource Include="Resources\EventPoster2.png" />
+    <BundleResource Include="Resources\EventPoster3.png" />
+    <BundleResource Include="Resources\EventPoster4.png" />
+    <BundleResource Include="Resources\QubicSharp_ProfilePhoto.png" />
+    <BundleResource Include="Resources\SpencerRift_ProfilePhoto.png" />
+    <BundleResource Include="Resources\EarlLogg_ProfilePhoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\0617_NeilDegrasseTyson_Gluekit_oneuseonly.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\elon-musk-twitter-account.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\golden2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\swh-1-web.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MatchIconGreen.png" />
   </ItemGroup>
 </Project>

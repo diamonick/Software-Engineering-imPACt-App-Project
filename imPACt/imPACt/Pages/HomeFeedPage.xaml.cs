@@ -1,41 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using imPACt.Models;
 using Xamarin.Forms;
-using Xamarin.Essentials;
+using Xamarin.Forms.Xaml;
+using SQLite;
 
 namespace imPACt.Pages
 {
     public partial class HomeFeedPage : MasterDetailPage
     {
+        User newUser;
         private const double PressedSize = 1.1;                     //Size of button when pressed
         private Color ActiveColor = Color.FromRgb(0, 179, 176);
         private Color InactiveColor = Color.FromRgb(0, 45, 48);
 
-        public HomeFeedPage()
+        public HomeFeedPage(User u)
         {
             InitializeComponent();
+            this.newUser = u;
 
             HomeNode.IsVisible = false;
             MatchNode.IsVisible = false;
             ContactsNode.IsVisible = false;
             SettingsNode.IsVisible = false;
 
-            Detail = new NavigationPage(new HomePage());
-            IsPresented = false;
-            this.IsPresentedChanged += OnPresentedChanged;
-        }
+            FullNameText.Text = newUser.Name;
 
-        async private void OnPresentedChanged(object sender, EventArgs args)
-        {
-            if (this.IsPresented)
-            {
-                await ForegroundLayer.FadeTo(0.5, 100, Easing.CubicOut);
-            }
-            else
-            {
-                await ForegroundLayer.FadeTo(0.0, 100, Easing.CubicOut);
-            }
+            Detail = new NavigationPage(new HomePage(this.newUser));
+            IsPresented = false;
         }
 
         //Highlight the button to let the user know it's pressed
@@ -53,7 +48,7 @@ namespace imPACt.Pages
 
             button.BackgroundColor = ActiveColor;
 
-            if (button == HomeButton)
+            if (button == HomeButton && !HomeNode.IsVisible)
             {
                 HomeNode.IsVisible = true;
                 MatchNode.IsVisible = false;
@@ -64,9 +59,9 @@ namespace imPACt.Pages
                 ContactsButton.BackgroundColor = InactiveColor;
                 SettingsButton.BackgroundColor = InactiveColor;
 
-                Detail = new NavigationPage(new HomePage());
+                Detail = new NavigationPage(new HomePage(this.newUser));
             }
-            else if (button == MatchButton)
+            else if (button == MatchButton && !MatchNode.IsVisible)
             {
                 HomeNode.IsVisible = false;
                 MatchNode.IsVisible = true;
@@ -79,7 +74,7 @@ namespace imPACt.Pages
 
                 Detail = new NavigationPage(new UserInterestsPage());
             }
-            else if (button == ContactsButton)
+            else if (button == ContactsButton && !ContactsNode.IsVisible)
             {
                 HomeNode.IsVisible = false;
                 MatchNode.IsVisible = false;
@@ -92,7 +87,7 @@ namespace imPACt.Pages
 
                 Detail = new NavigationPage(new ContactsPage());
             }
-            else if (button == SettingsButton)
+            else if (button == SettingsButton && !SettingsNode.IsVisible)
             {
                 HomeNode.IsVisible = false;
                 MatchNode.IsVisible = false;
@@ -114,7 +109,17 @@ namespace imPACt.Pages
         {
             var imageButton = (ImageButton)sender;
 
-            Detail = new NavigationPage(new UserProfilePage());
+            HomeNode.IsVisible = false;
+            MatchNode.IsVisible = false;
+            ContactsNode.IsVisible = false;
+            SettingsNode.IsVisible = false;
+
+            HomeButton.BackgroundColor = InactiveColor;
+            MatchButton.BackgroundColor = InactiveColor;
+            ContactsButton.BackgroundColor = InactiveColor;
+            SettingsButton.BackgroundColor = InactiveColor;
+
+            Detail = new NavigationPage(new UserProfilePage(this.newUser));
             IsPresented = false;
         }
     }

@@ -47,7 +47,10 @@ namespace imPACt.Pages
 
             SU_FullName.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             SU_Email.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
+            SU_Password.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
+            SU_ConfirmPassword.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             LI_Email.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
+            LI_Password.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone | KeyboardFlags.Suggestions);
             SU_ShowPasswordIcon.Source = "NotVisibleIcon.png";
 
             //Testing Purposes (will not appear in final product)
@@ -75,6 +78,16 @@ namespace imPACt.Pages
             else if (button == LogIn) { NodeLogIn.ScaleTo(PressedSize, 200, Easing.SinOut); }
 
             await button.ScaleTo(PressedSize, 200, Easing.SinOut);
+        }
+
+        //Highlight the Sign In or Login button to let the user know it's pressed
+        void HighlightConfirm(object sender, EventArgs args)
+        {
+            var button = (Button)sender;
+
+            button.TextColor = Color.FromRgb(200, 200, 200);
+            button.BackgroundColor = Color.FromRgb(0, 85, 92);
+            button.ScaleTo(PressedSize, 200, Easing.SinOut);
         }
 
         //Switch to Sign Up layout
@@ -147,7 +160,12 @@ namespace imPACt.Pages
                 //Display check mark
                 if (PL == PageLayout.SignUpLayout)
                 {
-                    if (entry == SU_FullName) { SU_FullNameMark.Source = Checkmark; FullName_Checked = true; }
+                    if (entry == SU_FullName)
+                    {
+                        SU_FullNameMark.Source = Checkmark;
+                        FullName_Checked = true;
+                        entry.BackgroundColor = ValidColor;
+                    }
                     else if (entry == SU_Email)
                     {
                         if (Regex.IsMatch(entry.Text, emailSyntax))
@@ -342,24 +360,50 @@ namespace imPACt.Pages
         }
 
         //Send user to Feed page
-        async void GoToFeedPage(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new FeedPage());
-        }
+        //async void GoToFeedPage(object sender, EventArgs args)
+        //{
+        //    await Navigation.PushAsync(new FeedPage());
+        //}
 
-        //Add User to Local DB -> Navigate to Home Page?
+        //Add User to Local DB
         async void ClickSignUp(object sender, EventArgs e)
         {
+            var button = (Button)sender;
 
-            await App.Database.SaveUserAsync(new User
+            button.TextColor = Color.White;
+            button.BackgroundColor = Color.FromHex("#00CFB3");
+            await button.ScaleTo(1.0, 200, Easing.SinOut);
+
+            User newUser = new User
             {
                 Name = SU_FullName.Text,
                 Email = SU_Email.Text,
-                Password = SU_Password.Text
-            });
-            System.Diagnostics.Debug.WriteLine("User Added");
-            await Navigation.PushAsync(new FeedPage());
+                Password = SU_Password.Text,
+            };
+            
+            await Navigation.PushAsync(new FeedPage(newUser));
 
+        }
+
+        //Check User DB to see if user exists
+        async void ClickSignIn(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            button.TextColor = Color.White;
+            button.BackgroundColor = Color.FromHex("#00CFB3");
+            await button.ScaleTo(1.0, 200, Easing.SinOut);
+
+            User user = await App.Database.GetUserByEmail(LI_Email.Text);
+            if (user == null)
+                await DisplayAlert("User Not Found", "A user with that email does not exist!", "Back");
+            else if (user.Password == LI_Password.Text)
+            {
+                App.currentUserID = user.ID;
+                await Navigation.PushAsync(new HomeFeedPage(user));
+            }
+            else
+                await DisplayAlert("Invalid User", "Wrong Username or Password", "Back");
         }
     }
 }

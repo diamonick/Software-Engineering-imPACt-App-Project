@@ -1,12 +1,373 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="imPACt.Pages.HomePage"
-             Title="Home">
+             Title="Home"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="#00858F">
     <ContentPage.Content>
-        <AbsoluteLayout>
-            <SearchBar x:Name="MainSearchBar" TextColor="White" BackgroundColor="#00D1A4"
-                       CancelButtonColor="#00858F" 
-                       Placeholder="Discover..." PlaceholderColor="White"/>
-        </AbsoluteLayout>
+        <!-- Scroll View (Able to scroll page) -->
+        <ScrollView>
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <!-- Draw white background -->
+                <BoxView BackgroundColor="#DEFFCF"
+                     HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                     AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                <!-- imPACt Title Logo -->
+                <Image Source="imPACt_Title2.png"
+                       WidthRequest="180"
+                       AbsoluteLayout.LayoutBounds="0.5,0.02" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                <StackLayout x:Name="UpcomingEvents" Orientation="Vertical" Spacing="24" Padding="5,0"
+                             AbsoluteLayout.LayoutBounds="0,100,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
+                    <Label Text="Upcoming Events: " TextColor="#00858F"
+                           FontSize="32" FontAttributes="Bold"/>
+                    <BoxView BackgroundColor="#00858F" CornerRadius="2" TranslationY="-12"
+                             HeightRequest="4" HorizontalOptions="FillAndExpand"/>
+                    <!-- First Post (Sharpen Your C# Skills) -->
+                    <AbsoluteLayout x:Name="FirstPost">
+                        <BoxView BackgroundColor="#00858f" IsEnabled="False"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Button x:Name="FirstPostButton" Pressed="PressedEvent" Released="GoToEventPage"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile1" Source="QubicSharp_ProfilePhoto.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical" IsEnabled="False"
+                                     HorizontalOptions="Start" TranslationX="-5"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   Text="Qubic Sharp" TextColor="#575757"
+                                   FontSize="12" FontAttributes="None"/>
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   Text="Sharpen Your C# Skills" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124" IsEnabled="False"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView BackgroundColor="#FFAF00" CornerRadius="10"
+                                     HorizontalOptions="Center" IsEnabled="False"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label HorizontalTextAlignment="Center" IsEnabled="False"
+                                   Text="Workshop" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Time Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="16" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="TimeIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Dec 12, 2019 at 5:00pm to 7:00pm" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="-18" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="1263 Patrick Taylor Hall" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </AbsoluteLayout>
+
+                    <!-- Second Post (The Potential of Virtual Reality) -->
+                    <AbsoluteLayout x:Name="SecondPost">
+                        <BoxView BackgroundColor="#00858f" IsEnabled="False"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Button x:Name="SecondPostButton" Pressed="PressedEvent" Released="GoToEventPage"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile2" Source="SpencerRift_ProfilePhoto.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical" IsEnabled="False"
+                                     HorizontalOptions="Start" TranslationX="27"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   Text="Spencer Rift" TextColor="#575757"
+                                   FontSize="12" FontAttributes="None"/>
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   Text="The Potential of Virtual Reality" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124" IsEnabled="False"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView BackgroundColor="#00DE12" CornerRadius="10"
+                                     HorizontalOptions="Center" IsEnabled="False"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label HorizontalTextAlignment="Center" IsEnabled="False"
+                                   Text="Seminar" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Time Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="17" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="TimeIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Dec 19, 2019 at 5:00pm to 6:20pm" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="-17" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Royal Cotillion Ballroom" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </AbsoluteLayout>
+
+                    <!-- Third Post (LSU Global Game Jam 2020) -->
+                    <AbsoluteLayout x:Name="ThirdPost">
+                        <BoxView BackgroundColor="#00858f" IsEnabled="False"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Button x:Name="ThirdPostButton" Pressed="PressedEvent" Released="GoToEventPage"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile3" Source="FloraPortrait.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-30"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical" IsEnabled="False"
+                                     HorizontalOptions="Start" TranslationX="20"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   HorizontalOptions="Start"
+                                   Text="Flora O'Connor" TextColor="#575757"
+                                   FontSize="12" FontAttributes="None"/>
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   Text="LSU Global Game Jam 2020" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124" IsEnabled="False"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView BackgroundColor="#0084FF" CornerRadius="10"
+                                     HorizontalOptions="Center" IsEnabled="False"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label HorizontalTextAlignment="Center" IsEnabled="False"
+                                   Text="Event" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Time Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="-24" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="TimeIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Jan 31 to Feb 2, 2020" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="-14" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="LSU Digital Media Center" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </AbsoluteLayout>
+
+                    <!-- Fourth Post (Importance of Software Testing (Dr. Earl Logg)) -->
+                    <AbsoluteLayout x:Name="FourthPost">
+                        <BoxView BackgroundColor="#00858F" IsEnabled="False"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Button x:Name="FourthPostButton" Pressed="PressedEvent" Released="GoToEventPage"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile4" Source="EarlLogg_ProfilePhoto.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical" IsEnabled="False"
+                                     HorizontalOptions="Start" TranslationX="18"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   HorizontalOptions="Start"
+                                   Text="Dr. Earl Logg" TextColor="#575757"
+                                   FontSize="12" FontAttributes="None"/>
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   Text="The Importance of Software&#10;Testing" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124" IsEnabled="False"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView BackgroundColor="#00DE12" CornerRadius="10"
+                                     HorizontalOptions="Center" IsEnabled="False"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label HorizontalTextAlignment="Center" IsEnabled="False"
+                                   Text="Seminar" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Time Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="16" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="TimeIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Mar 27, 2020 at 3:00pm to 4:20pm" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="-18" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="1263 Patrick Taylor Hall" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </AbsoluteLayout>
+                    
+                    <!-- Fifth Post (Git Gud at GitHub) -->
+                    <AbsoluteLayout x:Name="FifthPost">
+                        <BoxView BackgroundColor="#00858f" IsEnabled="False"
+                                 HorizontalOptions="Center" CornerRadius="16"
+                                 WidthRequest="380" HeightRequest="144"
+                                 TranslationX="3" TranslationY="3"
+                                 AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Button x:Name="FifthPostButton" Pressed="PressedEvent" Released="GoToEventPage"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="144"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="16"
+                               TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <ImageButton x:Name="MentorProfile5" Source="EarlLogg_ProfilePhoto.png"
+                                         Released="GoToMentorPage"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical" IsEnabled="False"
+                                     HorizontalOptions="Start" TranslationX="-24"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   HorizontalOptions="Start"
+                                   Text="Dr. Earl Logg" TextColor="#575757"
+                                   FontSize="12" FontAttributes="None"/>
+                            <Label HorizontalTextAlignment="Start" IsEnabled="False"
+                                   Text="Git Gud at GitHub" TextColor="Black"
+                                   FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <AbsoluteLayout TranslationX="124" IsEnabled="False"
+                                        AbsoluteLayout.LayoutBounds="0.5,0.065" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <BoxView BackgroundColor="#FFAF00" CornerRadius="10"
+                                     HorizontalOptions="Center" IsEnabled="False"
+                                     WidthRequest="100" HeightRequest="20"/>
+                            <Label HorizontalTextAlignment="Center" IsEnabled="False"
+                                   Text="Workshop" TextColor="White"
+                                   FontSize="16" FontAttributes="Bold"
+                                   AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        </AbsoluteLayout>
+                        <!-- Time Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="16" TranslationY="80"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="TimeIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="Apr 14, 2020 at 4:00pm to 7:00pm" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <!-- Location Information -->
+                        <StackLayout Orientation="Horizontal" IsEnabled="False"
+                                     TranslationX="-18" TranslationY="105"
+                                     AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image Source="LocationIcon.png" IsEnabled="False"
+                                         WidthRequest="28" HeightRequest="28"/>
+                            <Label Text="1225 Patrick Taylor Hall" TextColor="#00858F"
+                                   TranslationY="7" IsEnabled="False"
+                                   FontSize="12" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </AbsoluteLayout>
+                </StackLayout>
+            </AbsoluteLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

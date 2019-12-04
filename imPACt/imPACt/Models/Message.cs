@@ -3,6 +3,7 @@ using SQLite;
 
 namespace imPACt.Models
 {
+    [Table("Messages")]
     public class Message
     {
         [PrimaryKey, AutoIncrement]

@@ -9,19 +9,24 @@
                 <AbsoluteLayout>
                     <BoxView BackgroundColor="#00858F"
                          AbsoluteLayout.LayoutBounds="0,0,1,170" AbsoluteLayout.LayoutFlags="WidthProportional"/>
-                    <Image
-                           WidthRequest="120" HeightRequest="120"
-                           Source="ProfilePicTemplate.png" Margin="0,25,0,0"
-                           AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    <Frame HasShadow="False" CornerRadius="52"
+                           WidthRequest="64" HeightRequest="64"
+                           IsClippedToBounds="True" TranslationY="32"
+                           HorizontalOptions="Center" VerticalOptions="Center"
+                           AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional">
+                           <Image x:Name="ProfilePic" Source="InterestsIcons-06.png"
+                                        Aspect="AspectFill" Margin="-20"
+                                        WidthRequest="56" HeightRequest="56"/>
+                    </Frame>
                         <Button x:Name="FollowButton" Text="Follow"
                                 TextColor="White" FontSize="24" FontAttributes="Bold"
                                 BackgroundColor="#00CFB3"
                                 WidthRequest="120" HeightRequest="50"
                                 AbsoluteLayout.LayoutBounds="0.93,205" AbsoluteLayout.LayoutFlags="XProportional">
                         </Button>
-                    <StackLayout Orientation="Vertical" Spacing="1" Margin="16,24,0,0"
+                    <StackLayout Orientation="Vertical" Spacing="1" Margin="16,24,16,0"
                                  AbsoluteLayout.LayoutBounds="0.25,180" AbsoluteLayout.LayoutFlags="XProportional">
-                        <Label x:Name="UsernameText"
+                        <Label x:Name="FullNameText"
                                Text="Dr. Xavier Forms"
                                TextColor="#00858F" FontSize="24" FontAttributes="Bold"/>
                         <Label x:Name="UniversityText"
@@ -53,49 +58,49 @@
 
                             <Image x:Name="Tab1"
                                    Grid.Row="0" Grid.Column="0"
-                                   Source="InterestsIcons-01.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab2"
                                    Grid.Row="0" Grid.Column="1"
-                                   Source="InterestsIcons-02.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab3"
                                    Grid.Row="0" Grid.Column="2"
-                                   Source="InterestsIcons-03.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab4"
                                    Grid.Row="0" Grid.Column="3"
-                                   Source="InterestsIcons-04.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab5"
                                    Grid.Row="1" Grid.Column="0"
-                                   Source="InterestsIcons-05.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab6"
                                    Grid.Row="1" Grid.Column="1"
-                                   Source="InterestsIcons-06.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab7"
                                    Grid.Row="1" Grid.Column="2"
-                                   Source="InterestsIcons-07.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab8"
                                    Grid.Row="1" Grid.Column="3"
-                                   Source="InterestsIcons-08.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab9"
                                    Grid.Row="2" Grid.Column="0"
-                                   Source="InterestsIcons-09.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab10"
                                    Grid.Row="2" Grid.Column="1"
-                                   Source="InterestsIcons-10.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab11"
                                    Grid.Row="2" Grid.Column="2"
-                                   Source="InterestsIcons-11.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab12"
                                    Grid.Row="2" Grid.Column="3"
-                                   Source="InterestsIcons-12.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab13"
                                    Grid.Row="3" Grid.Column="0"
-                                   Source="InterestsIcons-13.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab14"
                                    Grid.Row="3" Grid.Column="1"
-                                   Source="InterestsIcons-14.png"/>
+                                   Source=""/>
                             <Image x:Name="Tab15"
                                    Grid.Row="3" Grid.Column="2"
-                                   Source="InterestsIcons-15.png"/>
+                                   Source=""/>
                         </Grid>
                         <Label Text="Educational Background" Margin="16,0,0,0"
                                TextColor="White" FontSize="24" FontAttributes="Bold"

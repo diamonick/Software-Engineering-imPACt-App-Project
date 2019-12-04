@@ -12,8 +12,7 @@ namespace imPACt.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserInterestsPage : ContentPage
     {
-        private string[] UniversityItems = {    "Any",
-                                                "Auburn University",
+        private string[] UniversityItems = {    "Auburn University",
                                                 "Louisiana State University",
                                                 "Mississippi State University",
                                                 "Texas A&M University",
@@ -29,8 +28,7 @@ namespace imPACt.Pages
                                                 "Vanderbilt University"
         };
 
-        private string[] LocationItems = {  "Any",
-                                            "Alabama",
+        private string[] LocationItems = {  "Alabama",
                                             "Alazka",
                                             "Arizona",
                                             "Arkansas",
@@ -82,7 +80,7 @@ namespace imPACt.Pages
                                             "Wyoming"
         };
 
-        private string[] InterestedFieldItems = {   "Any",
+        private string[] MajorItems = {   "N/A",
                                                     "Animal Sciences",
                                                     "Astronomy",
                                                     "Biochemistry",
@@ -119,8 +117,7 @@ namespace imPACt.Pages
         };
 
         //Pick from a string of classifications
-        private string[] ClassificationItems = {    "Any",
-                                                    "Freshman",
+        private string[] ClassificationItems = {    "Freshman",
                                                     "Sophomore",
                                                     "Junior",
                                                     "Senior",
@@ -129,6 +126,8 @@ namespace imPACt.Pages
                                                     "Researcher"
         };
 
+        private const double PressedSize = 1.1;                     //Size of button when pressed
+        public int SelectedIndex { get; set; }
         public UserInterestsPage()
         {
             InitializeComponent();
@@ -145,9 +144,9 @@ namespace imPACt.Pages
                 LocationList.Items.Add(i);
             }
 
-            foreach (string i in InterestedFieldItems)
+            foreach (string i in MajorItems)
             {
-                InterestedFieldList.Items.Add(i);
+                MajorList.Items.Add(i);
             }
 
             //Add all items from Classification items to the Classification list
@@ -156,16 +155,46 @@ namespace imPACt.Pages
                 ClassifcationList.Items.Add(i);
             }
 
-            checkFields();
+            CheckFields();
         }
-        void checkFields()
+
+        void HighlightButton(object sender, EventArgs args)
         {
-            SUBMIT.IsEnabled = true;
-            SUBMIT.Opacity = 1.0;
+            var button = (Button)sender;
+
+            button.TextColor = Color.FromRgb(200, 200, 200);
+            button.BackgroundColor = Color.FromRgb(0, 85, 92);
+            button.ScaleTo(PressedSize, 200, Easing.SinOut);
+        }
+
+        void CheckFields()
+        {
+            if (UniversityList.SelectedIndex != -1
+                && LocationList.SelectedIndex != -1
+                && MajorList.SelectedIndex != -1
+                && ClassifcationList.SelectedIndex != -1)
+            {
+                MATCH.IsEnabled = true;
+                MATCH.Opacity = 1.0;
+            }
+            else
+            {
+                MATCH.IsEnabled = false;
+                MATCH.Opacity = 0.5;
+            }
+        }
+
+        //SelectedIndexChanged Event that runs when the user selects an item from a picker
+        void PickedItem(object sender, EventArgs args)
+        {
+            CheckFields();
         }
 
         async void GoToMatchPage(object sender, EventArgs args)
         {
+            var button = (Button)sender;
+
+            await button.ScaleTo(1.0, 200, Easing.SinOut);
             await Navigation.PushAsync(new MatchPage());
         }
     }

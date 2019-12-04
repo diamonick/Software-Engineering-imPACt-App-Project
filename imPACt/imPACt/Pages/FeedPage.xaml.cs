@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using imPACt.Models;
 using Xamarin.Forms;
 
 namespace imPACt.Pages
@@ -12,10 +12,30 @@ namespace imPACt.Pages
         private int NumOfInterests = 0; 
         private const int RequiredNumOfInterests = 5;
         private bool[] InterestsSelected = new bool[15];
+        private string[] InterestSource =
+        {
+            "InterestsIcons-01.png",
+            "InterestsIcons-02.png",
+            "InterestsIcons-03.png",
+            "InterestsIcons-04.png",
+            "InterestsIcons-05.png",
+            "InterestsIcons-06.png",
+            "InterestsIcons-07.png",
+            "InterestsIcons-08.png",
+            "InterestsIcons-09.png",
+            "InterestsIcons-10.png",
+            "InterestsIcons-11.png",
+            "InterestsIcons-12.png",
+            "InterestsIcons-13.png",
+            "InterestsIcons-14.png",
+            "InterestsIcons-15.png",
+        };
+        private User newUser;
 
-        public FeedPage()
+        public FeedPage(User u)
         {
             InitializeComponent();
+            this.newUser = u;
             InterestCounter.Text = "Number of Interest: " + NumOfInterests + "/5";
         }
 
@@ -45,6 +65,9 @@ namespace imPACt.Pages
         void HighlightButton(object sender, EventArgs args)
         {
             var button = (Button)sender;
+
+            button.TextColor = Color.FromRgb(200, 200, 200);
+            button.BackgroundColor = Color.FromRgb(0, 85, 92);
             button.ScaleTo(PressedSize, 200, Easing.SinOut);
         }
 
@@ -179,7 +202,20 @@ namespace imPACt.Pages
         //Go to User Classification page
         async void GoToClassificationPage(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new UserClassificationPage());
+            var button = (Button)sender;
+
+            button.TextColor = Color.White;
+            button.BackgroundColor = Color.FromHex("#00CFB3");
+            await button.ScaleTo(1.0, 200, Easing.SinOut);
+
+
+            //Set Interests for New User Here
+            for (int i = 0; i < InterestsSelected.Length; i++)
+            {
+                if (InterestsSelected[i]) { this.newUser.Interests.Add((string)InterestSource[i]); }
+            }
+
+            await Navigation.PushAsync(new UserClassificationPage(this.newUser));
         }
     }
 }
