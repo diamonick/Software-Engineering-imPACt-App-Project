@@ -182,24 +182,6 @@ namespace imPACt.Pages
                         }
                     }
                 }
-                else
-                {
-                    if (entry == LI_Email)
-                    {
-                        if (Regex.IsMatch(entry.Text, emailSyntax))
-                        {
-                            LI_EmailMark.Source = Checkmark;
-                            LI_Email_Checked = true;
-                            entry.BackgroundColor = ValidColor;
-                        }
-                        else
-                        {
-                            LI_EmailMark.Source = Xmark;
-                            LI_Email_Checked = false;
-                            entry.BackgroundColor = InvalidColor;
-                        }
-                    }
-                }
             }
             //Entry is empty
             else
@@ -212,17 +194,15 @@ namespace imPACt.Pages
                     if (entry == SU_FullName) { SU_FullNameMark.Source = EmptyString; FullName_Checked = false; }
                     else if (entry == SU_Email) { SU_EmailMark.Source = EmptyString; SU_Email_Checked = false; }
                 }
-                else { LI_EmailMark.Source = EmptyString; SU_Email_Checked = false; }
             }
 
             if (PL == PageLayout.SignUpLayout) { CheckSignUp(); }
-            else { CheckLogin(); }
         }
 
         void ValidatePasswordLength(object sender, TextChangedEventArgs e)
         {
             var entry = (Entry)sender;
-            var image = (PL == PageLayout.SignUpLayout ? SU_PasswordMark : LI_PasswordMark);
+            var image = SU_PasswordMark;
             PWD = entry.Text;
 
             //Display nothing if password entry is empty
@@ -258,7 +238,6 @@ namespace imPACt.Pages
             }
 
             if (PL == PageLayout.SignUpLayout) { CheckSignUp(); }
-            else { CheckLogin(); }
         }
 
         //Show/Hide password in Password entry
@@ -326,7 +305,6 @@ namespace imPACt.Pages
             }
 
             if (PL == PageLayout.SignUpLayout) { CheckSignUp(); }
-            else { CheckLogin(); }
         }
 
         //Ensure user has filled all the entries in Sign Up. If true, allow user to sign up.
@@ -341,21 +319,6 @@ namespace imPACt.Pages
             {
                 SUBMIT.IsEnabled = false;
                 SUBMIT.Opacity = 0.5;
-            }
-        }
-
-        //Ensure user has filled all the entries in Log In. If true, allow user to login.
-        void CheckLogin()
-        {
-            if (LI_Email_Checked && LI_PWD_Checked)
-            {
-                LOGIN.IsEnabled = true;
-                LOGIN.Opacity = 1.0;
-            }
-            else
-            {
-                LOGIN.IsEnabled = false;
-                LOGIN.Opacity = 0.5;
             }
         }
 

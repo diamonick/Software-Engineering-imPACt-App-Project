@@ -18,12 +18,6 @@
                                         Aspect="AspectFill" Margin="-20"
                                         WidthRequest="56" HeightRequest="56"/>
                     </Frame>
-                        <Button x:Name="FollowButton" Text="Follow"
-                                TextColor="White" FontSize="24" FontAttributes="Bold"
-                                BackgroundColor="#00CFB3"
-                                WidthRequest="120" HeightRequest="50"
-                                AbsoluteLayout.LayoutBounds="0.93,205" AbsoluteLayout.LayoutFlags="XProportional">
-                        </Button>
                     <StackLayout Orientation="Vertical" Spacing="1" Margin="16,24,16,0"
                                  AbsoluteLayout.LayoutBounds="0.25,180" AbsoluteLayout.LayoutFlags="XProportional">
                         <Label x:Name="FullNameText"
@@ -36,6 +30,17 @@
                                Text="Hi! My name is Dr. Forms, I'm a Xamarin Forms specialist at Louisiana State University. I develop apps 24 hours a day. Contact me at xforms@lsu.edu."
                                TextColor="#00858F" FontSize="16" FontAttributes="None"/>
                     </StackLayout>
+                    <AbsoluteLayout x:Name="FollowField" AbsoluteLayout.LayoutBounds="0.93,205" AbsoluteLayout.LayoutFlags="XProportional">
+                        <Button x:Name="FollowButton" Text="Follow"
+                                TextColor="White" FontSize="18" FontAttributes="Bold"
+                                BackgroundColor="#303030"
+                                Pressed="HighlightButton" Released="FollowClicked"
+                                WidthRequest="144" HeightRequest="50">
+                        </Button>
+                         <Image x:Name="Checkmark" Source="interest_checkmark.png" Opacity="0.0"
+                                WidthRequest="18" HeightRequest="18" IsEnabled="False"
+                                AbsoluteLayout.LayoutBounds="9,0.5" AbsoluteLayout.LayoutFlags="YProportional"/>
+                    </AbsoluteLayout>
                     <BoxView BackgroundColor="#00D1A4"
                          AbsoluteLayout.LayoutBounds="0,390,1,600" AbsoluteLayout.LayoutFlags="WidthProportional"/>
                         <Label Text="Research Interests" Margin="16,0,0,0"

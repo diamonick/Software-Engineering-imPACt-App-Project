@@ -1,27 +1,143 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="imPACt.Pages.ContactsPage"
-             Title="Contacts">
+             Title="Contacts"
+             BackgroundColor="#00858f">
     <ContentPage.Content>
         <ScrollView>
             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <!-- Draw white background -->
-                <BoxView BackgroundColor="White"
+                <BoxView BackgroundColor="#DEFFCF"
                      HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
                      HeightRequest="640"
-                     AbsoluteLayout.LayoutBounds="0,130,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
-
-                <!-- Contacts Layout -->
-                <AbsoluteLayout x:Name="ContactsTemplate"
-                                IsVisible="True" IsEnabled="True"
-                                AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-                    <!-- Contacts page display text -->
-                    <Label Text="Contacts"
-                           TextColor="#00858F" FontSize="24" FontAttributes="Bold"
-                           HorizontalTextAlignment="Center"
-                           AbsoluteLayout.LayoutBounds="0.5,0.28" AbsoluteLayout.LayoutFlags="PositionProportional">
-                    </Label>
+                     AbsoluteLayout.LayoutBounds="0,80,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                <StackLayout Orientation="Vertical" Spacing="24" Padding="5,0,5,0"
+                             AbsoluteLayout.LayoutBounds="0,100,1,1" AbsoluteLayout.LayoutFlags="SizeProportional">
+                <AbsoluteLayout x:Name="FirstContact">
+                        <BoxView BackgroundColor="#00858f" IsEnabled="False"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="96"
+                                TranslationX="3" TranslationY="3"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Button x:Name="FirstPostButton"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="96"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.52,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image x:Name="MentorProfile1" Source="QubicSharp_ProfilePhoto.png"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                    
+                    <StackLayout Orientation="Vertical" Spacing="1"
+                                 AbsoluteLayout.LayoutBounds="90,20" AbsoluteLayout.LayoutFlags="None">
+                        <Label x:Name="FullNameText"
+                               Text="Dr. Xavier Forms"
+                               TextColor="#00858F" FontSize="24" FontAttributes="Bold"/>
+                        <Label x:Name="UniversityText"
+                               Text="Louisiana State University"
+                               TextColor="#575757" FontSize="18" FontAttributes="None"/>
+                    </StackLayout>
                 </AbsoluteLayout>
+                <AbsoluteLayout x:Name="SecondContact">
+                        <BoxView BackgroundColor="#00858f" IsEnabled="False"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="96"
+                                TranslationX="3" TranslationY="3"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Button x:Name="SecondContactButton"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="96"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.52,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image x:Name="MentorProfile2" Source="QubicSharp_ProfilePhoto.png"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                    
+                    <StackLayout Orientation="Vertical" Spacing="1"
+                                 AbsoluteLayout.LayoutBounds="90,20" AbsoluteLayout.LayoutFlags="None">
+                        <Label x:Name="FullNameText2"
+                               Text="Dr. Xavier Forms"
+                               TextColor="#00858F" FontSize="24" FontAttributes="Bold"/>
+                        <Label x:Name="UniversityText2"
+                               Text="Louisiana State University"
+                               TextColor="#575757" FontSize="18" FontAttributes="None"/>
+                    </StackLayout>
+                </AbsoluteLayout>
+                <AbsoluteLayout x:Name="ThirdContact">
+                        <BoxView BackgroundColor="#00858f" IsEnabled="False"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="96"
+                                TranslationX="3" TranslationY="3"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Button x:Name="ThirdContactButton"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="96"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.52,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image x:Name="MentorProfile3" Source="QubicSharp_ProfilePhoto.png"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                    
+                    <StackLayout Orientation="Vertical" Spacing="1"
+                                 AbsoluteLayout.LayoutBounds="90,20" AbsoluteLayout.LayoutFlags="None">
+                        <Label x:Name="FullNameText3"
+                               Text="Dr. Xavier Forms"
+                               TextColor="#00858F" FontSize="24" FontAttributes="Bold"/>
+                        <Label x:Name="UniversityText3"
+                               Text="Louisiana State University"
+                               TextColor="#575757" FontSize="18" FontAttributes="None"/>
+                    </StackLayout>
+                </AbsoluteLayout>
+                <AbsoluteLayout x:Name="FourthContact">
+                        <BoxView BackgroundColor="#00858f" IsEnabled="False"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="96"
+                                TranslationX="3" TranslationY="3"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Button x:Name="FourthContactButton"
+                                BackgroundColor="White"
+                                HorizontalOptions="Center" CornerRadius="16"
+                                WidthRequest="380" HeightRequest="96"
+                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                        <Frame HasShadow="False" CornerRadius="32"
+                               WidthRequest="24" HeightRequest="24"
+                               IsClippedToBounds="True" TranslationX="-154"
+                               HorizontalOptions="Center" VerticalOptions="Center"
+                               AbsoluteLayout.LayoutBounds="0.52,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image x:Name="MentorProfile4" Source="QubicSharp_ProfilePhoto.png"
+                                         Aspect="AspectFill" Margin="-20"
+                                         WidthRequest="56" HeightRequest="56"/>
+                        </Frame>
+                    
+                    <StackLayout Orientation="Vertical" Spacing="1"
+                                 AbsoluteLayout.LayoutBounds="90,20" AbsoluteLayout.LayoutFlags="None">
+                        <Label x:Name="FullNameText4"
+                               Text="Dr. Xavier Forms"
+                               TextColor="#00858F" FontSize="24" FontAttributes="Bold"/>
+                        <Label x:Name="UniversityText4"
+                               Text="Louisiana State University"
+                               TextColor="#575757" FontSize="18" FontAttributes="None"/>
+                    </StackLayout>
+                </AbsoluteLayout>
+            </StackLayout>
             </AbsoluteLayout>
         </ScrollView>
     </ContentPage.Content>

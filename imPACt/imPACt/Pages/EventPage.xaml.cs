@@ -50,26 +50,25 @@ namespace imPACt.Pages
         {
             InterestedButton.TextColor = Color.FromRgb(200, 200, 200);
             InterestedButton.BackgroundColor = (IsInterested ? Color.FromRgb(0, 85, 92) : Color.FromHex("#181818"));
-            InterestedButton.ScaleTo(PressedSize, 200, Easing.SinOut);
+            InterestedField.ScaleTo(PressedSize, 200, Easing.SinOut);
         }
 
         async void InterestedClicked(object sender, EventArgs args)
         {
-            await InterestedButton.ScaleTo(1.0, 200, Easing.SinOut);
+            await InterestedField.ScaleTo(1.0, 200, Easing.SinOut);
 
             IsInterested = !IsInterested;
-            if (IsInterested) { await DisplayAlert("Registered", "You are now registered for this event.", "OK"); }
 
             InterestedButton.Text = (IsInterested ? "You are registered!" : "Interested?");
             InterestedButton.BackgroundColor = (IsInterested ? Color.FromHex("#00CFB3") : Color.FromHex("#303030"));
             InterestedButton.TextColor = Color.White;
+            if (IsInterested) { await Checkmark.FadeTo(1.0, 200, Easing.Linear); }
+            else { await Checkmark.FadeTo(0.0, 200, Easing.Linear); }
 
             if (this.mentor.Email == MentorEmail1) { this.newUser.InterestedInEvents[0] = !(this.newUser.InterestedInEvents[0]); }
             else if (this.mentor.Email == MentorEmail2) { this.newUser.InterestedInEvents[1] = !(this.newUser.InterestedInEvents[1]); }
             else if (this.mentor.Email == MentorEmail3) { this.newUser.InterestedInEvents[2] = !(this.newUser.InterestedInEvents[2]); }
             else if (this.mentor.Email == MentorEmail4) { this.newUser.InterestedInEvents[3] = !(this.newUser.InterestedInEvents[3]); }
-            
-            await App.Database.SaveUserAsync(this.mentor);
         }
 
         void ConfirmInterested(string email)
@@ -82,11 +81,13 @@ namespace imPACt.Pages
             InterestedButton.Text = (IsInterested ? "You are registered!" : "Interested?");
             InterestedButton.BackgroundColor = (IsInterested ? Color.FromHex("#00CFB3") : Color.FromHex("#303030"));
             InterestedButton.TextColor = Color.White;
+
+            Checkmark.Opacity = (IsInterested ? 1.0 : 0.0);
         }
 
         async void GoToMentorPage(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new MentorProfilePage(this.mentor));
+            await Navigation.PushAsync(new MentorProfilePage(this.newUser, this.mentor));
         }
     }
 }

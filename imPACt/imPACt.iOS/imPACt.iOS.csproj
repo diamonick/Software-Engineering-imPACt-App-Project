@@ -197,6 +197,12 @@
     <BundleResource Include="Resources\QubicSharp_ProfilePhoto.png" />
     <BundleResource Include="Resources\SpencerRift_ProfilePhoto.png" />
     <BundleResource Include="Resources\EarlLogg_ProfilePhoto.png" />
+    <BundleResource Include="Resources\interest_checkmark.png" />
+    <BundleResource Include="Resources\Unknown_ProfilePhoto.png" />
+    <BundleResource Include="Resources\LoadingIcon.png" />
+    <BundleResource Include="Resources\MentorButton.png" />
+    <BundleResource Include="Resources\SwipeButton.png" />
+    <BundleResource Include="Resources\MailIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\0617_NeilDegrasseTyson_Gluekit_oneuseonly.jpg" />

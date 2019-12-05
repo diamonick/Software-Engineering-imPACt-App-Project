@@ -108,11 +108,11 @@ namespace imPACt.Pages
         {
             var imageButton = (ImageButton)sender;
 
-            if (imageButton == MentorProfile1) { await Navigation.PushAsync(new MentorProfilePage(Mentor1)); }
-            else if (imageButton == MentorProfile2) { await Navigation.PushAsync(new MentorProfilePage(Mentor2)); }
-            else if (imageButton == MentorProfile3) { await Navigation.PushAsync(new MentorProfilePage(Mentor3)); }
-            else if (imageButton == MentorProfile4) { await Navigation.PushAsync(new MentorProfilePage(Mentor4)); }
-            else if (imageButton == MentorProfile5) { await Navigation.PushAsync(new MentorProfilePage(Mentor4)); }
+            if (imageButton == MentorProfile1) { await Navigation.PushAsync(new MentorProfilePage(this.newUser, Mentor1)); }
+            else if (imageButton == MentorProfile2) { await Navigation.PushAsync(new MentorProfilePage(this.newUser, Mentor2)); }
+            else if (imageButton == MentorProfile3) { await Navigation.PushAsync(new MentorProfilePage(this.newUser, Mentor3)); }
+            else if (imageButton == MentorProfile4) { await Navigation.PushAsync(new MentorProfilePage(this.newUser, Mentor4)); }
+            else if (imageButton == MentorProfile5) { await Navigation.PushAsync(new MentorProfilePage(this.newUser, Mentor4)); }
         }
     }
 }

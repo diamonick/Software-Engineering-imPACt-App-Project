@@ -48,7 +48,7 @@ namespace imPACt.Pages
 
             button.BackgroundColor = ActiveColor;
 
-            if (button == HomeButton && !HomeNode.IsVisible)
+            if (button == HomeButton)
             {
                 HomeNode.IsVisible = true;
                 MatchNode.IsVisible = false;
@@ -61,7 +61,7 @@ namespace imPACt.Pages
 
                 Detail = new NavigationPage(new HomePage(this.newUser));
             }
-            else if (button == MatchButton && !MatchNode.IsVisible)
+            else if (button == MatchButton)
             {
                 HomeNode.IsVisible = false;
                 MatchNode.IsVisible = true;
@@ -72,9 +72,9 @@ namespace imPACt.Pages
                 ContactsButton.BackgroundColor = InactiveColor;
                 SettingsButton.BackgroundColor = InactiveColor;
 
-                Detail = new NavigationPage(new UserInterestsPage());
+                Detail = new NavigationPage(new UserInterestsPage(this.newUser));
             }
-            else if (button == ContactsButton && !ContactsNode.IsVisible)
+            else if (button == ContactsButton)
             {
                 HomeNode.IsVisible = false;
                 MatchNode.IsVisible = false;
@@ -87,7 +87,7 @@ namespace imPACt.Pages
 
                 Detail = new NavigationPage(new ContactsPage());
             }
-            else if (button == SettingsButton && !SettingsNode.IsVisible)
+            else if (button == SettingsButton)
             {
                 HomeNode.IsVisible = false;
                 MatchNode.IsVisible = false;

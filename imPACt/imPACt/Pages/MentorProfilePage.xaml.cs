@@ -12,7 +12,8 @@ namespace imPACt.Pages
 {
     public partial class MentorProfilePage : ContentPage
     {
-
+        private const double PressedSize = 1.1;                     //Size of button when pressed
+        private bool IsFollowing = false;
         private const string MentorEmail1 = "qsharp56@lsu.edu";
         private const string MentorEmail2 = "srift17@lsu.edu";
         private const string MentorEmail3 = "foconnor24@lsu.edu";
@@ -37,56 +38,58 @@ namespace imPACt.Pages
         };
 
         User newUser;
-        public MentorProfilePage(User u)
+        User mentor;
+        public MentorProfilePage(User u, User m)
         {
             InitializeComponent();
             this.newUser = u;
+            this.mentor = m;
 
             //Clears all the user's interests
-            this.newUser.Interests.Clear();
+            this.mentor.Interests.Clear();
 
-            FullNameText.Text = newUser.Name;
-            Description.Text = newUser.Description;
-            ProfilePic.Source = newUser.ProfilePhoto;
+            FullNameText.Text = mentor.Name;
+            Description.Text = mentor.Description;
+            ProfilePic.Source = mentor.ProfilePhoto;
 
-            if (this.newUser.Email == MentorEmail1)
+            if (this.mentor.Email == MentorEmail1)
             {
-                this.newUser.Interests.Add("InterestsIcons-01.png");
-                this.newUser.Interests.Add("InterestsIcons-04.png");
-                this.newUser.Interests.Add("InterestsIcons-06.png");
-                this.newUser.Interests.Add("InterestsIcons-09.png");
-                this.newUser.Interests.Add("InterestsIcons-15.png");
+                this.mentor.Interests.Add("InterestsIcons-01.png");
+                this.mentor.Interests.Add("InterestsIcons-04.png");
+                this.mentor.Interests.Add("InterestsIcons-06.png");
+                this.mentor.Interests.Add("InterestsIcons-09.png");
+                this.mentor.Interests.Add("InterestsIcons-15.png");
             }
-            else if (this.newUser.Email == MentorEmail2)
+            else if (this.mentor.Email == MentorEmail2)
             {
-                this.newUser.Interests.Add("InterestsIcons-02.png");
-                this.newUser.Interests.Add("InterestsIcons-05.png");
-                this.newUser.Interests.Add("InterestsIcons-06.png");
-                this.newUser.Interests.Add("InterestsIcons-08.png");
-                this.newUser.Interests.Add("InterestsIcons-09.png");
+                this.mentor.Interests.Add("InterestsIcons-02.png");
+                this.mentor.Interests.Add("InterestsIcons-05.png");
+                this.mentor.Interests.Add("InterestsIcons-06.png");
+                this.mentor.Interests.Add("InterestsIcons-08.png");
+                this.mentor.Interests.Add("InterestsIcons-09.png");
             }
-            else if (this.newUser.Email == MentorEmail3)
+            else if (this.mentor.Email == MentorEmail3)
             {
-                this.newUser.Interests.Add("InterestsIcons-03.png");
-                this.newUser.Interests.Add("InterestsIcons-04.png");
-                this.newUser.Interests.Add("InterestsIcons-05.png");
-                this.newUser.Interests.Add("InterestsIcons-06.png");
-                this.newUser.Interests.Add("InterestsIcons-07.png");
-                this.newUser.Interests.Add("InterestsIcons-09.png");
-                this.newUser.Interests.Add("InterestsIcons-13.png");
+                this.mentor.Interests.Add("InterestsIcons-03.png");
+                this.mentor.Interests.Add("InterestsIcons-04.png");
+                this.mentor.Interests.Add("InterestsIcons-05.png");
+                this.mentor.Interests.Add("InterestsIcons-06.png");
+                this.mentor.Interests.Add("InterestsIcons-07.png");
+                this.mentor.Interests.Add("InterestsIcons-09.png");
+                this.mentor.Interests.Add("InterestsIcons-13.png");
             }
-            else if (this.newUser.Email == MentorEmail4)
+            else if (this.mentor.Email == MentorEmail4)
             {
-                this.newUser.Interests.Add("InterestsIcons-01.png");
-                this.newUser.Interests.Add("InterestsIcons-04.png");
-                this.newUser.Interests.Add("InterestsIcons-09.png");
-                this.newUser.Interests.Add("InterestsIcons-10.png");
-                this.newUser.Interests.Add("InterestsIcons-11.png");
+                this.mentor.Interests.Add("InterestsIcons-01.png");
+                this.mentor.Interests.Add("InterestsIcons-04.png");
+                this.mentor.Interests.Add("InterestsIcons-09.png");
+                this.mentor.Interests.Add("InterestsIcons-10.png");
+                this.mentor.Interests.Add("InterestsIcons-11.png");
             }
 
             int InterestIndex = 0;
 
-            foreach (string S in newUser.Interests)
+            foreach (string S in mentor.Interests)
             {
                 while (!S.Equals(InterestSource[InterestIndex]))
                 {
@@ -110,6 +113,49 @@ namespace imPACt.Pages
                 else if (Tab14.Source.IsEmpty) { Tab14.Source = (string)S; }
                 else if (Tab15.Source.IsEmpty) { Tab15.Source = (string)S; }
             }
+
+            ConfirmFollowing(this.mentor.Email);
+        }
+
+        void HighlightButton(object sender, EventArgs args)
+        {
+            FollowButton.TextColor = Color.FromRgb(200, 200, 200);
+            FollowButton.BackgroundColor = (IsFollowing ? Color.FromRgb(0, 85, 92) : Color.FromHex("#181818"));
+            FollowField.ScaleTo(PressedSize, 200, Easing.SinOut);
+        }
+
+        async void FollowClicked(object sender, EventArgs args)
+        {
+            await FollowField.ScaleTo(1.0, 200, Easing.SinOut);
+
+            IsFollowing = !IsFollowing;
+
+            FollowButton.Text = (IsFollowing ? "Following" : "Follow");
+            FollowButton.BackgroundColor = (IsFollowing ? Color.FromHex("#00CFB3") : Color.FromHex("#303030"));
+            FollowButton.TextColor = Color.White;
+            if (IsFollowing) { await Checkmark.FadeTo(1.0, 200, Easing.Linear); }
+            else { await Checkmark.FadeTo(0.0, 200, Easing.Linear); }
+
+            if (this.mentor.Email == MentorEmail1) { this.newUser.FollowingMentor[0] = !(this.newUser.FollowingMentor[0]); }
+            else if (this.mentor.Email == MentorEmail2) { this.newUser.FollowingMentor[1] = !(this.newUser.FollowingMentor[1]); }
+            else if (this.mentor.Email == MentorEmail3) { this.newUser.FollowingMentor[2] = !(this.newUser.FollowingMentor[2]); }
+            else if (this.mentor.Email == MentorEmail4) { this.newUser.FollowingMentor[3] = !(this.newUser.FollowingMentor[3]); }
+
+            //await App.Database.SaveUserAsync(this.mentor);
+        }
+
+        void ConfirmFollowing(string email)
+        {
+            if (this.mentor.Email == MentorEmail1) { IsFollowing = this.newUser.FollowingMentor[0]; }
+            if (this.mentor.Email == MentorEmail2) { IsFollowing = this.newUser.FollowingMentor[1]; }
+            if (this.mentor.Email == MentorEmail3) { IsFollowing = this.newUser.FollowingMentor[2]; }
+            if (this.mentor.Email == MentorEmail4) { IsFollowing = this.newUser.FollowingMentor[3]; }
+
+            FollowButton.Text = (IsFollowing ? "Following" : "Follow");
+            FollowButton.BackgroundColor = (IsFollowing ? Color.FromHex("#00CFB3") : Color.FromHex("#303030"));
+            FollowButton.TextColor = Color.White;
+
+            Checkmark.Opacity = (IsFollowing ? 1.0 : 0.0);
         }
     }
 }

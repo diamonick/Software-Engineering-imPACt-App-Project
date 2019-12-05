@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using imPACt.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
 
 namespace imPACt.Pages
 {
@@ -128,9 +129,13 @@ namespace imPACt.Pages
 
         private const double PressedSize = 1.1;                     //Size of button when pressed
         public int SelectedIndex { get; set; }
-        public UserInterestsPage()
+        User newUser;
+
+        public UserInterestsPage(User u)
         {
             InitializeComponent();
+
+            this.newUser = u;
 
             //Add all items from University items to the University list
             foreach (string i in UniversityItems)
@@ -194,8 +199,10 @@ namespace imPACt.Pages
         {
             var button = (Button)sender;
 
+            button.BackgroundColor = Color.FromHex("#00CFB3");
+            button.TextColor = Color.White;
             await button.ScaleTo(1.0, 200, Easing.SinOut);
-            await Navigation.PushAsync(new MatchPage());
+            await Navigation.PushAsync(new MatchPage(this.newUser));
         }
     }
 }
