@@ -3,12 +3,17 @@
              x:Class="imPACt.Pages.MentorProfilePage"
              Title="Profile">
     <ContentPage.Content>
-        <ScrollView>
         <AbsoluteLayout>
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <AbsoluteLayout>
                     <BoxView BackgroundColor="#00858F"
                          AbsoluteLayout.LayoutBounds="0,0,1,170" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                        <Image x:Name="ProfileBG" Source="Seaside_ProfileBackground.jpg" Opacity="1.0"
+                             HorizontalOptions="Fill" Aspect="Fill"
+                             AbsoluteLayout.LayoutBounds="0,0,1,170" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                    <BoxView BackgroundColor="White" CornerRadius="58"
+                             WidthRequest="116" HeightRequest="116" Margin="1,25.5,0,0"
+                             AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     <Frame HasShadow="False" CornerRadius="52"
                            WidthRequest="64" HeightRequest="64"
                            IsClippedToBounds="True" TranslationY="32"
@@ -113,6 +118,5 @@
                 </AbsoluteLayout>
             </StackLayout>
         </AbsoluteLayout>
-        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

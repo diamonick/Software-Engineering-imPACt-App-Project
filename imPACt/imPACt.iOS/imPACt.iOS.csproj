@@ -203,6 +203,15 @@
     <BundleResource Include="Resources\MentorButton.png" />
     <BundleResource Include="Resources\SwipeButton.png" />
     <BundleResource Include="Resources\MailIcon.png" />
+    <BundleResource Include="Resources\Profile_Background.jpeg" />
+    <BundleResource Include="Resources\Vacation_ProfileBackground.jpeg" />
+    <BundleResource Include="Resources\BeatSaber_ProfileBackground.jpg" />
+    <BundleResource Include="Resources\Cute_Background.png" />
+    <BundleResource Include="Resources\Game_ProfileBackground.png" />
+    <BundleResource Include="Resources\Seaside_ProfileBackground.jpg" />
+    <BundleResource Include="Resources\LogoutIcon.png" />
+    <BundleResource Include="Resources\FollowtheLeader.png" />
+    <BundleResource Include="Resources\HalloweenBackground.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\0617_NeilDegrasseTyson_Gluekit_oneuseonly.jpg" />

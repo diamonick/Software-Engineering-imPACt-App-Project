@@ -40,6 +40,10 @@
                                HorizontalOptions="Center" CornerRadius="16"
                                TranslationX="-154" WidthRequest="72" HeightRequest="144"
                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="0"
+                               TranslationX="-136" WidthRequest="36" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Frame HasShadow="False" CornerRadius="32"
                                WidthRequest="24" HeightRequest="24"
                                IsClippedToBounds="True" TranslationX="-154"
@@ -108,6 +112,10 @@
                                HorizontalOptions="Center" CornerRadius="16"
                                TranslationX="-154" WidthRequest="72" HeightRequest="144"
                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="0"
+                               TranslationX="-136" WidthRequest="36" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Frame HasShadow="False" CornerRadius="32"
                                WidthRequest="24" HeightRequest="24"
                                IsClippedToBounds="True" TranslationX="-154"
@@ -175,6 +183,10 @@
                         <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
                                HorizontalOptions="Center" CornerRadius="16"
                                TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="0"
+                               TranslationX="-136" WidthRequest="36" HeightRequest="144"
                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Frame HasShadow="False" CornerRadius="32"
                                WidthRequest="24" HeightRequest="24"
@@ -245,6 +257,10 @@
                                HorizontalOptions="Center" CornerRadius="16"
                                TranslationX="-154" WidthRequest="72" HeightRequest="144"
                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="0"
+                               TranslationX="-136" WidthRequest="36" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Frame HasShadow="False" CornerRadius="32"
                                WidthRequest="24" HeightRequest="24"
                                IsClippedToBounds="True" TranslationX="-154"
@@ -313,6 +329,10 @@
                         <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
                                HorizontalOptions="Center" CornerRadius="16"
                                TranslationX="-154" WidthRequest="72" HeightRequest="144"
+                               AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                        <BoxView BackgroundColor="#00D1A4" IsEnabled="False"
+                               HorizontalOptions="Center" CornerRadius="0"
+                               TranslationX="-136" WidthRequest="36" HeightRequest="144"
                                AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Frame HasShadow="False" CornerRadius="32"
                                WidthRequest="24" HeightRequest="24"

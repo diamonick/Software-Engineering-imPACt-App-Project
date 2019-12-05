@@ -26,6 +26,7 @@ namespace imPACt.Pages
             MatchNode.IsVisible = false;
             ContactsNode.IsVisible = false;
             SettingsNode.IsVisible = false;
+            LogoutNode.IsVisible = false;
 
             FullNameText.Text = newUser.Name;
 
@@ -42,7 +43,7 @@ namespace imPACt.Pages
         }
 
         //Go to the page you selected from Master Page
-        void GoToSpecifiedPage(object sender, EventArgs args)
+        async void GoToSpecifiedPage(object sender, EventArgs args)
         {
             var button = (Button)sender;
 
@@ -54,10 +55,12 @@ namespace imPACt.Pages
                 MatchNode.IsVisible = false;
                 ContactsNode.IsVisible = false;
                 SettingsNode.IsVisible = false;
+                LogoutNode.IsVisible = false;
 
                 MatchButton.BackgroundColor = InactiveColor;
                 ContactsButton.BackgroundColor = InactiveColor;
                 SettingsButton.BackgroundColor = InactiveColor;
+                LogoutButton.BackgroundColor = InactiveColor;
 
                 Detail = new NavigationPage(new HomePage(this.newUser));
             }
@@ -67,10 +70,12 @@ namespace imPACt.Pages
                 MatchNode.IsVisible = true;
                 ContactsNode.IsVisible = false;
                 SettingsNode.IsVisible = false;
+                LogoutNode.IsVisible = false;
 
                 HomeButton.BackgroundColor = InactiveColor;
                 ContactsButton.BackgroundColor = InactiveColor;
                 SettingsButton.BackgroundColor = InactiveColor;
+                LogoutButton.BackgroundColor = InactiveColor;
 
                 Detail = new NavigationPage(new UserInterestsPage(this.newUser));
             }
@@ -80,10 +85,12 @@ namespace imPACt.Pages
                 MatchNode.IsVisible = false;
                 ContactsNode.IsVisible = true;
                 SettingsNode.IsVisible = false;
+                LogoutNode.IsVisible = false;
 
                 HomeButton.BackgroundColor = InactiveColor;
                 MatchButton.BackgroundColor = InactiveColor;
                 SettingsButton.BackgroundColor = InactiveColor;
+                LogoutButton.BackgroundColor = InactiveColor;
 
                 Detail = new NavigationPage(new ContactsPage());
             }
@@ -93,12 +100,29 @@ namespace imPACt.Pages
                 MatchNode.IsVisible = false;
                 ContactsNode.IsVisible = false;
                 SettingsNode.IsVisible = true;
+                LogoutNode.IsVisible = false;
 
                 HomeButton.BackgroundColor = InactiveColor;
                 MatchButton.BackgroundColor = InactiveColor;
                 ContactsButton.BackgroundColor = InactiveColor;
+                LogoutButton.BackgroundColor = InactiveColor;
 
                 Detail = new NavigationPage(new SettingsPage());
+            }
+            else if (button == LogoutButton)
+            {
+                HomeNode.IsVisible = false;
+                MatchNode.IsVisible = false;
+                ContactsNode.IsVisible = false;
+                SettingsNode.IsVisible = false;
+                LogoutNode.IsVisible = true;
+
+                HomeButton.BackgroundColor = InactiveColor;
+                MatchButton.BackgroundColor = InactiveColor;
+                ContactsButton.BackgroundColor = InactiveColor;
+                SettingsButton.BackgroundColor = InactiveColor;
+
+                await Navigation.PushAsync(new SignInPage());
             }
 
             IsPresented = false;

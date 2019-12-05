@@ -7,14 +7,23 @@
         <AbsoluteLayout>
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <AbsoluteLayout>
-                    <BoxView BackgroundColor="#00858F"
-                         AbsoluteLayout.LayoutBounds="0,0,1,320" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                    <BoxView BackgroundColor="#00858F" Opacity="0.0"
+                         AbsoluteLayout.LayoutBounds="0,0,1,360" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                    <BoxView BackgroundColor="#00858F" Opacity="1.0"
+                         AbsoluteLayout.LayoutBounds="0,0,1,360" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                        <Image Source="HalloweenBackground.png" Opacity="1"
+                             HorizontalOptions="Fill" Aspect="AspectFill"
+                             AbsoluteLayout.LayoutBounds="0,0,1,170" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                    
+                    <BoxView BackgroundColor="White" CornerRadius="67"
+                             WidthRequest="134" HeightRequest="134" Margin="0,17,0,0"
+                             AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     <Image
                            WidthRequest="120" HeightRequest="120"
                            Source="ProfilePicTemplate.png" Margin="0,25,0,0"
                            AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                    <StackLayout Orientation="Vertical" Spacing="1"
-                                 AbsoluteLayout.LayoutBounds="0.5,170" AbsoluteLayout.LayoutFlags="XProportional">
+                    <StackLayout Orientation="Vertical" Spacing="8"
+                                 AbsoluteLayout.LayoutBounds="0.5,180" AbsoluteLayout.LayoutFlags="XProportional">
                         <Label x:Name="FullNameText"
                                Text="Diamonick Dunn" HorizontalOptions="Center"
                                TextColor="White" FontSize="32" FontAttributes="Bold"/>
@@ -159,7 +168,7 @@
             </StackLayout>
             
                 <Grid RowSpacing="16" ColumnSpacing="16" HorizontalOptions="FillAndExpand" Margin="0,16,0,0"
-                              AbsoluteLayout.LayoutBounds="0.5,1200" AbsoluteLayout.LayoutFlags="XProportional">
+                              AbsoluteLayout.LayoutBounds="0.5,1250" AbsoluteLayout.LayoutFlags="XProportional">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="64"/>
                                 <RowDefinition Height="64"/>

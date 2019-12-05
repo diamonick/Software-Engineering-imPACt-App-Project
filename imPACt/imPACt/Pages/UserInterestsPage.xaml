@@ -35,9 +35,9 @@
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="UniversityList" Title="Select a university you want a mentor through"
                                 SelectedIndexChanged="PickedItem"
-                                BackgroundColor="White" WidthRequest="240" HeightRequest="28"
+                                BackgroundColor="White" WidthRequest="220" HeightRequest="28"
                                 HorizontalOptions="End"
-                                FontSize="12" FontAttributes="None" TranslationX="60"
+                                FontSize="12" FontAttributes="None" TranslationX="52"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
@@ -50,9 +50,9 @@
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="LocationList" Title="Select a location you want a mentor from"
                                 SelectedIndexChanged="PickedItem"
-                                BackgroundColor="White" WidthRequest="240" HeightRequest="28"
+                                BackgroundColor="White" WidthRequest="220" HeightRequest="28"
                                 HorizontalOptions="End"
-                                FontSize="12" FontAttributes="None" TranslationX="60"
+                                FontSize="12" FontAttributes="None" TranslationX="52"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
@@ -65,9 +65,9 @@
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="MajorList" Title="Pick an area you are looking for a mentor in"
                                 SelectedIndexChanged="PickedItem"
-                                BackgroundColor="White" WidthRequest="240" HeightRequest="28"
+                                BackgroundColor="White" WidthRequest="220" HeightRequest="28"
                                 HorizontalOptions="End"
-                                FontSize="12" FontAttributes="None" TranslationX="60"
+                                FontSize="12" FontAttributes="None" TranslationX="52"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>
@@ -80,9 +80,9 @@
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                         <Picker x:Name="ClassifcationList" Title="Pick classification"
                                 SelectedIndexChanged="PickedItem"
-                                BackgroundColor="White" WidthRequest="240" HeightRequest="28"
+                                BackgroundColor="White" WidthRequest="220" HeightRequest="28"
                                 HorizontalOptions="End"
-                                FontSize="12" FontAttributes="None" TranslationX="60"
+                                FontSize="12" FontAttributes="None" TranslationX="52"
                                 AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
                         </Picker>
                     </AbsoluteLayout>

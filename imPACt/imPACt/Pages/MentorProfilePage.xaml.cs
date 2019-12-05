@@ -54,6 +54,8 @@ namespace imPACt.Pages
 
             if (this.mentor.Email == MentorEmail1)
             {
+                ProfileBG.Source = "Vacation_ProfileBackground.jpeg";
+                ProfileBG.Aspect = Aspect.AspectFill;
                 this.mentor.Interests.Add("InterestsIcons-01.png");
                 this.mentor.Interests.Add("InterestsIcons-04.png");
                 this.mentor.Interests.Add("InterestsIcons-06.png");
@@ -62,6 +64,7 @@ namespace imPACt.Pages
             }
             else if (this.mentor.Email == MentorEmail2)
             {
+                ProfileBG.Source = "BeatSaber_ProfileBackground.jpg";
                 this.mentor.Interests.Add("InterestsIcons-02.png");
                 this.mentor.Interests.Add("InterestsIcons-05.png");
                 this.mentor.Interests.Add("InterestsIcons-06.png");
@@ -70,6 +73,7 @@ namespace imPACt.Pages
             }
             else if (this.mentor.Email == MentorEmail3)
             {
+                ProfileBG.Source = "Seaside_ProfileBackground.jpg";
                 this.mentor.Interests.Add("InterestsIcons-03.png");
                 this.mentor.Interests.Add("InterestsIcons-04.png");
                 this.mentor.Interests.Add("InterestsIcons-05.png");
@@ -80,6 +84,7 @@ namespace imPACt.Pages
             }
             else if (this.mentor.Email == MentorEmail4)
             {
+                ProfileBG.Source = "Profile_Background.jpeg";
                 this.mentor.Interests.Add("InterestsIcons-01.png");
                 this.mentor.Interests.Add("InterestsIcons-04.png");
                 this.mentor.Interests.Add("InterestsIcons-09.png");

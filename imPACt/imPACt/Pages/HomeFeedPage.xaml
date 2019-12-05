@@ -12,6 +12,9 @@
                         <BoxView BackgroundColor="#002D30"
                              HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
                              AbsoluteLayout.LayoutBounds="0,168,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                        <Image Source="HalloweenBackground.png" Opacity="0.5"
+                             HorizontalOptions="Fill" Aspect="Fill"
+                             AbsoluteLayout.LayoutBounds="0,0,1,168" AbsoluteLayout.LayoutFlags="WidthProportional"/>
                         <StackLayout Orientation="Vertical"
                                      AbsoluteLayout.LayoutBounds="0.5,0,1,1" AbsoluteLayout.LayoutFlags="All">
                             <ImageButton x:Name="UserProfile"
@@ -78,6 +81,19 @@
                                            TranslationY="4" IsEnabled="False"
                                            Source="SettingsIcon.png"/>
                                     <Label Text="Settings" TextColor="White" IsEnabled="False"
+                                           TranslationX="64" TranslationY="8"
+                                           FontSize="18" FontAttributes="None"/>
+                                </AbsoluteLayout>
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                    <Button x:Name="LogoutButton" Pressed="HighlightDetailButton" Released="GoToSpecifiedPage"
+                                            CornerRadius="0"
+                                            AbsoluteLayout.LayoutBounds="0,0,1,42" AbsoluteLayout.LayoutFlags="WidthProportional"/>
+                                    <BoxView x:Name="LogoutNode" BackgroundColor="#00858F"
+                                             AbsoluteLayout.LayoutBounds="0,0,36,42" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                                    <Image WidthRequest="32" HeightRequest="32"
+                                           TranslationY="4" IsEnabled="False"
+                                           Source="LogoutIcon.png"/>
+                                    <Label Text="Logout" TextColor="White" IsEnabled="False"
                                            TranslationX="64" TranslationY="8"
                                            FontSize="18" FontAttributes="None"/>
                                 </AbsoluteLayout>
