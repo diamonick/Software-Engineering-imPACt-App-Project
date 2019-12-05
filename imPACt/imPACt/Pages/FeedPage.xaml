@@ -27,7 +27,7 @@
                     CornerRadius="25"
                     BackgroundColor="#00858F"
                     AbsoluteLayout.LayoutBounds="0.5,0.11" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                <Label x:Name="InterestCounter" Text="Number of interests:"
+                <Label x:Name="InterestCounter" Text="Number of Interests:"
                        TextColor="White" FontSize="24" FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Start"

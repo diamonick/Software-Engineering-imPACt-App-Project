@@ -190,7 +190,7 @@ namespace imPACt.Pages
             if (Interest) { NumOfInterests++; }
             else { NumOfInterests--; }
 
-            InterestCounter.Text = "Number of Interest: " + NumOfInterests + "/5";
+            InterestCounter.Text = "Number of Interests: " + NumOfInterests + "/5";
         }
 
         void EnableNext()
