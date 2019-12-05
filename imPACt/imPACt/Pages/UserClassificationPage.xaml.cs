@@ -416,6 +416,47 @@ namespace imPACt.Pages
                 ProfilePhoto = "EarlLogg_ProfilePhoto.png"
             };
 
+            User mentor5 = new User
+            {
+                Name = "Nash Mahmoud",
+                Email = "nmahmoud32@lsu.edu",
+                Password = "nashnash",
+                Classification = "Professor",
+                Description = "My name is Anas Mahmoud, known to most people as Nash, I am an assistant professor of" +
+                              "Computer Science and Engineering at Louisiana State University. I direct the Software" +
+                              "Engineering and Evolution Lab (SEEL) at LSU.",
+                ProfilePhoto = "NashPhoto.png"
+            };
+            User mentor6 = new User
+            {
+                Name = "Golden G. Richard III",
+                Email = "grichard77@lsu.edu",
+                Password = "cybersecurity",
+                Classification = "Professor",
+                Description = "My name is Golden Richard. I'm a cybersecurity researcher and teacher and a Fellow of" +
+                              "the American Academy of Forensic Sciences. I've had over 35 years of practical experience" +
+                              "in computer systems and computer security.",
+                ProfilePhoto = "golden2.jpg"
+            };
+            User mentor7 = new User
+            {
+                Name = "Elon Musk",
+                Email = "emusk5@lsu.edu",
+                Password = "TeslaTruck",
+                Classification = "Professor",
+                Description = "",
+                ProfilePhoto = "elon-musk-twitter-account.jpg"
+            };
+            User mentor8 = new User
+            {
+                Name = "Nathan Brener",
+                Email = "nbrener@lsu.edu",
+                Password = "matlabRules",
+                Classification = "Professor",
+                Description = "",
+                ProfilePhoto = "brener.png"
+            };
+
             Event event1 = new Event
             {
                 Keyword = "C#",
@@ -473,6 +514,10 @@ namespace imPACt.Pages
             await App.Database.SaveUserAsync(mentor2);
             await App.Database.SaveUserAsync(mentor3);
             await App.Database.SaveUserAsync(mentor4);
+            await App.Database.SaveUserAsync(mentor5);
+            await App.Database.SaveUserAsync(mentor6);
+            await App.Database.SaveUserAsync(mentor7);
+            await App.Database.SaveUserAsync(mentor8);
 
             //Save Event to Database
             await App.Database.SaveEventAsync(event1);

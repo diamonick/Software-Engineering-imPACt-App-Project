@@ -212,6 +212,12 @@
     <BundleResource Include="Resources\LogoutIcon.png" />
     <BundleResource Include="Resources\FollowtheLeader.png" />
     <BundleResource Include="Resources\HalloweenBackground.png" />
+    <BundleResource Include="Resources\brener.png" />
+    <BundleResource Include="Resources\Nash.png" />
+    <BundleResource Include="Resources\Standard_Background.jpeg" />
+    <BundleResource Include="Resources\NashPhoto.png" />
+    <BundleResource Include="Resources\AlanTuring.jpg" />
+    <BundleResource Include="Resources\Alan.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\0617_NeilDegrasseTyson_Gluekit_oneuseonly.jpg" />

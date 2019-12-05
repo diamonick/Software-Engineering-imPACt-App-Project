@@ -21,10 +21,10 @@ namespace imPACt.Pages
         private const double PressedSize = 1.1;                     //Size of button when pressed
         private bool MatchRunning = true;
         private bool AbleToClickProfile = false;
-        private const string MentorEmail1 = "qsharp56@lsu.edu";
-        private const string MentorEmail2 = "srift17@lsu.edu";
-        private const string MentorEmail3 = "foconnor24@lsu.edu";
-        private const string MentorEmail4 = "elogg23@lsu.edu";
+        private const string MentorEmail1 = "nmahmoud32@lsu.edu";
+        private const string MentorEmail2 = "grichard77@lsu.edu";
+        private const string MentorEmail3 = "emusk5@lsu.edu";
+        private const string MentorEmail4 = "nbrener@lsu.edu";
 
 
         public MatchPage(User u)

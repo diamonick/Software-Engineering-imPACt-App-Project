@@ -15,7 +15,7 @@
                  AbsoluteLayout.LayoutBounds="0.5,1,1,0.75" AbsoluteLayout.LayoutFlags="SizeProportional"
         />
         <!-- Features text -->
-        <Label x:Name="Introduction_Note" Text="Find researchers in the SEC-LSAMP&#10;region to connect with by swiping left&#10;or right. Select their image to&#10;learn more!"
+        <Label x:Name="Introduction_Note" Text="Find mentors in the SEC&#10;region to connect with by swiping left&#10;or right. Select their image to&#10;learn more!"
                TextColor="#00858F" FontSize="16"
                HorizontalTextAlignment="Center"
                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"

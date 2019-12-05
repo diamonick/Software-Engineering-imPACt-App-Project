@@ -18,6 +18,10 @@ namespace imPACt.Pages
         private const string MentorEmail2 = "srift17@lsu.edu";
         private const string MentorEmail3 = "foconnor24@lsu.edu";
         private const string MentorEmail4 = "elogg23@lsu.edu";
+        private const string MentorEmail5 = "nmahmoud32@lsu.edu";
+        private const string MentorEmail6 = "grichard77@lsu.edu";
+        private const string MentorEmail7 = "emusk5@lsu.edu";
+        private const string MentorEmail8 = "nbrener@lsu.edu";
         private string[] InterestSource =
         {
             "InterestsIcons-01.png",
@@ -91,6 +95,43 @@ namespace imPACt.Pages
                 this.mentor.Interests.Add("InterestsIcons-10.png");
                 this.mentor.Interests.Add("InterestsIcons-11.png");
             }
+            else if (this.mentor.Email == MentorEmail5)
+            {
+                ProfileBG.Source = "Standard_Background.jpeg";
+                this.mentor.Interests.Add("InterestsIcons-01.png");
+                this.mentor.Interests.Add("InterestsIcons-06.png");
+                this.mentor.Interests.Add("InterestsIcons-08.png");
+                this.mentor.Interests.Add("InterestsIcons-09.png");
+                this.mentor.Interests.Add("InterestsIcons-15.png");
+            }
+            else if (this.mentor.Email == MentorEmail6)
+            {
+                ProfileBG.Source = "Standard_Background.jpeg";
+                this.mentor.Interests.Add("InterestsIcons-01.png");
+                this.mentor.Interests.Add("InterestsIcons-02.png");
+                this.mentor.Interests.Add("InterestsIcons-03.png");
+                this.mentor.Interests.Add("InterestsIcons-09.png");
+                this.mentor.Interests.Add("InterestsIcons-10.png");
+            }
+            else if (this.mentor.Email == MentorEmail7)
+            {
+                ProfileBG.Source = "Standard_Background.jpeg";
+                this.mentor.Interests.Add("InterestsIcons-01.png");
+                this.mentor.Interests.Add("InterestsIcons-04.png");
+                this.mentor.Interests.Add("InterestsIcons-09.png");
+                this.mentor.Interests.Add("InterestsIcons-10.png");
+                this.mentor.Interests.Add("InterestsIcons-11.png");
+            }
+            else if (this.mentor.Email == MentorEmail8)
+            {
+                ProfileBG.Source = "Standard_Background.jpeg";
+                this.mentor.Interests.Add("InterestsIcons-01.png");
+                this.mentor.Interests.Add("InterestsIcons-04.png");
+                this.mentor.Interests.Add("InterestsIcons-09.png");
+                this.mentor.Interests.Add("InterestsIcons-10.png");
+                this.mentor.Interests.Add("InterestsIcons-11.png");
+            }
+
 
             int InterestIndex = 0;
 

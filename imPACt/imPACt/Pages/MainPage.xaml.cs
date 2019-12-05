@@ -82,7 +82,7 @@ namespace imPACt.Pages
                 NoteIcon.FadeTo(0.0, 500, Easing.Linear);
                 await Introduction_Note.FadeTo(0.0, 500, Easing.Linear);
                 CurrentNote++;
-                Introduction_Note.Text = "Find collaborators for your current\ngrant!";
+                Introduction_Note.Text = "Join workshops, events, and seminars\nled by mentors you match with!";
                 NoteIcon.Source = "LS_PAC_MODELS_Icon3.png";
                 NextButton.Text = "Get Started";
                 NoteIcon.FadeTo(1.0, 500, Easing.Linear);

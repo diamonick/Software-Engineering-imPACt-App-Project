@@ -17,7 +17,7 @@
                 <Label x:Name="ItsAMatch" Text="It's a Match!" TextColor="White"
                        FontSize="54" FontAttributes="Bold" Opacity="0.0"
                        AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                <Label x:Name="SmallText" Text="You and Qubic Sharp share similar interests." TextColor="White" Opacity="0.0"
+                <Label x:Name="SmallText" Text="You and Nash Mahmoud share similar interests." TextColor="White" Opacity="0.0"
                        FontSize="24" FontAttributes="None" Margin="36,0" HorizontalTextAlignment="Center" VerticalTextAlignment="End"
                        AbsoluteLayout.LayoutBounds="0.5,0.3" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                 <Image x:Name="Mail1" Source="MailIcon.png"
@@ -89,7 +89,7 @@
                 <Label Text="It's a Match!" TextColor="White"
                        FontSize="54" FontAttributes="Bold" Opacity="1.0"
                        AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                <Label x:Name="SmallText2" Text="You and Spencer Rift share similar interests." TextColor="White" Opacity="1.0"
+                <Label x:Name="SmallText2" Text="You and Golden G. Richard III share similar interests." TextColor="White" Opacity="1.0"
                        FontSize="24" FontAttributes="None" Margin="36,0" HorizontalTextAlignment="Center" VerticalTextAlignment="End"
                        AbsoluteLayout.LayoutBounds="0.5,0.3" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                 <Image x:Name="Mail2" Source="MailIcon.png"
@@ -122,7 +122,7 @@
                                        IsClippedToBounds="True"
                                        HorizontalOptions="Center" VerticalOptions="Center"
                                        AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                                    <ImageButton x:Name="MentorProfilePhoto2" Source="SpencerRift_ProfilePhoto.png"
+                                    <ImageButton x:Name="MentorProfilePhoto2" Source="golden2.jpg"
                                                  Aspect="AspectFill" Margin="-20" Released="CheckMentorProfile"
                                                  WidthRequest="56" HeightRequest="56"/>
                         </Frame>
@@ -159,7 +159,7 @@
                 <Label Text="It's a Match!" TextColor="White"
                        FontSize="54" FontAttributes="Bold" Opacity="1.0"
                        AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                <Label x:Name="SmallText3" Text="You and Flora O'Connor share similar interests." TextColor="White" Opacity="1.0"
+                <Label x:Name="SmallText3" Text="You and Elon Musk share similar interests." TextColor="White" Opacity="1.0"
                        FontSize="24" FontAttributes="None" Margin="36,0" HorizontalTextAlignment="Center" VerticalTextAlignment="End"
                        AbsoluteLayout.LayoutBounds="0.5,0.3" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                 <Image x:Name="Mail3" Source="MailIcon.png"
@@ -192,7 +192,7 @@
                                        IsClippedToBounds="True"
                                        HorizontalOptions="Center" VerticalOptions="Center"
                                        AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                                    <ImageButton x:Name="MentorProfilePhoto3" Source="FloraPortrait.png"
+                                    <ImageButton x:Name="MentorProfilePhoto3" Source="elon-musk-twitter-account.jpg"
                                                  Aspect="AspectFill" Margin="-20" Released="CheckMentorProfile"
                                                  WidthRequest="56" HeightRequest="56"/>
                         </Frame>
@@ -229,7 +229,7 @@
                 <Label Text="It's a Match!" TextColor="White"
                        FontSize="54" FontAttributes="Bold" Opacity="1.0"
                        AbsoluteLayout.LayoutBounds="0.5,0.1" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                <Label x:Name="SmallText4" Text="You and Dr. Earl Logg share similar interests." TextColor="White" Opacity="1.0"
+                <Label x:Name="SmallText4" Text="You and Nathan Brener share similar interests." TextColor="White" Opacity="1.0"
                        FontSize="24" FontAttributes="None" Margin="36,0" HorizontalTextAlignment="Center" VerticalTextAlignment="End"
                        AbsoluteLayout.LayoutBounds="0.5,0.3" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                 <Image x:Name="Mail4" Source="MailIcon.png"
@@ -262,7 +262,7 @@
                                        IsClippedToBounds="True"
                                        HorizontalOptions="Center" VerticalOptions="Center"
                                        AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional">
-                                    <ImageButton x:Name="MentorProfilePhoto4" Source="EarlLogg_ProfilePhoto.png"
+                                    <ImageButton x:Name="MentorProfilePhoto4" Source="brener.png"
                                                  Aspect="AspectFill" Margin="-20" Released="CheckMentorProfile"
                                                  WidthRequest="56" HeightRequest="56"/>
                         </Frame>
