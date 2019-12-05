@@ -35,6 +35,41 @@ namespace imPACt.Data
                             .FirstOrDefaultAsync();
         }
 
+        public Task<User> GetUserByRole(string role)
+        {
+            return _database.Table<User>()
+                            .Where(i => i.Role == role)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<User> GetUserByUniversity(string university)
+        {
+            return _database.Table<User>()
+                            .Where(i => i.University == university)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<User> GetUserByLocation(string location)
+        {
+            return _database.Table<User>()
+                            .Where(i => i.Location == location)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<User> GetUserByMajor(string major)
+        {
+            return _database.Table<User>()
+                            .Where(i => i.Major == major)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<User> GetUserByClassification(string classification)
+        {
+            return _database.Table<User>()
+                            .Where(i => i.Classification == classification)
+                            .FirstOrDefaultAsync();
+        }
+
         public Task<int> SaveUserAsync(User User)
         {
             if (User.ID != 0)

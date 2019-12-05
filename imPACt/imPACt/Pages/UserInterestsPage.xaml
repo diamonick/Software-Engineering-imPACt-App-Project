@@ -33,7 +33,7 @@
                         <Label Text="University: " TextColor="White"
                                FontSize="16" FontAttributes="Bold" TranslationX="-130"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Picker x:Name="UniversityList" Title="Select a university you want a mentor through"
+                        <Picker x:Name="UniversityInterestList" Title="Select a university you want a mentor through"
                                 SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="240" HeightRequest="28"
                                 HorizontalOptions="End"
@@ -48,7 +48,7 @@
                         <Label Text="Location: " TextColor="White"
                                FontSize="16" FontAttributes="Bold" TranslationX="-132"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Picker x:Name="LocationList" Title="Select a location you want a mentor from"
+                        <Picker x:Name="LocationInterestList" Title="Select a location you want a mentor from"
                                 SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="240" HeightRequest="28"
                                 HorizontalOptions="End"
@@ -63,7 +63,7 @@
                         <Label Text="Major: " TextColor="White"
                                FontSize="16" FontAttributes="Bold" TranslationX="-144"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Picker x:Name="MajorList" Title="Pick an area you are looking for a mentor in"
+                        <Picker x:Name="MajorInterestList" Title="Pick an area you are looking for a mentor in"
                                 SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="240" HeightRequest="28"
                                 HorizontalOptions="End"
@@ -78,7 +78,7 @@
                         <Label Text="Classification: " TextColor="White"
                                FontSize="16" FontAttributes="Bold" TranslationX="-116"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Picker x:Name="ClassifcationList" Title="Pick classification"
+                        <Picker x:Name="ClassificationInterestList" Title="Pick classification"
                                 SelectedIndexChanged="PickedItem"
                                 BackgroundColor="White" WidthRequest="240" HeightRequest="28"
                                 HorizontalOptions="End"

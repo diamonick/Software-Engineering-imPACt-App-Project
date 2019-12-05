@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
+using imPACt.Models;
 
 namespace imPACt.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserInterestsPage : ContentPage
     {
+        User newUser;
+
         private string[] UniversityItems = {    "Auburn University",
                                                 "Louisiana State University",
                                                 "Mississippi State University",
@@ -128,31 +132,32 @@ namespace imPACt.Pages
 
         private const double PressedSize = 1.1;                     //Size of button when pressed
         public int SelectedIndex { get; set; }
-        public UserInterestsPage()
+        public UserInterestsPage(User u)
         {
             InitializeComponent();
+            this.newUser = u;
 
             //Add all items from University items to the University list
             foreach (string i in UniversityItems)
             {
-                UniversityList.Items.Add(i);
+                UniversityInterestList.Items.Add(i);
             }
 
             //Add all items from Location items to the Location list
             foreach (string i in LocationItems)
             {
-                LocationList.Items.Add(i);
+                LocationInterestList.Items.Add(i);
             }
 
             foreach (string i in MajorItems)
             {
-                MajorList.Items.Add(i);
+                MajorInterestList.Items.Add(i);
             }
 
             //Add all items from Classification items to the Classification list
             foreach (string i in ClassificationItems)
             {
-                ClassifcationList.Items.Add(i);
+                ClassificationInterestList.Items.Add(i);
             }
 
             CheckFields();
@@ -169,10 +174,10 @@ namespace imPACt.Pages
 
         void CheckFields()
         {
-            if (UniversityList.SelectedIndex != -1
-                && LocationList.SelectedIndex != -1
-                && MajorList.SelectedIndex != -1
-                && ClassifcationList.SelectedIndex != -1)
+            if (UniversityInterestList.SelectedIndex != -1
+                && LocationInterestList.SelectedIndex != -1
+                && MajorInterestList.SelectedIndex != -1
+                && ClassificationInterestList.SelectedIndex != -1)
             {
                 MATCH.IsEnabled = true;
                 MATCH.Opacity = 1.0;
@@ -196,6 +201,11 @@ namespace imPACt.Pages
 
             await button.ScaleTo(1.0, 200, Easing.SinOut);
             await Navigation.PushAsync(new MatchPage());
+
+            this.newUser.UniversityInterest = (string)UniversityInterestList.SelectedItem;
+            this.newUser.LocationInterest = (string)LocationInterestList.SelectedItem;
+            this.newUser.MajorInterest = (string)MajorInterestList.SelectedItem;
+            this.newUser.ClassificationInterest = (string)ClassificationInterestList.SelectedItem;
         }
     }
 }

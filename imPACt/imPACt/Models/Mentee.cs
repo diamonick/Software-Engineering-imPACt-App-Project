@@ -13,5 +13,6 @@ namespace imPACt.Models
         public string Password { get; set; }
         public string Classification { get; set; }
         public string Location { get; set; }
+
     }
 }

@@ -18,14 +18,27 @@ namespace imPACt.Pages
         readonly User Mentor2;
         readonly User Mentor3;
         readonly User Mentor4;
+        User newUser;
+        User match1;
+        User match2;
+        User match3;
+        User match4;
+        User match5;
 
-
-        public MatchPage()
+        public MatchPage(User u)
         {
             InitializeComponent();
-
+            this.newUser = u;
+            string UniInt = newUser.UniversityInterest;
+            string LocInt = newUser.LocationInterest;
+            string MajorInt = newUser.MajorInterest;
+            string ClassInt = newUser.ClassificationInterest;
         }
 
+        void RankUser()
+        {
+
+        }
         void HighlightButton(object sender, EventArgs args)
         {
             var Button = (Button)sender;

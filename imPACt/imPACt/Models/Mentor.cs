@@ -13,5 +13,9 @@ namespace imPACt.Models
         public string Password { get; set; }
         public string Classification { get; set; }
         public string Location { get; set; }
+        public string UniversityInterest { get; set; }
+        public string LocationInterest { get; set; }
+        public string MajorInterest { get; set; }
+        public string ClassificationInterest { get; set; }
     }
 }

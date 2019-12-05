@@ -29,5 +29,10 @@ namespace imPACt.Models
         public bool[] InterestedInEvents = new bool[4];
         public string Role { get; set; } //"Mentee" or "Mentor"
         //public String[] Interests { get; set; }
+        public string UniversityInterest { get; set; }
+        public string LocationInterest { get; set; }
+        public string MajorInterest { get; set; }
+        public string ClassificationInterest { get; set; }
     }
+}
 }
