@@ -36,7 +36,7 @@ namespace imPACt.Pages
         {
             InitializeComponent();
             this.newUser = u;
-            InterestCounter.Text = "Number of Interest: " + NumOfInterests + "/5";
+            InterestCounter.Text = "Number of Interests: " + NumOfInterests + "/5";
         }
 
         void HighlightInterest(object sender, EventArgs args)

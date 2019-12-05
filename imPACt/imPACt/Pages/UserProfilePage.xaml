@@ -184,22 +184,22 @@
 
                             <Image x:Name="Tab1"
                                    Grid.Row="0" Grid.Column="0"
-                                   Source=""/>
+                                   Source="InterestsIcons-01"/>
                             <Image x:Name="Tab2"
                                    Grid.Row="0" Grid.Column="1"
-                                   Source=""/>
+                                   Source="InterestsIcons-03"/>
                             <Image x:Name="Tab3"
                                    Grid.Row="0" Grid.Column="2"
-                                   Source=""/>
+                                   Source="InterestsIcons-06"/>
                             <Image x:Name="Tab4"
                                    Grid.Row="0" Grid.Column="3"
-                                   Source=""/>
+                                   Source="InterestsIcons-07"/>
                             <Image x:Name="Tab5"
                                    Grid.Row="1" Grid.Column="0"
-                                   Source=""/>
+                                   Source="InterestsIcons-09"/>
                             <Image x:Name="Tab6"
                                    Grid.Row="1" Grid.Column="1"
-                                   Source=""/>
+                                   Source="InterestsIcons-15"/>
                             <Image x:Name="Tab7"
                                    Grid.Row="1" Grid.Column="2"
                                    Source=""/>
