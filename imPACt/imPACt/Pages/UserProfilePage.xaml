@@ -16,7 +16,7 @@
                              AbsoluteLayout.LayoutBounds="0,0,1,170" AbsoluteLayout.LayoutFlags="WidthProportional"/>
                     
                     <BoxView BackgroundColor="White" CornerRadius="67"
-                             WidthRequest="134" HeightRequest="134" Margin="0,17,0,0"
+                             WidthRequest="134" HeightRequest="134" Margin="0,17.5,0,0"
                              AbsoluteLayout.LayoutBounds="0.5,0" AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     <Image
                            WidthRequest="120" HeightRequest="120"
